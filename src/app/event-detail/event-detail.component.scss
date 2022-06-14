@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.col-md-* { padding: 15px; }
+
+mat-form-field {
+  width: 100%;
+}
+
+.main {
+  font-family: 'Poppins';
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button[mat-fab]{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+.whiteBG {
+  width: 90vw;
+  height: 90vh;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 45px;
+}
+
+.font {
+  font-family: 'Poppins';
+}
+
+
+h1 {
+  font-weight: bolder;
+  font-size: 45px;
+  padding-left: 25px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  transform: translateY(-100px) translateX(60px);
+}
+
+img {
+
+  border-radius: 15px;
+  width: 316px;
+  height: 289px;
+  transition: 2.0s;
+  transform: translateY(-40px);
+}
+
+img:hover {
+ transform: scale3d(1.5,1.5,1.5) rotate(180deg) ;
+}
+
+.txt-field {
+  position: absolute;
+  top: 50%;
+}
+
+.input {
+  width: 100%;
+  font-family: 'Poppins';
+}
+
+input::placeholder {
+  font-family: 'Poppins';
+  font-weight: bolder;
+  padding-left: 30px;
+}
+
+.sendButton {
+  margin: 0px;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+}
+
+.sendButton:hover {
+  background-color: #fffafa;
+  cursor: pointer;
+  color: black;
+}
+
+.delButton {
+  margin-left: 20px;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+}
+
+.delButton:hover {
+  background-color: #fffafa;
+  cursor: pointer;
+  color: black;
+}
+
+.dim {
+  color: #999999;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.title {
+  transform: translateY(-80px);
+}
+
+

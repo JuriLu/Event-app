@@ -1,0 +1,82 @@
+<div class="main">
+  <button
+    mat-fab
+    color="accent"
+  [routerLink]="['..']">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <mat-card [formGroup]="eventForm">
+    <mat-card-title>Event Detail</mat-card-title>
+    <mat-card-content>
+
+      <mat-form-field appearance="outline" class="input">
+        <mat-label class="font">Title</mat-label>
+        <input matInput placeholder="Placeholder" type="text" formControlName="title">
+        <mat-hint>Title</mat-hint>
+      </mat-form-field>
+
+      <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <mat-form-field appearance="outline">
+            <mat-label>Start Date</mat-label>
+            <input formControlName="startDate" matInput [matDatepicker]="startDatepicker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <mat-form-field appearance="outline">
+            <mat-label>Start Time</mat-label>
+            <input formControlName="startTime" matInput type="time">
+            <mat-hint>HH/MM</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+          <mat-form-field appearance="outline">
+            <mat-label>End Date</mat-label>
+            <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
+            <mat-hint>DD/MM/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatepicker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+          <mat-form-field appearance="outline">
+            <mat-label>End Time</mat-label>
+            <input formControlName="endTime" matInput type="time">
+            <mat-hint>HH/MM</mat-hint>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="end">
+      <button
+        type="button"
+        class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4"
+        mat-raised-button
+        color="primary"
+        (click)="sendForm()"
+        [disabled]="!eventForm.valid">
+        {{ editMode? "Update Event":"Create Event"}}
+      </button>
+      <button
+        type="button"
+        mat-icon-button
+        color="warn"
+        (click)="deleteForm()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+
+  <div *ngIf="editMode"></div>
+</div>

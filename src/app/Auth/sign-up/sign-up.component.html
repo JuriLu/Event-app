@@ -1,0 +1,68 @@
+<div class="main">
+
+  <mat-card [formGroup]="signupForm">
+    <mat-card-title>Member Login</mat-card-title>
+    <mat-card-content>
+      <p class="name-block">
+        <mat-form-field appearance="outline">
+          <mat-label>First Name</mat-label>
+          <input
+            formControlName="firstName"
+            matInput
+            placeholder="First Name">
+        </mat-form-field>
+
+        <mat-form-field style="margin-left: 10px" appearance="outline">
+          <mat-label>Last Name</mat-label>
+          <input
+            formControlName="lastName"
+            matInput
+            placeholder="Last Name">
+        </mat-form-field>
+      </p>
+
+      <p>
+        <mat-form-field class="email" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            formControlName="email"
+            matInput
+            placeholder="Email">
+          <!--            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>-->
+        </mat-form-field>
+      </p>
+
+      <p class="password">
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="Password">
+          <mat-error *ngIf="signupForm.get('password').invalid">{{passErrMsg()}}</mat-error>
+        </mat-form-field>
+        <mat-form-field style="margin-left: 10px" appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input
+            type="password"
+            formControlName="confirmPassword"
+            matInput
+            placeholder="Confirm Password">
+          <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
+        </mat-form-field>
+      </p>
+    </mat-card-content>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="end">
+      <button mat-button (click)="onSignUp()">Sign Up</button>
+      <button mat-button (click)="gSignUp()">Google Sign Up</button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <button mat-button routerLink="/signin">Sign In</button>
+    </mat-card-footer>
+
+  </mat-card>
+
+
+</div>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.main {
+  font-family: 'Poppins';
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//p{
+//  position: relative;
+//  margin: 0;
+//  padding: 0;
+//}
+//.row {
+//  display: flex;
+//  flex-wrap: wrap;
+//}
+//
+//.col {
+//  flex: 1 1 auto;
+//}
+
+.whiteBG {
+  width: 80vw;
+  height: 90vh;
+  background-color: white;
+  border-radius: 15px;
+  transform: translateY(40px);
+}
+
+.signup-container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-weight: bolder;
+  font-size: 28px;
+  padding-left: 25px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+img {
+  /*border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;*/
+  border-radius: 15px;
+  width: 316px;
+  height: 289px;
+  transition: 2.0s;
+}
+
+img:hover {
+  transform: rotate3d(13, 8, 5, 360deg);
+}
+
+.input {
+  margin-bottom: 10px;
+  border-radius: 30px;
+  font-family: 'Poppins';
+  width: 260px;
+  height: 45px;
+  border-style: none;
+  background-color: lightgrey;
+  padding: 5px 15px;
+}
+
+.password {
+  width: 100%;
+  font-family: 'Poppins';
+}
+
+.email {;
+  width: 100%;
+  font-family: 'Poppins';
+}
+
+mat-form-field {
+  font-family: 'Poppins';
+  font-weight: 500
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+input::placeholder {
+  font-family: 'Poppins';
+  font-weight: bolder;
+  padding-left: 30px;
+}
+
+
+.authButton {
+  margin-top: 30px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+}
+
+
+.authButton:hover {
+  background-color: #fffafa;
+  cursor: pointer;
+  color: black;
+}
+
+.GauthButton {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+}
+
+
+.GauthButton:hover {
+  background-color: #1AA260;
+  cursor: pointer;
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
