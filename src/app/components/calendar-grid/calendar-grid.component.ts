@@ -5,6 +5,7 @@ import {CalendarService} from "../../Services/calendar.service";
 import {AuthService} from "../../Services/auth.service";
 import * as events from "events";
 
+
 @Component({
   selector: 'app-calendar-grid',
   templateUrl: './calendar-grid.component.html',
@@ -29,12 +30,13 @@ export class CalendarGridComponent implements OnInit{
     slotLabelInterval: '01:00',
 
     events: [],
+    themeSystem:'default',
 
     eventBackgroundColor: 'white',
     eventBorderColor: 'blue',
     eventTextColor: 'black',
     eventDisplay:'block',
-    eventMinHeight:15,
+    eventMinHeight:20,
     eventMinWidth:10,
 
 
@@ -43,7 +45,7 @@ export class CalendarGridComponent implements OnInit{
       center:"title",
       end:"today prev,next"
     },
-    titleFormat:{year: 'numeric', month: 'long', day: 'numeric'},
+    titleFormat:{month: 'long',year:'numeric'},
     titleRangeSeparator:'-',
     buttonText:{
       today: "Today",
@@ -52,9 +54,9 @@ export class CalendarGridComponent implements OnInit{
       list: "list"
     },
 
-    themeSystem: 'standard',
 
-    height: 740,
+
+    height: 840,
     contentHeight:800,
     aspectRatio:4,
     expandRows: true,
@@ -72,11 +74,7 @@ export class CalendarGridComponent implements OnInit{
     datesSet: ({start, end}) => {
       const s = start.toISOString();
       const e = end.toISOString();
-  // this.calendarService.getEvents({ start: s, end: e }).subscribe(events=>{
-  //
-  //   const calendarEvents= events;
-  //   console.log(calendarEvents,'calendarEventsssssssssss')
-  // })
+
       this.calendarService
         .getEvents({ start: s, end: e })
         .subscribe((events: any) => this.calendarOptions = { ...this.calendarOptions, events });
@@ -91,12 +89,6 @@ export class CalendarGridComponent implements OnInit{
 
 
   ngOnInit() {
-
-  }
-
-    toggleWeekends(){
-    this.calendarOptions.weekends = !this.calendarOptions.weekends
-    console.log(this.calendarOptions.weekends)
   }
 
 

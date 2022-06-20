@@ -1,3 +1,10 @@
+full-calendar{
+  margin-top: 60px;
+  border-width: 20px;
+}
 
+full-calendar > div > div > div > table.fc-theme-standard.fc-scrollgrid{
+  border: 3px solid white;
+}
 
 

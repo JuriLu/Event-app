@@ -7,14 +7,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <div class="account-display">
+        <li class="nav-item account-display">
             <mat-icon>account_circle</mat-icon>
             <p>{{name}}</p>
-          </div>
         </li>
-        <li class="nav-item d-flex">
-          <button mat-raised-button color="warn" class="justify-content-end" (click)="onSignOut()">Sign Out</button>
+        <li class="nav-item ">
+          <button class="logout" (click)="onSignOut()">Logout</button>
         </li>
       </ul>
     </div>
