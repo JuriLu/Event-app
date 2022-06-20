@@ -76,20 +76,6 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-    // async gSignUp(){
-    //   const socialUser: SocialUser = await this.authService.authWithGoogle();
-    //   if (socialUser && socialUser.idToken) {
-    //     const { idToken } = socialUser;
-    //
-    //     this.authService
-    //       .googleSignUp(idToken)
-    //       .subscribe(user => {
-    //         if (user) this.router.navigateByUrl('/signin');
-    //       });
-    //   }
-    // }
-
-
   confPassErrMsg(){
     if (this.signupForm.get('confirmPassword').hasError('exactMatch')){
       return 'Passwords Do Not Match'
