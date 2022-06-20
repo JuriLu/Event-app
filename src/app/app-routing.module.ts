@@ -8,9 +8,10 @@ import {LostPasswordComponent} from "./Auth/lost-password/lost-password.componen
 import {EventResolver} from "./Resolvers/event.resolver";
 import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {UnsavedDataGuard} from "./Guards/unsaved-data.guard";
+import {AuthGuard} from "./Guards/auth-guard";
 
 const routes: Routes = [
-  {path:'',redirectTo:'calendar',pathMatch:'full'},
+  {path:'',redirectTo:'signin',pathMatch:'full'},
   {path:'signin',component:LoginComponent},
   {path:'signup',component:SignUpComponent},
   {path:'lost-pass',component:LostPasswordComponent},
@@ -19,11 +20,13 @@ const routes: Routes = [
     children:[
       {
         path:'',
+        canActivate:[AuthGuard],
         component:CalendarGridComponent
       },
       {
         path:':id',
         component: EventDetailComponent,
+        canActivate:[AuthGuard],
         canDeactivate:[UnsavedDataGuard],
         resolve: { calendarEvent: EventResolver }
       }

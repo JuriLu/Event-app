@@ -3,6 +3,7 @@ import {CalendarOptions} from "@fullcalendar/angular";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CalendarService} from "../Services/calendar.service";
 import {AuthService} from "../Services/auth.service";
+import * as events from "events";
 
 @Component({
   selector: 'app-calendar-grid',
@@ -71,10 +72,17 @@ export class CalendarGridComponent implements OnInit{
     datesSet: ({start, end}) => {
       const s = start.toISOString();
       const e = end.toISOString();
-
+  // this.calendarService.getEvents({ start: s, end: e }).subscribe(events=>{
+  //
+  //   const calendarEvents= events;
+  //   console.log(calendarEvents,'calendarEventsssssssssss')
+  // })
       this.calendarService
         .getEvents({ start: s, end: e })
         .subscribe((events: any) => this.calendarOptions = { ...this.calendarOptions, events });
+      console.log(this.calendarOptions)
+      console.log(events)
+
     }
   };
 

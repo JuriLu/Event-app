@@ -108,13 +108,13 @@ export class EventDetailComponent implements OnInit,OnEdit {
       .pipe(
         finalize(()=>this.isDirty=false)
       )
-      .subscribe(event => {this.populateForm(event);this.router.navigate(['..'])});
+      .subscribe(event => {this.populateForm(event);this.router.navigate(['calendar'])});
 
   }
 
   deleteForm(){
     this.calendarService.delete(this.id).subscribe();
-    this.router.navigate(['..'])
+    this.router.navigate(['calendar'])
   }
 }
 
