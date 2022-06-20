@@ -3,7 +3,7 @@ import {CalendarOptions} from "@fullcalendar/angular";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CalendarService} from "../../Services/calendar.service";
 import {AuthService} from "../../Services/auth.service";
-import * as events from "events";
+
 
 
 @Component({
@@ -79,7 +79,7 @@ export class CalendarGridComponent implements OnInit{
         .getEvents({ start: s, end: e })
         .subscribe((events: any) => this.calendarOptions = { ...this.calendarOptions, events });
       console.log(this.calendarOptions)
-      console.log(events)
+
 
     }
   };
