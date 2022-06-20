@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 .bg-color{
-background: linear-gradient(-135deg, #c850c0, #4158d0);
+
   font-family: 'Poppins';
 }
 li{
@@ -11,4 +11,9 @@ li{
 .navbar-brand{
   color: white;
   font-size: 30px;
+}
+
+#navbarSupportedContent > ul > li.nav-item.d-flex > button{
+  border-radius: 10px;
+
 }

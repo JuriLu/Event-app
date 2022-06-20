@@ -3,16 +3,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  margin: 0;
+  font-family:'Poppins', Roboto, "Helvetica Neue", sans-serif;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
 
 a.fc-daygrid-day-number{
   color: white;
 }
 .fc-toolbar-title{
   color: white;
-  font-family: 'Poppins';
 }
 
-span.text-muted{
-  color: white;
+.text-muted[_ngcontent-cbr-c32]{
+  color: white ;
 }
