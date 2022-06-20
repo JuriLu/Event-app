@@ -1,31 +1,32 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {MaterialModule} from "./material/material.module";
+import {MaterialModule} from "./shared/material/material.module";
+
 import {FullCalendarModule} from "@fullcalendar/angular";
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timeGrid';
 import interactionPlugin from '@fullcalendar/interaction';
 
-import timeGridPlugin from '@fullcalendar/timeGrid';
-import { CalendarGridComponent } from './calendar-grid/calendar-grid.component';
-
-import { HeaderComponent } from './header/header.component';
-import { Error404Component } from './error404/error404.component';
-import { FooterComponent } from './footer/footer.component'
-import {AuthService} from "./Services/auth.service";
-import {AuthGuard} from "./Guards/auth-guard";
+import { AppComponent } from './app.component';
+import { CalendarGridComponent } from './components/calendar-grid/calendar-grid.component';
+import {EventDetailComponent} from "./components/event-detail/event-detail.component";
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component'
+import { Error404Component } from './shared/error404/error404.component';
 import { LoginComponent } from './Auth/login/login.component';
 import { SignUpComponent } from './Auth/sign-up/sign-up.component';
 import { LostPasswordComponent } from './Auth/lost-password/lost-password.component';
+
+import {AuthService} from "./Services/auth.service";
+import {AuthGuard} from "./Guards/auth-guard";
+import {TokenInterceptor} from "./Services/token.interceptor";
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
 import {environment} from "../environments/environment";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {MAT_DATE_LOCALE} from "@angular/material/core";
-import {TokenInterceptor} from "./Services/token.interceptor";
 
 
 FullCalendarModule.registerPlugins([

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: [
-    '../../.././node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
     './footer.component.scss'
   ]
 })

@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/angular";
 import {ActivatedRoute, Router} from "@angular/router";
-import {CalendarService} from "../Services/calendar.service";
-import {AuthService} from "../Services/auth.service";
+import {CalendarService} from "../../Services/calendar.service";
+import {AuthService} from "../../Services/auth.service";
 import * as events from "events";
 
 @Component({

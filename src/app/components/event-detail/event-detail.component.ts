@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {EventModel} from "../Model/event.model";
-import {CalendarService} from "../Services/calendar.service";
-import {UserModel} from "../Model/user.model";
-import {OnEdit} from "../Model/on-edit";
+import {EventModel} from "../../Model/event.model";
+import {CalendarService} from "../../Services/calendar.service";
+import {UserModel} from "../../Model/user.model";
+import {OnEdit} from "../../Model/on-edit";
 import {finalize, tap} from "rxjs";
 
 @Component({
