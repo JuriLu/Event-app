@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
-import {SocialUser} from "angularx-social-login";
+
 
 
 @Component({
@@ -16,9 +16,6 @@ export class LoginComponent implements OnInit {
   type = 'password';
   loginForm: FormGroup;
 
-  // //GOOGLE
-
-
   constructor(
     private router: Router,
     private authService: AuthService,
@@ -31,22 +28,9 @@ export class LoginComponent implements OnInit {
       password: new FormControl('', [Validators.required])
     })
 
-    //GOOGLE
-    // this.authService.gAuth()
 
   }
 
-  async gLogin() {
-    const socialUser: SocialUser = await this.authService.authWithGoogle();
-    if (socialUser && socialUser.idToken) {
-      const {idToken} = socialUser;
-
-      this.authService.googleSignIn(idToken).subscribe(user=>{
-        if (user) this.router.navigateByUrl('/calendar')
-
-      });
-    }
-  }
 
   onSubmit() {
     console.log(this.loginForm)
