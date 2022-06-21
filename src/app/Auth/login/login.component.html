@@ -1,39 +1,59 @@
-<div class="main">
+<body>
+<div class="row container">
 
-  <mat-card [formGroup]="loginForm">
-    <mat-card-title>Member Login</mat-card-title>
-    <mat-card-content>
-      <mat-form-field class="input" appearance="outline">
-        <mat-label>Enter your email</mat-label>
-        <input matInput placeholder="email@example.com" formControlName="email" required>
-        <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
-      </mat-form-field>
+  <div class="col photo-container">
+    <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
+  </div>
 
-      <mat-form-field class="input" appearance="outline">
-        <mat-label>Enter your password</mat-label>
-        <input matInput type={{type}} formControlName="password">
-        <mat-error
-          *ngIf="loginForm.get('password').hasError('required')">{{"Please Enter A Password"}}</mat-error>
-        <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-          <mat-icon>{{hide}}</mat-icon>
+  <div class="col login-container">
+    <div class="login">
+      <h1>Member Login</h1>
+
+      <form [formGroup]="loginForm">
+
+        <mat-form-field class="email" appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="email@example.com" formControlName="email" required>
+          <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+
+        <div>
+
+          <mat-form-field class="password" appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput type={{type}} formControlName="password">
+            <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Please Enter A Password"}}</mat-error>
+            <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+              <mat-icon>{{hide}}</mat-icon>
+            </button>
+          </mat-form-field>
+
+        </div>
+        <br>
+
+        <button
+          class="authButton"
+          mat-raised-button
+          color="primary"
+          (click)="Login()"
+          [disabled]="!loginForm.valid"
+        >Login
         </button>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-divider inset></mat-divider>
-    <mat-card-actions align="end">
-      <button
-        mat-button
-        (click)="Login()"
-        [disabled]="!loginForm.valid"
-      >Sign In</button>
-<!--      <button mat-button (click)="gLogin()">Google Sign In</button>-->
-    </mat-card-actions>
-    <mat-card-footer>
-      <button mat-button routerLink="/signup">Sign Up</button>
-    </mat-card-footer>
 
-  </mat-card>
+      </form>
 
+      <!--      <div class="pass">-->
+      <!--        <p><span class="dim">Forgot </span> <a href=""> Username / Password? </a></p>-->
+      <!--      </div>-->
 
+      <div class="signup_link">
+        <a routerLink="/signup"> Create your Account <span class="arrow"> &#8594;</span></a>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+
+</body>

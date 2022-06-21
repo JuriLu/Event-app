@@ -1,15 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
-.main {
+
+body{
+
   font-family: 'Poppins';
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg,#c850c0,#4158d0);
   height: 100vh;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  mat-card-content{
-    display: flex;
-    flex-direction: column;
-  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1 1 auto;
+}
+
+.container{
+  width: 65vw;
+  height: 70vh;
+  background-color: white;
+  border-radius: 15px;
+
+}
+
+.login-container {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+h1{
+  font-weight: bolder;
+  font-size: 28px;
+  padding-left: 25px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+}
+
+img {
+  /*border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;*/
+  border-radius: 15px;
+  width: 316px;
+  height: 289px;
+  transition: 2.0s;
+}
+
+img:hover{
+  transform: rotate3d(13, 8, 5, 360deg);
+}
+
+.txt-field{
+  position: absolute;
+  top: 50%;
+}
+
+.input{
+  margin-bottom: 10px;
+  border-radius: 30px;
+  font-family: 'Poppins';
+  /*font-weight: bolder;*/
+  width: 260px;
+  height: 45px;
+  border-style: none;
+  background-color: lightgrey;
+  padding: 5px 15px;
+}
+
+.email{
+  margin-bottom: 10px;
+  width:100%;
+  font-family: 'Poppins';
+}
+
+.password{
+  //margin-bottom: 10px;
+  width:100%;
+  font-family: 'Poppins';
+}
+
+input::placeholder{
+  font-family: 'Poppins';
+  font-weight: bolder;
+  padding-left: 30px;
+}
+
+
+
+.authButton{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  //background-color:#57B846;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+  //font-weight: bolder;
+  //color: white;
+}
+
+.pass{
+  font-family: 'Poppins';
+  font-size: 13px;
+  margin-left: 50px;
+  color: #666666;
+  margin-top: 5px;
+}
+
+.dim{
+  color: #999999;
+}
+
+
+.signup_link{
+  position: relative;
+  font-family: 'Poppins';
+  font-size: 13px;
+  margin-left: 90px;
+  margin-top: 160px;
+  color: #666666;
+}
+
+a{
+  text-decoration: none;
+  color: #666;
+  transition:all .4s;
+  -webkit-transition: all .4s;
+}
+
+
+a:hover {
+  text-decoration: none;
+  color: #57B846;
+}
+
+input[type='submit']:hover{
+  background-color: #343434;
+  cursor: pointer;
+}
+
+.bg-transparent{
+  background-color: transparent;
 }
 
