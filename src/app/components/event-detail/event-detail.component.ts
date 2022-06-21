@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EventModel} from "../../Model/event.model";
@@ -7,6 +7,7 @@ import {OnEdit} from "../../Model/on-edit";
 import {finalize, tap} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
+import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
 
 @Component({
   selector: 'app-event-detail',
@@ -35,16 +36,18 @@ export class EventDetailComponent implements OnInit, OnEdit {
     });
   }
 
+
+
   ngOnInit(): void {
     const calendarEvent: EventModel | null = this.activatedRoute.snapshot.data.calendarEvent;
-    //
-    // this.userModels = calendarEvent.bookings
+
 
     if (calendarEvent) {
       this.populateForm(calendarEvent);
     } else {
       const startDate = new Date(this.calendarService.selectedDate);
-      const startTime = this.calendarService.selectedDate.split('T')[1].split('.')[0].substr(0, 5);
+      const startTime = this.calendarService.selectedDate.split('T')[1].split('.')[0]
+        .substr(0, 5);
 
       this.eventForm.patchValue({startDate, startTime});
     }
@@ -57,10 +60,12 @@ export class EventDetailComponent implements OnInit, OnEdit {
     const {id, title, start, end} = eventModel;
 
     const startDate = new Date(start);
-    const startTime = start.split('T')[1].split('.')[0].substr(0, 5);
+    const startTime = start.split('T')[1].split('.')[0]
+      .substr(0, 5);
 
     const endDate = new Date(end);
-    const endTime = end.split('T')[1].split('.')[0].substr(0, 5);
+    const endTime = end.split('T')[1].split('.')[0]
+      .substr(0, 5);
 
     this.eventForm.patchValue({
       title,
@@ -72,11 +77,8 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
     this.id = id;
 
-    if (this.id) {
-      this.editMode = true
-    } else {
-      this.editMode = false
-    }
+    //Simplified set of editMode
+    this.editMode = !!this.id;
   }
 
   static toISOStringConverter(date: Date, time?: string): string {
@@ -106,11 +108,18 @@ export class EventDetailComponent implements OnInit, OnEdit {
     (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
     )
       .pipe(
-        finalize(() => this.isDirty = false)
+        finalize(() => this.isDirty = false),
       )
       .subscribe(event => {
-        this.populateForm(event);
-        this.router.navigate(['calendar'])
+        this.dialog.open(InformDialogComponent,{
+          data:{
+            title:event.title,
+            startDate:event.start,
+            endDate:event.end,
+            editMode: this.editMode
+          }
+        })
+        this.router.navigate(['calendar']);
       });
 
   }
@@ -129,6 +138,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
       }
     })
   }
+
 
 }
 

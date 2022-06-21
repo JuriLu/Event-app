@@ -19,7 +19,7 @@ interface CalendarFilter {
 })
 export class CalendarService {
   private readonly _url: string;
-  private _selectedDate: string
+  private _selectedDate: string;
 
   get selectedDate(): string {
     if (!this._selectedDate) {
@@ -60,9 +60,7 @@ export class CalendarService {
   }
 
   create(event:Partial<EventModel>): Observable<EventModel>{
-    return this.httpClient
-      .post<ResponseModel<EventModel>>(`${this._url}`,event)
-      .pipe(map(res => res.data))
+    return this.httpClient.post<ResponseModel<EventModel>>(`${this._url}`,event).pipe(map(res => res.data))
   }
 
   update(id:number,event:Partial<EventModel>): Observable<EventModel>{
