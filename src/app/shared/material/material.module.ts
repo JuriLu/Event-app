@@ -18,7 +18,7 @@ const MaterialComponents = [
   MatNativeDateModule,
   MatCardModule,
   MatDividerModule,
-  MatDialogModule
+  MatDialogModule,
 ]
 
 @NgModule({

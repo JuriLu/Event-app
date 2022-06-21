@@ -27,6 +27,8 @@ import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "a
 import {environment} from "../environments/environment";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {MAT_DATE_LOCALE} from "@angular/material/core";
+import { InformDialogComponent } from './shared/inform-dialog/inform-dialog.component';
+import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 
 
 FullCalendarModule.registerPlugins([
@@ -45,7 +47,9 @@ FullCalendarModule.registerPlugins([
     LoginComponent,
     SignUpComponent,
     LostPasswordComponent,
-    EventDetailComponent
+    EventDetailComponent,
+    InformDialogComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,

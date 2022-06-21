@@ -1,0 +1,27 @@
+<div class="main">
+  <h1 mat-dialog-title>
+    {{data.title}}
+  </h1>
+  <div mat-dialog-content>
+    {{data.message}}
+  </div>
+  <div class="btnGroup">
+    <button
+      mat-stroked-button
+      color="primary"
+      type="button"
+      value="Confirm"
+      [mat-dialog-close]="true">
+      <mat-icon>check</mat-icon>
+    </button>
+
+    <button
+      mat-stroked-button
+      color="warn"
+      type="button"
+      value="Cancel"
+      [mat-dialog-close]="false">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,36 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {EventModel} from "../../Model/event.model";
 import {CalendarService} from "../../Services/calendar.service";
-import {UserModel} from "../../Model/user.model";
 import {OnEdit} from "../../Model/on-edit";
 import {finalize, tap} from "rxjs";
+import {MatDialog} from "@angular/material/dialog";
+import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
 
 @Component({
   selector: 'app-event-detail',
   templateUrl: './event-detail.component.html',
   styleUrls: ['./event-detail.component.scss']
 })
-export class EventDetailComponent implements OnInit,OnEdit {
+export class EventDetailComponent implements OnInit, OnEdit {
   eventForm: FormGroup;
   id?: number;
   editMode: boolean = false
   isDirty: boolean = false
-  //
-  // userModels: UserModel[] = []
+
 
   constructor(
-    private activatedRoute:ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private calendarService: CalendarService,
-    private router :Router
+    private router: Router,
+    private dialog: MatDialog
   ) {
     this.eventForm = new FormGroup({
-      title: new FormControl('',[Validators.required]),
-      startDate: new FormControl('',[Validators.required]),
-      startTime: new FormControl('',[Validators.required]),
-      endDate: new FormControl('',[Validators.required]),
-      endTime: new FormControl('',[Validators.required]),
+      title: new FormControl('', [Validators.required]),
+      startDate: new FormControl('', [Validators.required]),
+      startTime: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', [Validators.required]),
+      endTime: new FormControl('', [Validators.required]),
     });
   }
 
@@ -39,22 +40,21 @@ export class EventDetailComponent implements OnInit,OnEdit {
     //
     // this.userModels = calendarEvent.bookings
 
-    if (calendarEvent){
+    if (calendarEvent) {
       this.populateForm(calendarEvent);
-    }
-    else {
+    } else {
       const startDate = new Date(this.calendarService.selectedDate);
       const startTime = this.calendarService.selectedDate.split('T')[1].split('.')[0].substr(0, 5);
 
-      this.eventForm.patchValue({ startDate, startTime });
+      this.eventForm.patchValue({startDate, startTime});
     }
-    this.eventForm.valueChanges.pipe(tap(()=>{
+    this.eventForm.valueChanges.pipe(tap(() => {
       if (this.eventForm.dirty) this.isDirty = true
     })).subscribe()
   }
 
   private populateForm(eventModel: EventModel): void {
-    const { id, title, start, end } = eventModel;
+    const {id, title, start, end} = eventModel;
 
     const startDate = new Date(start);
     const startTime = start.split('T')[1].split('.')[0].substr(0, 5);
@@ -72,17 +72,17 @@ export class EventDetailComponent implements OnInit,OnEdit {
 
     this.id = id;
 
-    if (this.id){
+    if (this.id) {
       this.editMode = true
-    }else {
+    } else {
       this.editMode = false
     }
   }
 
   static toISOStringConverter(date: Date, time?: string): string {
     if (time) {
-     const hours = +time.split(':')[0];
-     const minutes = +time.split(':')[1];
+      const hours = +time.split(':')[0];
+      const minutes = +time.split(':')[1];
 
       return new Date(date.getFullYear(), date.getMonth(), date.getDate(), hours, minutes).toISOString();
     }
@@ -91,8 +91,8 @@ export class EventDetailComponent implements OnInit,OnEdit {
   };
 
 
-  sendForm(){
-    const { title, startDate, startTime, endDate, endTime } = this.eventForm.getRawValue();
+  sendForm() {
+    const {title, startDate, startTime, endDate, endTime} = this.eventForm.getRawValue();
 
     const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
     const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
@@ -103,19 +103,33 @@ export class EventDetailComponent implements OnInit,OnEdit {
       end
     };
 
-    (this.id ? this.calendarService.update(this.id, eventModel)  : this.calendarService.create(eventModel)
+    (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
     )
       .pipe(
-        finalize(()=>this.isDirty=false)
+        finalize(() => this.isDirty = false)
       )
-      .subscribe(event => {this.populateForm(event);this.router.navigate(['calendar'])});
+      .subscribe(event => {
+        this.populateForm(event);
+        this.router.navigate(['calendar'])
+      });
 
   }
 
-  deleteForm(){
-    this.calendarService.delete(this.id).subscribe();
-    this.router.navigate(['calendar'])
+  openDialog(){
+  const confirmDialog = this.dialog.open(ConfirmDialogComponent,{
+    data:{
+      title:'Confirm Delete',
+      message:`Are you sure to delete '${this.eventForm.get('title').value}'`
+    }
+  })
+    confirmDialog.afterClosed().subscribe(result => {
+      if (result) {
+        this.calendarService.delete(this.id).subscribe();
+        this.router.navigate(['calendar'])
+      }
+    })
   }
+
 }
 
 
