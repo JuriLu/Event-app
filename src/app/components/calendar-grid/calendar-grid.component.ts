@@ -84,10 +84,6 @@ export class CalendarGridComponent implements OnInit{
     }
   };
 
-
-
-
-
   ngOnInit() {
   }
 

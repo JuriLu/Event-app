@@ -65,6 +65,7 @@ export class LoginComponent implements OnInit {
       const {email,password} = this.loginForm.getRawValue()
       this.authService.signIn(email,password).subscribe((user)=>{
         if (user) this.router.navigateByUrl('/calendar')
+
       })
     }
   }
