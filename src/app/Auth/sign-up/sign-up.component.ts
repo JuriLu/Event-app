@@ -38,6 +38,8 @@ function PartialMatch(controlName: string, errorKey: string = 'partiallyMatch'):
 })
 export class SignUpComponent implements OnInit {
   signupForm :FormGroup
+  hide = 'visibility_off';
+  type = 'password';
 
   constructor(private router:Router,private authService:AuthService) { }
 
@@ -74,13 +76,13 @@ export class SignUpComponent implements OnInit {
           if (user) this.router.navigateByUrl('/signin');
         });
     }
-  }
+  };
 
   confPassErrMsg(){
     if (this.signupForm.get('confirmPassword').hasError('exactMatch')){
       return 'Passwords Do Not Match'
     }else{
-      return 'Field must be filled'
+      return 'Confirm Password required'
     }
   };
 
@@ -88,7 +90,7 @@ export class SignUpComponent implements OnInit {
    if (this.signupForm.get('password').invalid) {
      switch (Object.keys(this.signupForm.get('password').errors)[0]) { // this.signupForm.get('password').errors returns --> { required: true }
        case 'required':
-         return 'Field must not be empty';
+         return 'Password required';
        case 'minlength':
          return 'Password length must be min 8 character long';
        case 'pattern':
@@ -101,5 +103,19 @@ export class SignUpComponent implements OnInit {
          return 'Password Must not be the same as Email';
      }
    }
-  }
+  };
+
+  getType() {
+    switch (this.type) {
+      case 'password':
+        this.type = 'text'
+        this.hide = 'visibility'
+        break;
+
+      case 'text':
+        this.type = 'password'
+        this.hide = 'visibility_off'
+        break;
+    }
+  };
 }
