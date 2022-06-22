@@ -1,6 +1,6 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {EventModel} from "../../Model/event.model";
 import {CalendarService} from "../../Services/calendar.service";
 import {OnEdit} from "../../Model/on-edit";
@@ -8,6 +8,18 @@ import {finalize, tap} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
 import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
+
+function GreaterThan(controlName: string): ValidatorFn {
+  return (control:AbstractControl): { greater : boolean } | null => {
+    const checkedControl = control.parent?.get(controlName);
+
+    if (control.value < checkedControl?.value) {
+      return  { greater: true };
+    }
+
+    return null;
+  };
+}
 
 @Component({
   selector: 'app-event-detail',
@@ -21,6 +33,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
   isDirty: boolean = false
 
 
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private calendarService: CalendarService,
@@ -31,7 +44,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
       title: new FormControl('', [Validators.required]),
       startDate: new FormControl('', [Validators.required]),
       startTime: new FormControl('', [Validators.required]),
-      endDate: new FormControl('', [Validators.required]),
+      endDate: new FormControl('', [Validators.required,GreaterThan('startDate')]),
       endTime: new FormControl('', [Validators.required]),
     });
   }
@@ -95,32 +108,32 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
   sendForm() {
     const {title, startDate, startTime, endDate, endTime} = this.eventForm.getRawValue();
-
     const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
     const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
-
+    console.log(end>start);
     const eventModel: Omit<EventModel, 'id'> = {
       title,
       start,
       end
     };
 
-    (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
-    )
-      .pipe(
-        finalize(() => this.isDirty = false),
+      (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
       )
-      .subscribe(event => {
-        this.dialog.open(InformDialogComponent,{
-          data:{
-            title:event.title,
-            startDate:event.start,
-            endDate:event.end,
-            editMode: this.editMode
-          }
-        })
-        this.router.navigate(['calendar']);
-      });
+        .pipe(
+          finalize(() => this.isDirty = false),
+        )
+        .subscribe(event => {
+          this.dialog.open(InformDialogComponent,{
+            data:{
+              title:event.title,
+              startDate:event.start,
+              endDate:event.end,
+              editMode: this.editMode
+            }
+          })
+          this.router.navigate(['calendar']);
+        });
+
 
   }
 

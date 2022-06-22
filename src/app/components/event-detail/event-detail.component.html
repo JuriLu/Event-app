@@ -36,6 +36,7 @@
             <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
             <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #endDatepicker></mat-datepicker>
+            <mat-error *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
           </mat-form-field>
         </div>
 
