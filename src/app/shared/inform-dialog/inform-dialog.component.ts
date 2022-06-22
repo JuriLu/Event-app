@@ -6,13 +6,8 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
   templateUrl: './inform-dialog.component.html',
   styleUrls: ['./inform-dialog.component.scss']
 })
-export class InformDialogComponent implements OnInit{
+export class InformDialogComponent {
 
   constructor(  @Inject(MAT_DIALOG_DATA) public data: any) { }
-
- ngOnInit(): void {
-
- }
-
 
 }

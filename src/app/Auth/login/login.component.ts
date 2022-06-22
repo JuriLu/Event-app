@@ -11,16 +11,11 @@ import {AuthService} from "../../Services/auth.service";
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  loginForm: FormGroup;
   hide = 'visibility_off';
   type = 'password';
-  loginForm: FormGroup;
 
-  constructor(
-    private router: Router,
-    private authService: AuthService,
-  ) {
-  }
+  constructor(private router: Router,private authService: AuthService,) {}
 
   ngOnInit(): void {
     this.loginForm = new FormGroup({
@@ -30,7 +25,6 @@ export class LoginComponent implements OnInit {
 
 
   }
-
 
   onSubmit() {
     console.log(this.loginForm)
@@ -42,7 +36,6 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.get('email').hasError('required')) {
       return 'Please Enter An Email';
     }
-
     return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
   }
 
@@ -65,7 +58,6 @@ export class LoginComponent implements OnInit {
       const {email,password} = this.loginForm.getRawValue()
       this.authService.signIn(email,password).subscribe((user)=>{
         if (user) this.router.navigateByUrl('/calendar')
-
       })
     }
   }

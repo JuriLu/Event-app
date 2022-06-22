@@ -1,12 +1,6 @@
 <div class="main">
 
-  <button
-    class="backBtn"
-    mat-fab
-    color="accent"
-  [routerLink]="['..']">
-    <mat-icon>chevron_left</mat-icon>
-  </button>
+  <button class="backBtn" mat-fab color="accent" [routerLink]="['..']"><mat-icon>chevron_left</mat-icon></button>
 
   <mat-card [formGroup]="eventForm">
     <mat-card-title>Event Form</mat-card-title>
@@ -15,7 +9,6 @@
       <mat-form-field appearance="outline" class="input">
         <mat-label class="font">Title</mat-label>
         <input matInput placeholder="Placeholder" type="text" formControlName="title">
-<!--        <mat-hint>Title</mat-hint>-->
       </mat-form-field>
 
       <div class="row">
@@ -23,7 +16,6 @@
           <mat-form-field appearance="outline">
             <mat-label>Start Date</mat-label>
             <input formControlName="startDate" matInput [matDatepicker]="startDatepicker">
-<!--            <mat-hint>DD/MM/YYYY</mat-hint>-->
             <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #startDatepicker></mat-datepicker>
           </mat-form-field>
@@ -33,18 +25,15 @@
           <mat-form-field appearance="outline">
             <mat-label>Start Time</mat-label>
             <input formControlName="startTime" matInput type="time">
-<!--            <mat-hint>HH/MM</mat-hint>-->
           </mat-form-field>
         </div>
       </div>
-
 
       <div class="row">
         <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
           <mat-form-field appearance="outline">
             <mat-label>End Date</mat-label>
             <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
-<!--            <mat-hint>DD/MM/YYYY</mat-hint>-->
             <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #endDatepicker></mat-datepicker>
           </mat-form-field>
@@ -54,7 +43,6 @@
           <mat-form-field appearance="outline">
             <mat-label>End Time</mat-label>
             <input formControlName="endTime" matInput type="time">
-<!--            <mat-hint>HH/MM</mat-hint>-->
           </mat-form-field>
         </div>
       </div>

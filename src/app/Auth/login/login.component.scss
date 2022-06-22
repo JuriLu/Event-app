@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 
-body{
-
+body {
   font-family: 'Poppins';
-  background: linear-gradient(-135deg,#c850c0,#4158d0);
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -21,12 +20,11 @@ body{
   flex: 1 1 auto;
 }
 
-.container{
-  width: 65vw;
+.container {
+  width: 75vw;
   height: 70vh;
   background-color: white;
   border-radius: 15px;
-
 }
 
 .login-container {
@@ -36,14 +34,14 @@ body{
   justify-content: center;
 }
 
-.photo-container{
+.photo-container {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
 }
 
-h1{
+h1 {
   font-weight: bolder;
   font-size: 28px;
   padding-left: 25px;
@@ -52,28 +50,25 @@ h1{
 }
 
 img {
-  /*border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;*/
   border-radius: 15px;
   width: 316px;
   height: 289px;
   transition: 2.0s;
 }
 
-img:hover{
+img:hover {
   transform: rotate3d(13, 8, 5, 360deg);
 }
 
-.txt-field{
+.txt-field {
   position: absolute;
   top: 50%;
 }
 
-.input{
+.input {
   margin-bottom: 10px;
   border-radius: 30px;
   font-family: 'Poppins';
-  /*font-weight: bolder;*/
   width: 260px;
   height: 45px;
   border-style: none;
@@ -81,39 +76,34 @@ img:hover{
   padding: 5px 15px;
 }
 
-.email{
+.email {
   margin-bottom: 10px;
-  width:100%;
+  width: 100%;
   font-family: 'Poppins';
 }
 
-.password{
-  //margin-bottom: 10px;
-  width:100%;
+.password {
+  width: 100%;
   font-family: 'Poppins';
 }
 
-input::placeholder{
+input::placeholder {
   font-family: 'Poppins';
   font-weight: bolder;
   padding-left: 30px;
 }
 
 
-
-.authButton{
+.authButton {
   margin-top: 0px;
   margin-bottom: 0px;
-  //background-color:#57B846;
   width: 290px;
   height: 50px;
   transition: .4s;
   font-family: 'Poppins';
-  //font-weight: bolder;
-  //color: white;
 }
 
-.pass{
+.pass {
   font-family: 'Poppins';
   font-size: 13px;
   margin-left: 50px;
@@ -121,12 +111,11 @@ input::placeholder{
   margin-top: 5px;
 }
 
-.dim{
+.dim {
   color: #999999;
 }
 
-
-.signup_link{
+.signup_link {
   position: relative;
   font-family: 'Poppins';
   font-size: 13px;
@@ -135,10 +124,10 @@ input::placeholder{
   color: #666666;
 }
 
-a{
+a {
   text-decoration: none;
   color: #666;
-  transition:all .4s;
+  transition: all .4s;
   -webkit-transition: all .4s;
 }
 
@@ -148,12 +137,12 @@ a:hover {
   color: #57B846;
 }
 
-input[type='submit']:hover{
+input[type='submit']:hover {
   background-color: #343434;
   cursor: pointer;
 }
 
-.bg-transparent{
+.bg-transparent {
   background-color: transparent;
 }
 

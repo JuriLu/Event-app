@@ -1,7 +1,6 @@
 body { background-color: #FF7F2E; font-family: 'Concert One', cursive; margin: 0; overflow: hidden; padding: 0; }
 
 
-/*/////////////////// rules */
 $color-black:     #13242C;
 $color-white:     #fff;
 $color-red-1:     #D13433;
@@ -33,7 +32,7 @@ $color-wood-2:    #410A09;
   transform: translate(-50%, -50%);
 }
 
-/*/////////////////// scene */
+
 .text {
   @include centered;
   color: rgba($color-black, 0.1);
@@ -57,7 +56,7 @@ $color-wood-2:    #410A09;
     z-index: -1;
   }
 }
-/*/////////////////// caveman */
+
 .caveman {
   height: 300px;
   position: absolute;
@@ -247,7 +246,7 @@ $color-wood-2:    #410A09;
   &:after { background-color: $color-skin-2; }
   .foot   { background-color: $color-skin-2; }
 }
-/*/////////////////// animation */
+
 .caveman:nth-child(1) .arm-right {
   animation: arm-anima 1.2s infinite cubic-bezier(.55,.01,.16,1.34);
 }
@@ -300,7 +299,7 @@ $color-wood-2:    #410A09;
   75%   { width: 450px; left: 0px; }
   100%  { width: 350px; left: 80px; }
 }
-/*/////////////////////// credit ////*/
+
 #link {
   bottom: 20px;
   color: #000;

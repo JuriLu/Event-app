@@ -11,7 +11,7 @@
 
       <form [formGroup]="loginForm">
 
-        <mat-form-field class="email" appearance="fill">
+        <mat-form-field class="email" appearance="outline">
           <mat-label>Enter your email</mat-label>
           <input matInput placeholder="email@example.com" formControlName="email" required>
           <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
@@ -19,7 +19,7 @@
 
         <div>
 
-          <mat-form-field class="password" appearance="fill">
+          <mat-form-field class="password" appearance="outline">
             <mat-label>Enter your password</mat-label>
             <input matInput type={{type}} formControlName="password">
             <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Please Enter A Password"}}</mat-error>
@@ -42,10 +42,6 @@
         </button>
 
       </form>
-
-      <!--      <div class="pass">-->
-      <!--        <p><span class="dim">Forgot </span> <a href=""> Username / Password? </a></p>-->
-      <!--      </div>-->
 
       <div class="signup_link">
         <a routerLink="/signup"> Create your Account <span class="arrow"> &#8594;</span></a>

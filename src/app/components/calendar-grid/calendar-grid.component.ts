@@ -54,8 +54,6 @@ export class CalendarGridComponent implements OnInit{
       list: "list"
     },
 
-
-
     height: 840,
     contentHeight:800,
     aspectRatio:4,
@@ -79,8 +77,6 @@ export class CalendarGridComponent implements OnInit{
         .getEvents({ start: s, end: e })
         .subscribe((events: any) => this.calendarOptions = { ...this.calendarOptions, events });
       console.log(this.calendarOptions)
-
-
     }
   };
 

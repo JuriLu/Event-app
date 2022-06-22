@@ -111,7 +111,6 @@ export class SignUpComponent implements OnInit {
         this.type = 'text'
         this.hide = 'visibility'
         break;
-
       case 'text':
         this.type = 'password'
         this.hide = 'visibility_off'

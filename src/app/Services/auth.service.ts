@@ -50,9 +50,8 @@ export class AuthService {
 
   signUp(firstName: string, lastName: string, email: string, password: string): Observable<any> {
     const authData: AuthModel = {firstName, lastName, email, password}
-    return this.http.post(`${this.authUrl}/signUp`, authData) //Must Check path '/login'
+    return this.http.post(`${this.authUrl}/signUp`, authData)
   }
-
 
   signOut(): void {
     this.loggedUser = null;
