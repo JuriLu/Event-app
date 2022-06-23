@@ -1,4 +1,3 @@
-
 <body>
 <div class="row container">
 
@@ -11,20 +10,22 @@
       <h1>Member Sign Up</h1>
 
       <form [formGroup]="signupForm">
+        <div class="groups">
 
-
-        <mat-form-field class="email" appearance="outline">
-          <mat-label>First Name</mat-label>
-          <input matInput formControlName="firstName" placeholder="First Name">
-          <mat-error *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
-        </mat-form-field>
-
-        <div>
-          <mat-form-field class="email" appearance="outline">
-            <mat-label>Last Name</mat-label>
-            <input formControlName="lastName" matInput placeholder="Last Name">
-            <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
+          <mat-form-field class="nameWidth" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" placeholder="First Name">
+            <mat-error *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
           </mat-form-field>
+
+
+          <div style="margin-left: 10px">
+            <mat-form-field class="nameWidth" appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input formControlName="lastName" matInput placeholder="Last Name">
+              <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
+            </mat-form-field>
+          </div>
         </div>
 
         <div>
@@ -35,8 +36,9 @@
           </mat-form-field>
         </div>
 
-        <div>
-          <mat-form-field class="email" appearance="outline">
+
+        <div class="groups">
+          <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
             <input formControlName="password" type={{type}} matInput placeholder="Password">
             <mat-error *ngIf="signupForm.get('password').invalid">{{passErrMsg()}}</mat-error>
@@ -45,32 +47,35 @@
               <mat-icon>{{hide}}</mat-icon>
             </button>
           </mat-form-field>
+
+          <div style="margin-left: 10px">
+            <mat-form-field appearance="outline">
+              <mat-label>Confirm Password</mat-label>
+              <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
+              <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
+              <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                <mat-icon>{{hide}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
         </div>
 
-        <div>
-          <mat-form-field class="email" appearance="outline">
-            <mat-label>Confirm Password</mat-label>
-            <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
-            <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
-            <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-              <mat-icon>{{hide}}</mat-icon>
-            </button>
-          </mat-form-field>
+        <div class="endPart">
+          <button
+            class="authButton"
+            mat-raised-button
+            color="primary"
+            (click)="onSignUp()"
+            [disabled]="!signupForm.valid"> Sign Up
+          </button>
         </div>
 
-        <button
-          class="authButton"
-          mat-raised-button
-          color="primary"
-          (click)="onSignUp()"
-          [disabled]="!signupForm.valid"
-        >Sign Up</button>
+        <div class="signup_link">
+          <a routerLink="/signin"> Back to Login </a>
+        </div>
+
       </form>
-
-      <div class="signup_link">
-        <a routerLink="/signin">  Back to Login </a>
-      </div>
 
 
     </div>

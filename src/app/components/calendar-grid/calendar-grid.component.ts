@@ -54,7 +54,7 @@ export class CalendarGridComponent implements OnInit{
       list: "list"
     },
 
-    height: 840,
+    height: 700,
     contentHeight:800,
     aspectRatio:4,
     expandRows: true,

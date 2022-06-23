@@ -6,12 +6,13 @@ html, body { height: 100%; }
 
 body {
   margin: 0;
+  overflow: hidden;
   font-family:'Poppins', Roboto, "Helvetica Neue", sans-serif;
-  //background: linear-gradient(-135deg, #c850c0, #4158d0);
   background-image:url('assets/BG.jpg') ;
   background-repeat: no-repeat;
   background-size: 2300px 1200px  ;
 }
+
 
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-next-button.fc-button.fc-button-primary:hover {
   --fc-daygrid-event-dot-width: 8px;
@@ -193,7 +194,6 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
 }
 
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary{
-  //margin-right: 5px;
 
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;

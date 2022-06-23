@@ -1,6 +1,8 @@
 <div class="main">
 
-  <button class="backBtn" mat-fab color="accent" [routerLink]="['..']"><mat-icon>chevron_left</mat-icon></button>
+  <button class="backBtn" mat-fab color="accent" [routerLink]="['..']">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
 
   <mat-card [formGroup]="eventForm">
     <mat-card-title>Event Form</mat-card-title>
@@ -36,7 +38,8 @@
             <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
             <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
             <mat-datepicker #endDatepicker></mat-datepicker>
-            <mat-error *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
+            <mat-error
+              *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
           </mat-form-field>
         </div>
 
@@ -50,24 +53,26 @@
     </mat-card-content>
     <mat-divider inset></mat-divider>
     <mat-card-actions align="end">
-      <button
-        type="button"
-        class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4"
-        mat-raised-button
-        color="primary"
-        (click)="sendForm()"
-        [disabled]="!eventForm.valid">
-        {{ editMode? "Update Event":"Create Event"}}
-      </button>
-      <button
-        class="delButton"
-        *ngIf="editMode"
-        type="button"
-        mat-icon-button
-        color="warn"
-        (click)="openDialog()">
-        <mat-icon>delete</mat-icon>
-      </button>
+      <div class="thebuttons">
+        <button
+          type="button"
+          class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4"
+          mat-raised-button
+          color="primary"
+          (click)="sendForm()"
+          [disabled]="!eventForm.valid">
+          {{ editMode ? "Update Event" : "Create Event"}}
+        </button>
+        <button
+          class="delButton"
+          *ngIf="editMode"
+          type="button"
+          mat-icon-button
+          color="warn"
+          (click)="openDialog()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
     </mat-card-actions>
   </mat-card>
 

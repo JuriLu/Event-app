@@ -1,106 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+// X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
 
-.col-md-* { padding: 15px; }
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-mat-form-field {
-  width: 100%;
-}
+  .col-md-* { padding: 15px; }
 
-mat-card{
-  width: 40vw;
-  height: 60vh;
-}
+  .thebuttons{
+    display: flex;
+  }
 
-.main {
-  font-family: 'Poppins',sans-serif;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  button[mat-fab]{
-    position: absolute;
-    top: 20px;
-    left: 20px;
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-card{
+    width: 40vw;
+    height: 76vh;
+  }
+
+  .main {
+    font-family: 'Poppins',sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button[mat-fab]{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+  }
+
+  mat-card-title{
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  input{
+    padding:1px 0px;
+    margin: 5px 2px
+  }
+
+  .font {
+    font-family: 'Poppins',sans-serif;
+  }
+
+  h1 {
+    font-weight: bolder;
+    font-size: 45px;
+    padding-left: 25px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    transform: translateY(-100px) translateX(60px);
+  }
+
+  .input {
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  input::placeholder {
+    font-family: 'Poppins',sans-serif;
+    font-weight: bolder;
+    padding-left: 30px;
+  }
+
+  .backBtn{
+    transition: .6s;
+  }
+
+  .backBtn:hover{
+    transition: .6s;
+    transform: scale(1.15);
+  }
+
+  .mat-card>.mat-card-actions:last-child{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .sendButton {
+    margin-top: 15px;
+    width: 290px;
+    height: 50px;
+    transition: .7s;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  .delButton {
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+    transform: translateX(120px);
+  }
+
+  .delButton:hover {
+    background-color: #ff4081;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: black;
+    transition: 1s;
+  }
+
+  .title {
+    transform: translateY(-80px);
   }
 }
 
-mat-card-title{
-  padding: 20px;
-  text-align: center;
-  font-size: 30px;
-  font-weight: 600;
+// XX-Large devices (larger desktops, 1533px and up)
+@media (min-width: 1537px) { @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+  .col-md-* { padding: 15px; }
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  mat-card{
+    width: 40vw;
+    height: 60vh;
+  }
+
+  .main {
+    font-family: 'Poppins',sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button[mat-fab]{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+  }
+
+  mat-card-title{
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  input{
+    padding:1px 0px;
+    margin: 5px 2px
+  }
+
+  .font {
+    font-family: 'Poppins',sans-serif;
+  }
+
+  h1 {
+    font-weight: bolder;
+    font-size: 45px;
+    padding-left: 25px;
+    margin-bottom: 50px;
+    letter-spacing: 1px;
+    transform: translateY(-100px) translateX(60px);
+  }
+
+  .input {
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  input::placeholder {
+    font-family: 'Poppins',sans-serif;
+    font-weight: bolder;
+    padding-left: 30px;
+  }
+
+  .backBtn{
+    transition: .6s;
+  }
+
+  .backBtn:hover{
+    transition: .6s;
+    transform: scale(1.15);
+  }
+
+  .mat-card>.mat-card-actions:last-child{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .sendButton {
+    margin-top: 15px;
+    width: 290px;
+    height: 50px;
+    transition: .7s;
+    font-family: 'Poppins',sans-serif;
+  }
+
+  .delButton {
+    width: 50px;
+    height: 50px;
+    transition: 1s;
+  }
+
+  .thebuttons{
+    display: flex;
+  }
+
+  .delButton:hover {
+    background-color: #ff4081;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    color: black;
+    transition: 1s;
+  }
+
+  .title {
+    transform: translateY(-80px);
+  }
 }
 
-input{
-  padding:1px 0px;
-  margin: 5px 2px
-}
-
-.font {
-  font-family: 'Poppins',sans-serif;
-}
-
-h1 {
-  font-weight: bolder;
-  font-size: 45px;
-  padding-left: 25px;
-  margin-bottom: 50px;
-  letter-spacing: 1px;
-  transform: translateY(-100px) translateX(60px);
-}
-
-.input {
-  width: 100%;
-  font-family: 'Poppins',sans-serif;
-}
-
-input::placeholder {
-  font-family: 'Poppins',sans-serif;
-  font-weight: bolder;
-  padding-left: 30px;
-}
-
-.backBtn{
-  transition: .6s;
-}
-
-.backBtn:hover{
-  transition: .6s;
-  transform: scale(1.15);
-}
-
-.mat-card>.mat-card-actions:last-child{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.sendButton {
-  margin-top: 15px;
-  width: 290px;
-  height: 50px;
-  transition: .7s;
-  font-family: 'Poppins',sans-serif;
-}
-
-.delButton {
-  width: 50px;
-  height: 50px;
-  transition: 1s;
-  transform: translateX(200px);
-}
-
-.delButton:hover {
-  background-color: #ff4081;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  color: black;
-  transition: 1s;
-}
-
-.title {
-  transform: translateY(-80px);
-}
 
 

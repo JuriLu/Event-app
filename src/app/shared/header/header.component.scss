@@ -24,9 +24,9 @@ nav>div>a.navbar-brand:hover {
 //Profile Icon
 .account-display {
   margin-top: 5px;
-  margin-right: 25px;
-  width: 50px;
-  height: 50px;
+  margin-right: 55px;
+  width: 1px;
+  height: 1px;
 
 }
 
@@ -36,19 +36,23 @@ li > button {
 }
 
 li > mat-icon {
-  width: 40px;
-  height: 40px;
-  font-size: 50px;
+  //width: 40px;
+  //height: 40px;
+  font-size: 40px;
   color: white;
+  margin-left: 13px;
 }
 
 li > p{
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   color: white;
-  transform: translateX(-8px);
+  text-align: left;
   letter-spacing: 0.5px;
-  //margin-right: 15px;
+}
+
+div>ul>li:first-child{
+  margin-right: 20px;
 }
 
 .logout{
@@ -134,6 +138,7 @@ li > p{
   cursor: pointer;
   margin-left: .75em;
 }
+
 .logout:hover{
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
