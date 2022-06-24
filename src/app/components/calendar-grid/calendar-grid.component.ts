@@ -1,10 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/angular";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CalendarService} from "../../Services/calendar.service";
 import {AuthService} from "../../Services/auth.service";
-
-
 
 @Component({
   selector: 'app-calendar-grid',
@@ -12,12 +10,39 @@ import {AuthService} from "../../Services/auth.service";
   styleUrls: ['./calendar-grid.component.scss']
 })
 export class CalendarGridComponent implements OnInit{
+  public height=null;
+  public winHeight=null;
+
+
+  ngOnInit() {
+  }
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private calendarService: CalendarService,
-    private authService:AuthService
+    private authService:AuthService,
   ) {
+  }
+
+  @HostListener('window:resize',['$event'])
+  onResize(){
+    this.winHeight = window.innerHeight
+    console.log(this.winHeight);
+
+    if (this.winHeight<=793){
+      this.theHeight=100
+    }else if (this.winHeight>=1007){
+      this.theHeight=890
+    }
+  }
+
+  get theHeight(){
+    return this.height
+  }
+
+  set theHeight(val){
+    this.height = val
   }
 
   calendarOptions: CalendarOptions = {
@@ -54,7 +79,9 @@ export class CalendarGridComponent implements OnInit{
       list: "list"
     },
 
-    height: 700,
+
+    height: this.theHeight,
+    // height:300,
     contentHeight:800,
     aspectRatio:4,
     expandRows: true,
@@ -80,8 +107,7 @@ export class CalendarGridComponent implements OnInit{
     }
   };
 
-  ngOnInit() {
-  }
+
 
 
 }
