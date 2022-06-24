@@ -1,20 +1,4 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-.main {
-  width: 17vw;
-  height: 17vh;
-  font-family: Poppins,sans-serif;
-}
-
-button[value=Confirm]{
-  margin-right: 5px;
-}
-
-.btnGroup{
-  margin-left: 170px;
-  margin-top: 70px;
-}
-
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) { @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -36,19 +20,19 @@ button[value=Confirm]{
 
 // XX-Large devices (larger desktops, 1400px and up)
 @media (min-width: 1537px) {
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-  .main {
-    width: 17vw;
-    height: 17vh;
-    font-family: Poppins,sans-serif;
-  }
 
-  button[value=Confirm]{
-    margin-right: 5px;
-  }
+  //.main {
+  //  width: 17vw;
+  //  height: 17vh;
+  //  font-family: Poppins,sans-serif;
+  //}
 
-  .btnGroup{
-    margin-left: 170px;
-    margin-top: 70px;
-  }
+  //button[value=Confirm]{
+  //  margin-right: 5px;
+  //}
+  //
+  //.btnGroup{
+  //  margin-left: 170px;
+  //  margin-top: 70px;
+  //}
 }
