@@ -1,10 +1,8 @@
 <div class="main">
-
   <button class="backBtn" mat-fab color="accent" [routerLink]="['..']">
     <mat-icon>chevron_left</mat-icon>
   </button>
-
-  <mat-card [formGroup]="eventForm">
+  <mat-card class="event-card" [formGroup]="eventForm">
     <mat-card-title>Event Form</mat-card-title>
     <mat-card-content>
 
@@ -55,7 +53,7 @@
         </div>
       </div>
     </mat-card-content>
-    <mat-divider inset></mat-divider>
+
     <mat-card-actions align="end">
       <div class="thebuttons">
         <button
@@ -68,16 +66,16 @@
           {{ editMode ? "Update Event" : "Create Event"}}
         </button>
         <button
-          class="delButton"
+          style="margin-left: 40px"
+          class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4 "
           *ngIf="editMode"
           type="button"
-          mat-icon-button
+          mat-raised-button
           color="warn"
           (click)="openDialog()">
-          <mat-icon>delete</mat-icon>
+          {{"Delete Event"}}
         </button>
       </div>
     </mat-card-actions>
   </mat-card>
-
 </div>
