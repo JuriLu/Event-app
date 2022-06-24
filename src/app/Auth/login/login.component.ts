@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
 
   getErrorMessage() {
     if (this.loginForm.get('email').hasError('required')) {
-      return 'Please Enter An Email';
+      return 'Please Enter Your Email';
     }
     return this.loginForm.get('email').hasError('email') ? 'Not a valid email' : '';
   }
