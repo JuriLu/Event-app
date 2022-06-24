@@ -1,8 +1,9 @@
-<div class="main">
+<div  class="main">
   <button class="backBtn" mat-fab color="accent" [routerLink]="['..']">
     <mat-icon>chevron_left</mat-icon>
   </button>
-  <mat-card class="event-card" [formGroup]="eventForm">
+  <div class="example-box" cdkDrag>
+  <mat-card  class="event-card" [formGroup]="eventForm">
     <mat-card-title>Event Form</mat-card-title>
     <mat-card-content>
 
@@ -78,4 +79,5 @@
       </div>
     </mat-card-actions>
   </mat-card>
+  </div>
 </div>
