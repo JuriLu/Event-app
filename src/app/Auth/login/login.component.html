@@ -1,55 +1,54 @@
 <body>
-<div class="row bg container">
+<mat-card>
+  <div class="row bg container">
+    <div class="col photo-container ">
+      <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
+    </div>
+    <div class="col login-container">
+      <div class="login">
+        <form [formGroup]="loginForm">
+          <mat-card-title>Member Login</mat-card-title>
+          <mat-card-content>
 
-  <div class="col photo-container ">
-    <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
-  </div>
+            <mat-form-field class="email" appearance="outline">
+              <mat-label>Enter your email</mat-label>
+              <input matInput placeholder="email@example.com" formControlName="email" required>
+              <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
 
-  <div class="col login-container">
-    <div class="login">
-      <h1>Member Login</h1>
+            <div>
+              <mat-form-field class="password" appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput type={{type}} formControlName="password">
+                <mat-error
+                  *ngIf="loginForm.get('password').hasError('required')">{{"Please Enter Your Password"}}</mat-error>
+                <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <br>
 
-      <form [formGroup]="loginForm">
-
-        <mat-form-field class="email" appearance="outline">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="email@example.com" formControlName="email" required>
-          <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-
-        <div>
-
-          <mat-form-field class="password" appearance="outline">
-            <mat-label>Enter your password</mat-label>
-            <input matInput type={{type}} formControlName="password">
-            <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Please Enter Your Password"}}</mat-error>
-            <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-              <mat-icon>{{hide}}</mat-icon>
+            <button
+              class="authButton"
+              mat-raised-button
+              color="primary"
+              (click)="Login()"
+              [disabled]="!loginForm.valid"
+            >Login
             </button>
-          </mat-form-field>
 
+          </mat-card-content>
+        </form>
+        <div class="signup_link">
+          <a routerLink="/signup"> Create your Account <span class="arrow"> &#8594;</span></a>
         </div>
-        <br>
 
-        <button
-          class="authButton"
-          mat-raised-button
-          color="primary"
-          (click)="Login()"
-          [disabled]="!loginForm.valid"
-        >Login
-        </button>
-
-      </form>
-
-      <div class="signup_link">
-        <a routerLink="/signup"> Create your Account <span class="arrow"> &#8594;</span></a>
       </div>
-
     </div>
   </div>
-</div>
+</mat-card>
 
 
 </body>

@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
-// X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-
-  body {
+body {
   font-family: 'Poppins';
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   height: 100vh;
@@ -15,906 +10,138 @@
   justify-content: center;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .col {
-    flex: 1 1 auto;
-  }
-
-  .bg {
-    width: 75vw;
-    height: 90vh;
-    background-color: white;
-    border-radius: 15px;
-  }
-
-  .login-container {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
-
-  h1 {
-    font-weight: bolder;
-    font-size: 28px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
-
-  img {
-    border-radius: 15px;
-    width: 210px;
-    height: 190px;
-    transition: 2.0s;
-  }
-
-  img:hover {
-    transform: rotate3d(13, 8, 5, 360deg);
-  }
-
-  .txt-field {
-    position: absolute;
-    top: 50%;
-  }
-
-  .input {
-    margin-bottom: 10px;
-    border-radius: 30px;
-    font-family: 'Poppins';
-    width: 240px;
-    height: 5px;
-    border-style: none;
-    background-color: lightgrey;
-    padding: 5px 15px;
-  }
-
-  .email {
-    margin-bottom: 10px;
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  .password {
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  input::placeholder {
-    font-family: 'Poppins';
-    font-weight: bolder;
-    padding-left: 30px;
-  }
-
-  mat-form-field{
-    max-height: 60px;
-  }
-
-  .authButton {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 290px;
-    height: 50px;
-    transition: .4s;
-    font-family: 'Poppins';
-  }
-
-  .pass {
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 50px;
-    color: #666666;
-    margin-top: 5px;
-  }
-
-  .dim {
-    color: #999999;
-  }
-
-  .signup_link {
-    position: relative;
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 70px;
-    margin-top: 50px;
-    color: #666666;
-  }
-
-  a {
-    text-decoration: none;
-    color: #666;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-  }
-
-  a:hover {
-    text-decoration: none;
-    color: #57B846;
-  }
-
-  input[type='submit']:hover {
-    background-color: #343434;
-    cursor: pointer;
-  }
-
-  .bg-transparent {
-    background-color: transparent;
-  }
-
+.row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+.col {
+  flex: 1 1 auto;
+}
 
-  body {
-  font-family: 'Poppins';
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  height: 100vh;
-  overflow: hidden;
+.bg {
+  padding: 40px 40px;
+  background-color: white;
+}
+
+mat-card{
+  border-radius: 15px;
+}
+
+.login-container {
+  margin-top: 80px;
+  margin-left: 400px;
+  margin-right: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .col {
-    flex: 1 1 auto;
-  }
-
-  .bg {
-    //width: 75vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 15px;
-  }
-
-  .login-container {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-  }
-
-  h1 {
-    font-weight: bolder;
-    font-size: 28px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
-
-  img {
-    border-radius: 15px;
-    width: 316px;
-    height: 289px;
-    transition: 2.0s;
-  }
-
-  img:hover {
-    transform: rotate3d(13, 8, 5, 360deg);
-  }
-
-  .txt-field {
-    position: absolute;
-    top: 50%;
-  }
-
-  //.input {
-  //  margin-bottom: 10px;
-  //  border-radius: 30px;
-  //  font-family: 'Poppins';
-  //  width: 260px;
-  //  height: 45px;
-  //  border-style: none;
-  //  background-color: lightgrey;
-  //  padding: 5px 15px;
-  //}
-
-  .email {
-    margin-bottom: 10px;
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  .password {
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  input::placeholder {
-    font-family: 'Poppins';
-    font-weight: bolder;
-    padding-left: 30px;
-  }
-
-  .authButton {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 290px;
-    height: 50px;
-    transition: .4s;
-    font-family: 'Poppins';
-  }
-
-  .pass {
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 50px;
-    color: #666666;
-    margin-top: 5px;
-  }
-
-  .dim {
-    color: #999999;
-  }
-
-  .signup_link {
-    position: relative;
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 90px;
-    margin-top: 160px;
-    color: #666666;
-  }
-
-  a {
-    text-decoration: none;
-    color: #666;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-  }
-
-
-  a:hover {
-    text-decoration: none;
-    color: #57B846;
-  }
-
-  input[type='submit']:hover {
-    background-color: #343434;
-    cursor: pointer;
-  }
-
-  .bg-transparent {
-    background-color: transparent;
-  }
-
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-
-  body {
-  font-family: 'Poppins';
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  height: 100vh;
-  overflow: hidden;
+.photo-container {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: center;
+  margin-left: 50px;
+  margin-bottom: 100px;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .col {
-    flex: 1 1 auto;
-  }
-
-  .bg {
-    //width: 75vw;
-    //height: 70vh;
-    background-color: white;
-    border-radius: 15px;
-  }
-
-  .login-container {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-  }
-
-  h1 {
-    font-weight: bolder;
-    font-size: 28px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
-
-  img {
-    border-radius: 15px;
-    width: 316px;
-    height: 289px;
-    transition: 2.0s;
-  }
-
-  img:hover {
-    transform: rotate3d(13, 8, 5, 360deg);
-  }
-
-  .txt-field {
-    position: absolute;
-    top: 50%;
-  }
-
-  .input {
-    margin-bottom: 10px;
-    border-radius: 30px;
-    font-family: 'Poppins';
-    width: 260px;
-    height: 45px;
-    border-style: none;
-    background-color: lightgrey;
-    padding: 5px 15px;
-  }
-
-  .email {
-    margin-bottom: 10px;
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  .password {
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  input::placeholder {
-    font-family: 'Poppins';
-    font-weight: bolder;
-    padding-left: 30px;
-  }
-
-
-  .authButton {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 290px;
-    height: 50px;
-    transition: .4s;
-    font-family: 'Poppins';
-  }
-
-  .pass {
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 50px;
-    color: #666666;
-    margin-top: 5px;
-  }
-
-  .dim {
-    color: #999999;
-  }
-
-  .signup_link {
-    position: relative;
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 90px;
-    margin-top: 160px;
-    color: #666666;
-  }
-
-  a {
-    text-decoration: none;
-    color: #666;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-  }
-
-
-  a:hover {
-    text-decoration: none;
-    color: #57B846;
-  }
-
-  input[type='submit']:hover {
-    background-color: #343434;
-    cursor: pointer;
-  }
-
-  .bg-transparent {
-    background-color: transparent;
-  }
-
+mat-card-title {
+  padding-left: 50px;
+  margin-bottom: 40px;
 }
 
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
+img {
+  border-radius: 15px;
+  width: 316px;
+  height: 289px;
+  transition: 2.0s;
+}
 
-  body {
+img:hover {
+  transform: rotate3d(13, 8, 5, 360deg);
+}
+
+.txt-field {
+  position: absolute;
+  top: 50%;
+}
+
+.input {
+  margin-bottom: 10px;
+  border-radius: 30px;
   font-family: 'Poppins';
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 260px;
+  height: 45px;
+  border-style: none;
+  background-color: lightgrey;
+  padding: 5px 15px;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .col {
-    flex: 1 1 auto;
-  }
-
-  .bg {
-    width: 75vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 15px;
-  }
-
-  .login-container {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-  }
-
-  h1 {
-    font-weight: bolder;
-    font-size: 28px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
-
-  img {
-    border-radius: 15px;
-    width: 316px;
-    height: 289px;
-    transition: 2.0s;
-  }
-
-  img:hover {
-    transform: rotate3d(13, 8, 5, 360deg);
-  }
-
-  .txt-field {
-    position: absolute;
-    top: 50%;
-  }
-
-  .input {
-    margin-bottom: 10px;
-    border-radius: 30px;
-    font-family: 'Poppins';
-    width: 260px;
-    height: 45px;
-    border-style: none;
-    background-color: lightgrey;
-    padding: 5px 15px;
-  }
-
-  .email {
-    margin-bottom: 10px;
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  .password {
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  input::placeholder {
-    font-family: 'Poppins';
-    font-weight: bolder;
-    padding-left: 30px;
-  }
-
-
-  .authButton {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 290px;
-    height: 50px;
-    transition: .4s;
-    font-family: 'Poppins';
-  }
-
-  .pass {
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 50px;
-    color: #666666;
-    margin-top: 5px;
-  }
-
-  .dim {
-    color: #999999;
-  }
-
-  .signup_link {
-    position: relative;
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 90px;
-    margin-top: 160px;
-    color: #666666;
-  }
-
-  a {
-    text-decoration: none;
-    color: #666;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-  }
-
-
-  a:hover {
-    text-decoration: none;
-    color: #57B846;
-  }
-
-  input[type='submit']:hover {
-    background-color: #343434;
-    cursor: pointer;
-  }
-
-  .bg-transparent {
-    background-color: transparent;
-  }
-
-}
-
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1400px) {
-  body {
+.email {
+  margin-bottom: 10px;
+  width: 100%;
   font-family: 'Poppins';
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.password {
+  width: 100%;
+  font-family: 'Poppins';
+}
 
-  .col {
-    flex: 1 1 auto;
-  }
+input::placeholder {
+  font-family: 'Poppins';
+  font-weight: bolder;
+  padding-left: 30px;
+}
 
-  .bg {
-    width: 75vw;
-    height: 70vh;
-    background-color: white;
-    border-radius: 15px;
-  }
+.authButton {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  width: 290px;
+  height: 50px;
+  transition: .4s;
+  font-family: 'Poppins';
+}
 
-  .login-container {
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.pass {
+  font-family: 'Poppins';
+  font-size: 13px;
+  margin-left: 50px;
+  color: #666666;
+  margin-top: 5px;
+}
 
-  .photo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px;
-  }
+.dim {
+  color: #999999;
+}
 
-  h1 {
-    font-weight: bolder;
-    font-size: 28px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-  }
+.signup_link {
+  position: relative;
+  font-family: 'Poppins';
+  font-size: 13px;
+  margin-left: 90px;
+  margin-top: 160px;
+  color: #666666;
+}
 
-  img {
-    border-radius: 15px;
-    width: 316px;
-    height: 289px;
-    transition: 2.0s;
-  }
-
-  img:hover {
-    transform: rotate3d(13, 8, 5, 360deg);
-  }
-
-  .txt-field {
-    position: absolute;
-    top: 50%;
-  }
-
-  .input {
-    margin-bottom: 10px;
-    border-radius: 30px;
-    font-family: 'Poppins';
-    width: 260px;
-    height: 45px;
-    border-style: none;
-    background-color: lightgrey;
-    padding: 5px 15px;
-  }
-
-  .email {
-    margin-bottom: 10px;
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  .password {
-    width: 100%;
-    font-family: 'Poppins';
-  }
-
-  input::placeholder {
-    font-family: 'Poppins';
-    font-weight: bolder;
-    padding-left: 30px;
-  }
-
-
-  .authButton {
-    margin-top: 0px;
-    margin-bottom: 0px;
-    width: 290px;
-    height: 50px;
-    transition: .4s;
-    font-family: 'Poppins';
-  }
-
-  .pass {
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 50px;
-    color: #666666;
-    margin-top: 5px;
-  }
-
-  .dim {
-    color: #999999;
-  }
-
-  .signup_link {
-    position: relative;
-    font-family: 'Poppins';
-    font-size: 13px;
-    margin-left: 90px;
-    margin-top: 160px;
-    color: #666666;
-  }
-
-  a {
-    text-decoration: none;
-    color: #666;
-    transition: all .4s;
-    -webkit-transition: all .4s;
-  }
-
-
-  a:hover {
-    text-decoration: none;
-    color: #57B846;
-  }
-
-  input[type='submit']:hover {
-    background-color: #343434;
-    cursor: pointer;
-  }
-
-  .bg-transparent {
-    background-color: transparent;
-  }
-
+a {
+  text-decoration: none;
+  color: #666;
+  transition: all .4s;
+  -webkit-transition: all .4s;
 }
 
 
+a:hover {
+  text-decoration: none;
+  color: #57B846;
+}
 
+input[type='submit']:hover {
+  background-color: #343434;
+  cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
-//body {
-//  font-family: 'Poppins';
-//  background: linear-gradient(-135deg, #c850c0, #4158d0);
-//  height: 100vh;
-//  overflow: hidden;
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//}
-//
-//.row {
-//  display: flex;
-//  flex-wrap: wrap;
-//}
-//
-//.col {
-//  flex: 1 1 auto;
-//}
-//
-//.bg {
-//  width: 75vw;
-//  height: 70vh;
-//  background-color: white;
-//  border-radius: 15px;
-//}
-//
-//.login-container {
-//  margin-top: 40px;
-//  display: flex;
-//  align-items: center;
-//  justify-content: center;
-//}
-//
-//.photo-container {
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  margin-bottom: 100px;
-//}
-//
-//h1 {
-//  font-weight: bolder;
-//  font-size: 28px;
-//  padding-left: 25px;
-//  margin-bottom: 50px;
-//  letter-spacing: 1px;
-//}
-//
-//img {
-//  border-radius: 15px;
-//  width: 316px;
-//  height: 289px;
-//  transition: 2.0s;
-//}
-//
-//img:hover {
-//  transform: rotate3d(13, 8, 5, 360deg);
-//}
-//
-//.txt-field {
-//  position: absolute;
-//  top: 50%;
-//}
-//
-//.input {
-//  margin-bottom: 10px;
-//  border-radius: 30px;
-//  font-family: 'Poppins';
-//  width: 260px;
-//  height: 45px;
-//  border-style: none;
-//  background-color: lightgrey;
-//  padding: 5px 15px;
-//}
-//
-//.email {
-//  margin-bottom: 10px;
-//  width: 100%;
-//  font-family: 'Poppins';
-//}
-//
-//.password {
-//  width: 100%;
-//  font-family: 'Poppins';
-//}
-//
-//input::placeholder {
-//  font-family: 'Poppins';
-//  font-weight: bolder;
-//  padding-left: 30px;
-//}
-//
-//
-//.authButton {
-//  margin-top: 0px;
-//  margin-bottom: 0px;
-//  width: 290px;
-//  height: 50px;
-//  transition: .4s;
-//  font-family: 'Poppins';
-//}
-//
-//.pass {
-//  font-family: 'Poppins';
-//  font-size: 13px;
-//  margin-left: 50px;
-//  color: #666666;
-//  margin-top: 5px;
-//}
-//
-//.dim {
-//  color: #999999;
-//}
-//
-//.signup_link {
-//  position: relative;
-//  font-family: 'Poppins';
-//  font-size: 13px;
-//  margin-left: 90px;
-//  margin-top: 160px;
-//  color: #666666;
-//}
-//
-//a {
-//  text-decoration: none;
-//  color: #666;
-//  transition: all .4s;
-//  -webkit-transition: all .4s;
-//}
-//
-//
-//a:hover {
-//  text-decoration: none;
-//  color: #57B846;
-//}
-//
-//input[type='submit']:hover {
-//  background-color: #343434;
-//  cursor: pointer;
-//}
-//
-//.bg-transparent {
-//  background-color: transparent;
-//}
-
+.bg-transparent {
+  background-color: transparent;
+}
