@@ -11,9 +11,12 @@
             <mat-icon>account_circle</mat-icon>
             <p>{{name}}</p>
           </li>
-        <li class="nav-item ">
-          <button class="logout" (click)="onSignOut()">Logout</button>
-        </li>
+
+<!--        <li class="nav-item ">-->
+          <button class="backBtn" mat-fab color="accent"(click)="onSignOut()" >
+            <mat-icon>logout</mat-icon>
+          </button>
+<!--        </li>-->
       </ul>
     </div>
   </div>
