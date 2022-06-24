@@ -94,7 +94,7 @@ export class SignUpComponent implements OnInit {
        case 'minlength':
          return 'Password length must be min 8 character long';
        case 'pattern':
-         return 'Password must have 1 Uppercase 1 Number and 1 Symbol';
+         return 'Password must have 1 Uppercase 1 Number';
        case 'firstNameMatch':
          return 'Password Must not be the same as FirstName';
        case 'lastNameMatch':
