@@ -1,17 +1,12 @@
 <div class="all">
-  <h1 mat-dialog-title>{{data.editMode ? "Event Updated" : "Event Created"}}</h1>
+  <button mat-raised-button mat-dialog-close tabindex="-1"><mat-icon>close</mat-icon></button>
+
+  <h1 mat-dialog-title class="fix">{{data.editMode ? "Event Updated" : "Event Created"}}</h1>
+  <hr>
   <div mat-dialog-content>
     <h2>Event Details:</h2>
-    <ul>
-      <li>
         <p><strong>Title:</strong> {{data.title}}</p>
-      </li>
-      <li>
         <p><strong>Start:</strong> {{data.startDate | date :'medium' }}</p>
-      </li>
-      <li>
         <p><strong>End:</strong> {{data.endDate | date: 'medium' }}</p>
-      </li>
-    </ul>
   </div>
 </div>
