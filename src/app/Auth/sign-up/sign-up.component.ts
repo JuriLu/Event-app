@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
-import {SocialUser} from "angularx-social-login";
 
 function ExactMatch(controlName: string): ValidatorFn {
   return (control:AbstractControl): { exactMatch : boolean } | null => {

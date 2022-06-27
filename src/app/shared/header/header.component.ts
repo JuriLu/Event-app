@@ -5,10 +5,7 @@ import {AuthService} from "../../Services/auth.service";
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: [
-    '../../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
-    './header.component.scss',
-  ]
+  styleUrls: ['./header.component.scss',]
 })
 export class HeaderComponent implements OnInit {
 
@@ -16,7 +13,7 @@ export class HeaderComponent implements OnInit {
   }
 
   name: string;
-  private auth = this.authService.isAuthenticated;
+  // private auth = this.authService.isAuthenticated;
 
 
 

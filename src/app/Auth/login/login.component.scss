@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 body {
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   height: 100vh;
   overflow: hidden;
@@ -10,28 +10,29 @@ body {
   justify-content: center;
 }
 
-.row {
+.rowCustom {
   display: flex;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
 }
 
-.col {
+.colCustom {
   flex: 1 1 auto;
 }
 
 .bg {
-  padding: 40px 40px;
+  padding: 20px 20px;
   background-color: white;
 }
 
 mat-card{
   border-radius: 15px;
+  max-height: 92vh;
 }
 
 .login-container {
-  margin-top: 80px;
-  margin-left: 400px;
-  margin-right: 100px;
+  margin-top: 60px;
+  margin-left: 350px;
+  margin-right: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +70,7 @@ img:hover {
 .input {
   margin-bottom: 10px;
   border-radius: 30px;
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
   width: 260px;
   height: 45px;
   border-style: none;
@@ -80,31 +81,31 @@ img:hover {
 .email {
   margin-bottom: 10px;
   width: 100%;
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
 }
 
 .password {
   width: 100%;
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
 }
 
 input::placeholder {
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
   font-weight: bolder;
   padding-left: 30px;
 }
 
 .authButton {
-  margin-top: 0px;
-  margin-bottom: 0px;
+  margin-top: 0;
+  margin-bottom: 0;
   width: 290px;
   height: 50px;
   transition: .4s;
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
 }
 
 .pass {
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
   font-size: 13px;
   margin-left: 50px;
   color: #666666;
@@ -117,7 +118,7 @@ input::placeholder {
 
 .signup_link {
   position: relative;
-  font-family: 'Poppins';
+  font-family: 'Poppins',sans-serif;
   font-size: 13px;
   margin-left: 90px;
   margin-top: 160px;

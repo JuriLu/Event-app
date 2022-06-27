@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {EventModel} from "../../Model/event.model";

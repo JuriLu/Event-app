@@ -1,5 +1,4 @@
 import {Injectable} from '@angular/core';
-import {GoogleLoginProvider, SocialAuthService, SocialUser} from "angularx-social-login";
 import {map, Observable, tap} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
@@ -7,10 +6,10 @@ import {AuthModel} from "../Model/auth.model";
 import {UserModel} from "../Model/user.model";
 import {ResponseModel} from "../Model/response.model";
 
-interface User {
-  email: string;
-  password: string;
-}
+// interface User {
+//   email: string;
+//   password: string;
+// }
 
 const LOCALSTORAGE_USER = 'event:user';
 
@@ -23,7 +22,6 @@ export class AuthService {
 
 
   constructor(
-    private gooAuthService: SocialAuthService,
     private http: HttpClient) {
     if (localStorage.getItem(LOCALSTORAGE_USER)) {
       this.loggedUser = JSON.parse(localStorage.getItem(LOCALSTORAGE_USER));
