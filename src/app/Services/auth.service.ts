@@ -6,10 +6,6 @@ import {AuthModel} from "../Model/auth.model";
 import {UserModel} from "../Model/user.model";
 import {ResponseModel} from "../Model/response.model";
 
-// interface User {
-//   email: string;
-//   password: string;
-// }
 
 const LOCALSTORAGE_USER = 'event:user';
 

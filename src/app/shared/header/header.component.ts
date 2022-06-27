@@ -13,9 +13,6 @@ export class HeaderComponent implements OnInit {
   }
 
   name: string;
-  // private auth = this.authService.isAuthenticated;
-
-
 
   ngOnInit(): void {
     if (this.authService.loggedUser){
