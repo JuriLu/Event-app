@@ -32,7 +32,7 @@
           <mat-form-field class="email" appearance="outline">
             <mat-label>Email</mat-label>
             <input formControlName="email" matInput placeholder="Email">
-            <mat-error *ngIf="signupForm.get('email').hasError('required')">{{"Email required"}}</mat-error>
+            <mat-error *ngIf="signupForm.get('email').invalid">{{emailErrMsg()}}</mat-error>
           </mat-form-field>
         </div>
 
@@ -67,8 +67,7 @@
             mat-raised-button
             color="primary"
             (click)="onSignUp()"
-            [disabled]="!signupForm.valid"> Sign Up
-          </button>
+            [disabled]="!signupForm.valid"> Sign Up </button>
         </div>
 
         <div class="signup_link">

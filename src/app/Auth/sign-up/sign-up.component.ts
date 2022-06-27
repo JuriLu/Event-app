@@ -76,7 +76,16 @@ export class SignUpComponent implements OnInit {
           if (user) this.router.navigateByUrl('/signin');
         });
     }
+    console.log(this.signupForm)
   };
+
+  emailErrMsg(){
+    if (this.signupForm.get('email').hasError('email')){
+      return 'Not a valid email'
+    } else{
+      return 'Email is Required'
+    }
+  }
 
   confPassErrMsg(){
     if (this.signupForm.get('confirmPassword').hasError('exactMatch')){
