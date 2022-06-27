@@ -1,4 +1,4 @@
-import {Component, HostListener, OnInit} from '@angular/core';
+import {AfterViewChecked, Component, HostListener, OnInit} from '@angular/core';
 import {CalendarOptions} from "@fullcalendar/angular";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CalendarService} from "../../Services/calendar.service";
@@ -9,12 +9,15 @@ import {AuthService} from "../../Services/auth.service";
   templateUrl: './calendar-grid.component.html',
   styleUrls: ['./calendar-grid.component.scss']
 })
-export class CalendarGridComponent implements OnInit{
-  public height=null;
+export class CalendarGridComponent implements OnInit,AfterViewChecked{
+  public height=917;
   public winHeight=null;
 
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  ngAfterViewChecked() {
+    this.onResize()
   }
 
   constructor(
@@ -25,7 +28,6 @@ export class CalendarGridComponent implements OnInit{
   ) {
   }
 
-  @HostListener('window:resize',['$event'])
   onResize(){
     this.winHeight = window.innerHeight
     console.log(this.winHeight);
