@@ -1,75 +1,81 @@
 <body>
-<div class="row container">
+<mat-card>
 
-  <div class="col-sm-3 col-md-4 col-lg-5 col-xl-6 photo-container">
-    <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
-  </div>
+  <div class="rowCustom bg container">
 
-  <div class="col-sm-3 col-md-4 col-lg-5 col-xl-6 login-container">
-    <div class="login">
-      <h1>Member Sign Up</h1>
+    <div class="colCustom photo-container">
+      <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
+    </div>
 
-      <form [formGroup]="signupForm">
-        <div class="groups">
-          <mat-form-field class="nameWidth" appearance="outline">
-            <mat-label>First Name</mat-label>
-            <input matInput formControlName="firstName" placeholder="First Name">
-            <mat-error *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
-          </mat-form-field>
+    <div class="colCustom login-container">
+      <div>
 
-          <mat-form-field class="nameWidth" appearance="outline">
-              <mat-label>Last Name</mat-label>
-              <input formControlName="lastName" matInput placeholder="Last Name">
-              <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
-            </mat-form-field>
-        </div>
+        <form [formGroup]="signupForm">
+          <h1>Member Sign Up</h1>
+          <mat-card-content>
 
-        <div>
-          <mat-form-field class="email" appearance="outline">
-            <mat-label>Email</mat-label>
-            <input formControlName="email" matInput placeholder="Email">
-            <mat-error *ngIf="signupForm.get('email').invalid">{{emailErrMsg()}}</mat-error>
-          </mat-form-field>
-        </div>
+            <div class="groups">
+              <mat-form-field class="nameWidth" appearance="outline">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName" placeholder="First Name">
+                <mat-error
+                  *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
+              </mat-form-field>
 
-        <div class="groups">
-          <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input formControlName="password" type={{type}} matInput placeholder="Password">
-            <mat-error *ngIf="signupForm.get('password').invalid">{{passErrMsg()}}</mat-error>
-            <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
-                    [attr.aria-pressed]="hide">
-              <mat-icon>{{hide}}</mat-icon>
-            </button>
-          </mat-form-field>
+              <mat-form-field class="nameWidth" appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input formControlName="lastName" matInput placeholder="Last Name">
+                <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field appearance="outline">
-              <mat-label>Confirm Password</mat-label>
-              <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
-              <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
-              <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
-                      [attr.aria-pressed]="hide">
-                <mat-icon>{{hide}}</mat-icon>
+            <div>
+              <mat-form-field class="email" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput placeholder="Email">
+                <mat-error *ngIf="signupForm.get('email').invalid">{{emailErrMsg()}}</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="groups">
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" type={{type}} matInput placeholder="Password">
+                <mat-error *ngIf="signupForm.get('password').invalid">{{passErrMsg()}}</mat-error>
+                <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide}}</mat-icon>
+                </button>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
+                <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
+                <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide}}</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+            <div class="endPart">
+              <button
+                class="authButton"
+                mat-raised-button
+                color="primary"
+                (click)="onSignUp()"
+                [disabled]="!signupForm.valid"> Sign Up
               </button>
-            </mat-form-field>
-        </div>
-
-        <div class="endPart">
-          <button
-            class="authButton"
-            mat-raised-button
-            color="primary"
-            (click)="onSignUp()"
-            [disabled]="!signupForm.valid"> Sign Up </button>
-        </div>
-
+            </div>
+          </mat-card-content>
+        </form>
         <div class="signup_link">
           <a routerLink="/signin"> Back to Login </a>
         </div>
-
-      </form>
+      </div>
     </div>
   </div>
-</div>
+</mat-card>
 </body>
 
