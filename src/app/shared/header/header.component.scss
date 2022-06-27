@@ -21,42 +21,38 @@ nav>div>a.navbar-brand:hover {
   border-radius: 10px;
 }
 
-//Profile Icon
-.account-display {
-  margin-top: 5px;
-  margin-right: 55px;
-  width: 1px;
-  height: 1px;
+.account-container{
+  width: 150px;
+  height: 58px;
+  border: 0.1px white solid;
+  background-color: white;
+  border-radius: 15px;
 }
 
-li > button {
-  max-height: 40px;
-  margin-top: 17px;
+.accIcon{
+  margin-left: 5px;
 }
 
-li > mat-icon {
-  font-size: 40px;
-  color: white;
-  margin-left: 13px;
-}
-
-li > p{
-  font-size: 17px;
+.accName{
+  font-size: 20px;
   font-weight: 600;
-  color: white;
   text-align: left;
-  letter-spacing: 0.5px;
+  color:#00A9EE ;
 }
 
-div>ul>li:first-child{
-  margin-right: 20px;
+mat-icon{
+  color:#00A9EE;
+}
+
+mat-icon:hover{
+  color:#ffffff;
 }
 
 .backBtn{
   border-radius: 50%;
   margin-left: 35px;
   transition: 0.5s;
-  background-color: #23272C;
+  background-color: #ffffff;
 }
 
 .backBtn:hover{
@@ -64,5 +60,6 @@ div>ul>li:first-child{
   margin-left: 35px;
   transition: 0.5s;
   transform: scale(1.050);
+  background-color: #00A9EE;
 }
 
