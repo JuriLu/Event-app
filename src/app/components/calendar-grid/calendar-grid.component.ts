@@ -11,13 +11,12 @@ import {AuthService} from "../../Services/auth.service";
 })
 export class CalendarGridComponent implements OnInit,AfterViewChecked{
   public height=917;
-  public winHeight=null;
+  // public winHeight=null;
 
 
   ngOnInit() {}
 
   ngAfterViewChecked() {
-    this.onResize()
   }
 
   constructor(
@@ -28,24 +27,24 @@ export class CalendarGridComponent implements OnInit,AfterViewChecked{
   ) {
   }
 
-  onResize(){
-    this.winHeight = window.innerHeight
-    console.log(this.winHeight);
-
-    if (this.winHeight<=793){
-      this.theHeight=100
-    }else if (this.winHeight>=1007){
-      this.theHeight=890
-    }
-  }
-
-  get theHeight(){
-    return this.height
-  }
-
-  set theHeight(val){
-    this.height = val
-  }
+  // onResize(){
+  //   this.winHeight = window.innerHeight
+  //   console.log(this.winHeight);
+  //
+  //   if (this.winHeight<=793){
+  //     this.theHeight=100
+  //   }else if (this.winHeight>=1007){
+  //     this.theHeight=890
+  //   }
+  // }
+  //
+  // get theHeight(){
+  //   return this.height
+  // }
+  //
+  // set theHeight(val){
+  //   this.height = val
+  // }
 
   calendarOptions: CalendarOptions = {
 
@@ -82,8 +81,8 @@ export class CalendarGridComponent implements OnInit,AfterViewChecked{
     },
 
 
-    height: this.theHeight,
-    // height:300,
+    // height: this.theHeight,
+    height:917,
     contentHeight:800,
     aspectRatio:4,
     expandRows: true,
