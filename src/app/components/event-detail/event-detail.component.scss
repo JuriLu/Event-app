@@ -1,98 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 
-  .col-md-* { padding: 15px; }
+.col-md- * {
+  padding: 15px;
+}
 
-  mat-form-field {
-    width: 1000px;
+mat-form-field {
+  width: 1000px;
+}
+
+.event-card {
+  //padding: 60px 40px;
+}
+
+.main {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button[mat-fab] {
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
+}
 
-  .event-card{
-    padding: 60px 40px;
-    padding: 60px 40px;
-  }
+mat-card-title {
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
 
-  .main {
-    font-family: 'Poppins',sans-serif;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-      button[mat-fab]{
-        position: absolute;
-        top: 20px;
-        left: 20px;
-      }
-  }
+input {
+  padding: 1px 0px;
+  margin: 5px 2px
+}
 
-  mat-card-title{
-    padding: 20px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-  }
+.font {
+  font-family: 'Poppins', sans-serif;
+}
 
-  input{
-    padding:1px 0px;
-    margin: 5px 2px
-  }
+h1 {
+  font-weight: bolder;
+  font-size: 45px;
+  padding-left: 25px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  transform: translateY(-100px) translateX(60px);
+}
 
-  .font {
-    font-family: 'Poppins',sans-serif;
-  }
+.input {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
 
-  h1 {
-    font-weight: bolder;
-    font-size: 45px;
-    padding-left: 25px;
-    margin-bottom: 50px;
-    letter-spacing: 1px;
-    transform: translateY(-100px) translateX(60px);
-  }
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  padding-left: 30px;
+}
 
-  .input {
-    width: 100%;
-    font-family: 'Poppins',sans-serif;
-  }
+.backBtn {
+  transition: .6s;
+}
 
-  input::placeholder {
-    font-family: 'Poppins',sans-serif;
-    font-weight: bolder;
-    padding-left: 30px;
-  }
+.backBtn:hover {
+  transition: .6s;
+  transform: scale(1.15);
+}
 
-  .backBtn{
-    transition: .6s;
-  }
+.mat-card > .mat-card-actions:last-child {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
-  .backBtn:hover{
-    transition: .6s;
-    transform: scale(1.15);
-  }
-
-  .mat-card>.mat-card-actions:last-child{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-
-  .sendButton {
-    margin-top: 15px;
-    width: 290px;
-    height: 50px;
-    transition: .7s;
-    font-family: 'Poppins',sans-serif;
-  }
+.sendButton {
+  margin-top: 15px;
+  width: 290px;
+  height: 50px;
+  transition: .7s;
+  font-family: 'Poppins', sans-serif;
+}
 
 
-  .thebuttons{
-    display: flex;
-  }
+.thebuttons {
+  display: flex;
+}
 
-  .title {
-    transform: translateY(-80px);
-  }
-
+.title {
+  transform: translateY(-80px);
+}
 
 .example-box {
   width: 200px;
