@@ -47,7 +47,7 @@
                 </button>
               </mat-form-field>
 
-              <mat-form-field appearance="outline">
+              <mat-form-field style="margin-left:16px;" appearance="outline">
                 <mat-label>Confirm Password</mat-label>
                 <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
                 <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
