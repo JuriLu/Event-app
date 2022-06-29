@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
+import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
   selector: 'app-login',
@@ -52,10 +53,15 @@ export class LoginComponent implements OnInit {
       const {email,password} = this.loginForm.getRawValue()
       this.authService.signIn(email,password).subscribe((user)=>{
         if (user) this.router.navigateByUrl('/calendar')
-      },
-        error => {
-        this.errMsg = "Wrong Email or Password"
-        })
+      },error =>{
+
+        switch (error.status) {
+          case (400):
+            this.errMsg = "Wrong Email or Password"
+            break;
+        }
+
+      })
     }
   }
 
