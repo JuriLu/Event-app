@@ -15,14 +15,11 @@ body{
   flex: 1 1 auto;
 }
 
-.bg {
-  padding: 20px 20px;
-  background-color: white;
-}
-
 mat-card{
   border-radius: 15px;
   max-height: 92vh;
+  padding: 20px 20px;
+  background-color: white;
 }
 
 .login-container {
