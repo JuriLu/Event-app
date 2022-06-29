@@ -10,8 +10,9 @@ import {AuthService} from "../../Services/auth.service";
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  hide = 'visibility_off';
-  type = 'password';
+  hide:string = 'visibility_off';
+  type:string = 'password';
+  errMsg:string = ''
 
   constructor(private router: Router,private authService: AuthService,) {}
 
@@ -24,13 +25,8 @@ export class LoginComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    console.log(this.loginForm)
-    this.loginForm.reset()
-    this.router.navigate(['/calendar/time'])
-  }
 
-  getErrorMessage() {
+  emailErrorMessage() {
     if (this.loginForm.get('email').hasError('required')) {
       return 'Please Enter Your Email';
     }
@@ -56,7 +52,12 @@ export class LoginComponent implements OnInit {
       const {email,password} = this.loginForm.getRawValue()
       this.authService.signIn(email,password).subscribe((user)=>{
         if (user) this.router.navigateByUrl('/calendar')
-      })
+      },
+        error => {
+        this.errMsg = "Wrong Email or Password"
+        })
     }
   }
+
+
 }
