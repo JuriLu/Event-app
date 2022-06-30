@@ -559,3 +559,26 @@ a.fc-daygrid-day-number{
   color: white ;
 }
 
+.custom-dialog-container .mat-dialog-container {
+  display: block;
+  padding: 0 4px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+  outline: 0;
+  width: 32vh;
+  height: 24vh;
+  min-height: inherit;
+  max-height: inherit;
+}
+
+.custom-dialog-container .mat-dialog-content {
+  display: block;
+  margin: 0 -3px;
+  padding: 0 23px;
+  max-height: 65vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+

@@ -1,38 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-// X-Large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) { @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-  .main {
-    width: 20vw;
-    height: 20vh;
-    font-family: Poppins,sans-serif;
-  }
-
-  button[value=Confirm]{
-    margin-right: 5px;
-  }
-
-  .btnGroup{
-    margin-left: 170px;
-    margin-top: 70px;
-  }
+.main {
+  font-family: Poppins, sans-serif;
 }
 
-// XX-Large devices (larger desktops, 1400px and up)
-@media (min-width: 1537px) {
-
-  //.main {
-  //  width: 17vw;
-  //  height: 17vh;
-  //  font-family: Poppins,sans-serif;
-  //}
-
-  //button[value=Confirm]{
-  //  margin-right: 5px;
-  //}
-  //
-  //.btnGroup{
-  //  margin-left: 170px;
-  //  margin-top: 70px;
-  //}
+button[value=Confirm] {
+  margin-right: 5px;
 }
+.body{
+  padding-top: 15px;
+}
+
+mat-dialog-content>p{
+  text-align: center;
+  font-family: Poppins, sans-serif;
+}
+.mat-dialog-title{
+  font-size: 24px;
+  font-family: Poppins, sans-serif;
+}
+.mat-body-1{
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+mat-dialog-actions>button{
+  border-radius: 6px;
+  height: 44px;
+  width: 100px;
+  margin: 15px;
+  color: #ffffff;
+}
+mat-dialog-actions{
+  padding-top: 0;
+}
+
+.confirm{
+  background-color: #57B55D;
+  margin-left: 30px;
+  font-family: Poppins, sans-serif;
+}
+
+.cancel{
+  background-color: #929292;
+  font-family: Poppins, sans-serif;
+}
+
+mat-icon{
+  margin-left: 269px;
+  margin-bottom: 0;
+  color: #929292;
+}
+
+.btnGroup {
+  margin-left: 170px;
+  margin-top: 70px;
+}
+
+
