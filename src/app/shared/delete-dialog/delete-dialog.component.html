@@ -1,5 +1,16 @@
-<div class="all">
-  <button mat-raised-button color="warn" mat-dialog-close tabindex="-1"><mat-icon>close</mat-icon></button>
+<div class="main">
+  <button class="close" mat-icon-button mat-dialog-close tabindex="-1">
+    <mat-icon>close</mat-icon>
+  </button>
+  <div class="body">
+    <mat-dialog-content>
+      <p class="mat-dialog-title">
+        {{"Event Deleted Successfully"}}
+      </p>
 
-  <p class="mat-subheading-2">Event Deleted Successfully</p>
+    </mat-dialog-content>
+    <mat-dialog-actions align="center">
+      <button mat-raised-button class="confirm" value="Confirm" tabindex="1" [mat-dialog-close]="true">Close</button>
+    </mat-dialog-actions>
+  </div>
 </div>

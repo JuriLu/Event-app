@@ -150,7 +150,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
       if (result) {
         this.calendarService.delete(this.id).subscribe();
         this.router.navigate(['calendar'])
-        this.dialog.open(DeleteDialogComponent)
+        this.dialog.open(DeleteDialogComponent,{panelClass:'custom-dialog-container-delete',})
       }
     })
   }
