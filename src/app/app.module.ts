@@ -27,6 +27,7 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
 import { InformDialogComponent } from './shared/inform-dialog/inform-dialog.component';
 import { ConfirmDialogComponent } from './shared/confirm-dialog/confirm-dialog.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { DeleteDialogComponent } from './shared/delete-dialog/delete-dialog.component';
 
 
 FullCalendarModule.registerPlugins([
@@ -45,7 +46,8 @@ FullCalendarModule.registerPlugins([
     SignUpComponent,
     EventDetailComponent,
     InformDialogComponent,
-    ConfirmDialogComponent
+    ConfirmDialogComponent,
+    DeleteDialogComponent
   ],
   imports: [
     BrowserModule,

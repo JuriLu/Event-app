@@ -8,6 +8,7 @@ import {finalize, tap} from "rxjs";
 import {MatDialog} from "@angular/material/dialog";
 import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
 import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
+import {DeleteDialogComponent} from "../../shared/delete-dialog/delete-dialog.component";
 
 function GreaterThan(controlName: string): ValidatorFn {
   return (control:AbstractControl): { greater : boolean } | null => {
@@ -139,15 +140,17 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
   openDialog(){
   const confirmDialog = this.dialog.open(ConfirmDialogComponent,{
+    panelClass:'custom-dialog-container',
     data:{
       title:'Confirm Delete',
-      message:`Are you sure to delete '${this.eventForm.get('title').value}'`
+      message:`Are you sure to delete event: '${this.eventForm.get('title').value}'`
     }
   })
     confirmDialog.afterClosed().subscribe(result => {
       if (result) {
         this.calendarService.delete(this.id).subscribe();
         this.router.navigate(['calendar'])
+        this.dialog.open(DeleteDialogComponent,{panelClass:'custom-dialog-container-delete',})
       }
     })
   }

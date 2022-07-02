@@ -5,15 +5,12 @@
   <div class="body">
     <mat-dialog-content>
       <p class="mat-dialog-title">
-        {{data.title}}
+        {{"Event Deleted Successfully"}}
       </p>
-      <p class="mat-body-1">
-        {{data.message}}
-      </p>
+
     </mat-dialog-content>
     <mat-dialog-actions align="center">
-      <button mat-raised-button class="cancel" mat-dialog-close tabindex="-1">Cancel</button>
-      <button mat-raised-button class="confirm" value="Confirm" tabindex="1" [mat-dialog-close]="true">Confirm</button>
+      <button mat-raised-button class="confirm" value="Confirm" tabindex="1" [mat-dialog-close]="true">Close</button>
     </mat-dialog-actions>
   </div>
 </div>

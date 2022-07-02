@@ -27,7 +27,7 @@ mat-dialog-content>p{
 mat-dialog-actions>button{
   border-radius: 6px;
   height: 44px;
-  width: 100px;
+  width: 180px;
   margin: 15px;
   color: #ffffff;
 }
@@ -41,13 +41,9 @@ mat-dialog-actions{
   font-family: Poppins, sans-serif;
 }
 
-.cancel{
-  background-color: #929292;
-  font-family: Poppins, sans-serif;
-}
 
 mat-icon{
-  margin-left: 269px;
+  margin-left: 333px;
   margin-bottom: 0;
   color: #929292;
 }
@@ -56,5 +52,3 @@ mat-icon{
   margin-left: 170px;
   margin-top: 70px;
 }
-
-
