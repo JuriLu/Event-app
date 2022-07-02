@@ -619,4 +619,19 @@ a.fc-col-header-cell-cushion{
   -webkit-overflow-scrolling: touch;
 }
 
+//Event Title
+div.fc-event-title.fc-sticky{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
 
+
+//main event div
+div.fc-event-main {
+  padding: 5px;
+}
+
+div.fc-event-time{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
