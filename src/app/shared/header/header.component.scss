@@ -8,8 +8,9 @@ li {
 nav>div>a.navbar-brand {
   color: white;
   font-size: 40px;
-  font-weight: 600;
+  font-weight: 400;
   transition-duration: 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 
 nav>div>a.navbar-brand:hover {
@@ -22,37 +23,39 @@ nav>div>a.navbar-brand:hover {
 }
 
 .account-container{
-  width: 150px;
-  height: 58px;
+  min-width: 20px;
+  height: 48px;
   border: 0.1px white solid;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 8px;
+  //display: flex;
 }
 
-.accIcon{
-  margin-left: 5px;
-}
 
 .accName{
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
-  text-align: left;
   color:#00A9EE ;
+  font-family: 'Poppins', sans-serif;
 }
 
 mat-icon{
   color:#00A9EE;
+  text-align-all: center;
 }
 
 mat-icon:hover{
   color:#ffffff;
 }
 
+
 .backBtn{
   border-radius: 50%;
   margin-left: 35px;
   transition: 0.5s;
   background-color: #ffffff;
+  width: 50px;
+  height: 50px;
 }
 
 .backBtn:hover{

@@ -1,16 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-.col-md- * {
-  padding: 15px;
-}
-
 mat-form-field {
-  width: 1000px;
-}
-
-.event-card {
-  //padding: 60px 40px;
+  width: 500px;
 }
 
 .main {
@@ -34,10 +25,10 @@ mat-card-title {
   font-weight: 600;
 }
 
-input {
-  padding: 1px 0px;
-  margin: 5px 2px
-}
+//input {
+//  padding: 1px 0;
+//  margin: 5px 2px
+//}
 
 .font {
   font-family: 'Poppins', sans-serif;
@@ -53,7 +44,7 @@ h1 {
 }
 
 .input {
-  width: 100%;
+  //width: 100%;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -80,7 +71,7 @@ input::placeholder {
 
 .sendButton {
   margin-top: 15px;
-  width: 290px;
+  width: 225px;
   height: 50px;
   transition: .7s;
   font-family: 'Poppins', sans-serif;

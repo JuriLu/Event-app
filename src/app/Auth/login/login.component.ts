@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
         switch (error.status) {
           case (400):
-            this.errMsg = "Wrong Email or Password"
+            this.errMsg = "Wrong email or password"
             break;
         }
 
