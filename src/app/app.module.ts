@@ -15,6 +15,7 @@ import {MAT_DATE_LOCALE} from "@angular/material/core";
 import {AuthModule} from "./Auth/auth.module";
 import {ComponentsModule} from "./components/components.module";
 import {SharedModule} from "./shared/shared.module";
+import {CoreModule} from "./shared/core/core.module";
 
 
 
@@ -39,13 +40,11 @@ import {SharedModule} from "./shared/shared.module";
     SharedModule,       //Custom
     BrowserModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule
   ],
   providers: [
-    { provide: MAT_DATE_LOCALE, useValue: 'en-GB' },
-    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi:true },
-    AuthService,
-    AuthGuard,
+
     ],
   bootstrap: [AppComponent]
 })

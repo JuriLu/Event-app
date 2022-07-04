@@ -52,7 +52,6 @@ export class CalendarService {
       );
   }
 
-
   getEvent(id:number):Observable<EventModel> {
     return this.httpClient
       .get<ResponseModel<EventModel>>(`${this._url}/${id}`)
