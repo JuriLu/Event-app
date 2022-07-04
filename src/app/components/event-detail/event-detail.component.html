@@ -14,7 +14,7 @@
           <mat-form-field appearance="outline" class="input">
             <mat-label class="font">Title</mat-label>
             <input matInput placeholder="Placeholder" type="text" formControlName="title">
-            <mat-error *ngIf="eventForm.get('title').hasError('required')">{{"Title is required!"}}</mat-error>
+            <mat-error *ngIf="eventForm.get('title').hasError('required')">{{"Title required!"}}</mat-error>
           </mat-form-field>
         </div>
         </div>
@@ -27,7 +27,7 @@
               <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
               <mat-datepicker #startDatepicker></mat-datepicker>
               <mat-error
-                *ngIf="eventForm.get('startDate').hasError('required')">{{"Start Date is required!"}}</mat-error>
+                *ngIf="eventForm.get('startDate').hasError('required')">{{"Start Date required!"}}</mat-error>
             </mat-form-field>
           </div>
 
@@ -36,7 +36,7 @@
               <mat-label>Start Time</mat-label>
               <input formControlName="startTime" matInput type="time">
               <mat-error
-                *ngIf="eventForm.get('startTime').hasError('required')">{{"Start Time is required!"}}</mat-error>
+                *ngIf="eventForm.get('startTime').hasError('required')">{{"Start Time required!"}}</mat-error>
             </mat-form-field>
           </div>
         </div>
@@ -49,8 +49,8 @@
               <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
               <mat-datepicker #endDatepicker></mat-datepicker>
               <mat-error
-                *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
-              <mat-error *ngIf="eventForm.get('endDate').hasError('required')">{{"End Date is required!"}}</mat-error>
+                *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date can't be lower than Start Date"}}</mat-error>
+              <mat-error *ngIf="eventForm.get('endDate').hasError('required')">{{"End Date required!"}}</mat-error>
             </mat-form-field>
           </div>
 
@@ -58,7 +58,7 @@
             <mat-form-field appearance="outline">
               <mat-label>End Time</mat-label>
               <input formControlName="endTime" matInput type="time">
-              <mat-error *ngIf="eventForm.get('endTime').hasError('required')">{{"End Time is required!"}}</mat-error>
+              <mat-error *ngIf="eventForm.get('endTime').hasError('required')">{{"End Time required!"}}</mat-error>
             </mat-form-field>
           </div>
         </div>
