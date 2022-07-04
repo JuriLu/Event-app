@@ -41,34 +41,34 @@ export class CalendarService {
 
   getEvents(filters: CalendarFilter): Observable<EventModel[]> {
     const params = new HttpParams({
-      fromObject: { ...filters }
+      fromObject: {...filters}
     });
     console.log('PARAMS:', params);
     return this.httpClient
-      .get<ResponseModel<ListOf<EventModel>>>(this._url, { params })
+      .get<ResponseModel<ListOf<EventModel>>>(this._url, {params})
       .pipe(
         map(res => res.data),
         map(listOf => listOf.list)
       );
   }
 
-  getEvent(id:number):Observable<EventModel> {
+  getEvent(id: number): Observable<EventModel> {
     return this.httpClient
       .get<ResponseModel<EventModel>>(`${this._url}/${id}`)
       .pipe(map(res => res.data))
   }
 
-  create(event:Partial<EventModel>): Observable<EventModel>{
-    return this.httpClient.post<ResponseModel<EventModel>>(`${this._url}`,event).pipe(map(res => res.data))
+  create(event: Partial<EventModel>): Observable<EventModel> {
+    return this.httpClient.post<ResponseModel<EventModel>>(`${this._url}`, event).pipe(map(res => res.data))
   }
 
-  update(id:number,event:Partial<EventModel>): Observable<EventModel>{
+  update(id: number, event: Partial<EventModel>): Observable<EventModel> {
     return this.httpClient
-      .put<ResponseModel<EventModel>>(`${this._url}/${id}`, { ...event, id })
+      .put<ResponseModel<EventModel>>(`${this._url}/${id}`, {...event, id})
       .pipe(map(res => res.data));
   }
 
-  delete(id:number): Observable<EventModel>{
+  delete(id: number): Observable<EventModel> {
     return this.httpClient
       .delete<ResponseModel<EventModel>>(`${this._url}/${id}`)
       .pipe(map(res => res.data));
