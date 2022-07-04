@@ -16,6 +16,7 @@ body {
 
 .colCustom {
   flex: 1 1 auto;
+  padding: 20px 100px;
 }
 
 mat-card{
@@ -27,8 +28,8 @@ mat-card{
 
 .login-container {
   margin-top: 60px;
-  margin-left: 350px;
-  margin-right: 80px;
+  //margin-left: 350px;
+  //margin-right: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,9 +37,9 @@ mat-card{
 
 .photo-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  margin-left: 50px;
+  //margin-left: 50px;
   margin-bottom: 100px;
 }
 
@@ -110,7 +111,7 @@ input::placeholder {
   position: relative;
   font-family: 'Poppins',sans-serif;
   font-size: 13px;
-  margin-left: 90px;
+  margin-left: 80px;
   margin-top: 100px;
   color: #666666;
 }
