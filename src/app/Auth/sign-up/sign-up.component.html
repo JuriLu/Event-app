@@ -1,34 +1,38 @@
 <body>
 <mat-card>
-  <div class="rowCustom">
+  <div class="colCustom">
 
-    <div class="colCustom photo-container">
+    <div class="photo-container">
       <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
     </div>
 
-    <div class="colCustom login-container">
+    <div class="signup-container">
       <div>
 
         <form [formGroup]="signupForm">
           <mat-card-title>Sign Up</mat-card-title>
           <mat-card-content>
 
-            <div class="groups">
+            <!--            <div class="groups">-->
+            <div class="each">
               <mat-form-field class="nameWidth" appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput formControlName="firstName" placeholder="First Name">
                 <mat-error
                   *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
               </mat-form-field>
+            </div>
 
+            <div class="each">
               <mat-form-field class="nameWidth" appearance="outline">
                 <mat-label>Last Name</mat-label>
                 <input formControlName="lastName" matInput placeholder="Last Name">
                 <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
               </mat-form-field>
             </div>
+            <!--            </div>-->
 
-            <div>
+            <div class="each">
               <mat-form-field class="email" appearance="outline">
                 <mat-label>Email</mat-label>
                 <input formControlName="email" matInput placeholder="Email">
@@ -36,7 +40,8 @@
               </mat-form-field>
             </div>
 
-            <div class="groups">
+            <!--            <div class="groups">-->
+            <div class="each">
               <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input formControlName="password" type={{type}} matInput placeholder="Password">
@@ -46,8 +51,10 @@
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
+            </div>
 
-              <mat-form-field style="margin-left:16px;" appearance="outline">
+            <div class="each">
+              <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
                 <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
                 <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
@@ -57,6 +64,7 @@
                 </button>
               </mat-form-field>
             </div>
+            <!--            </div>-->
 
             <div class="endPart">
               <button
