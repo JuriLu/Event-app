@@ -25,3 +25,22 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+UI + Functional Updates:
+
++ New UI Design for Login and Sign Up forms,Photo moved up.
++ Added a Profile Component
++ Profile UI Updated to be made smaller
++ Updated all errors for login,signup and event forms.
++ Pasword Validation Updated (Removed !@#$%)
++ Login component, displayed wrong password or email message
++ Created Dragable event form
++ New UI Design for Delete Button
++ Modals Created: 
+   Event created/updated successfully
+   Confirm event delete
+   Event deleted successfully
++ All writing and fonts were updated 
++ Event form UI made smaller
++ EXTRA (SEE COMMITS)

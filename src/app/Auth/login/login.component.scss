@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 body {
-  font-family: 'Poppins',sans-serif;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+mat-card-title{
+  font-family: 'Poppins',sans-serif;
+}
+
+mat-error{
+  font-family: 'Poppins',sans-serif;
 }
 
 .rowCustom {
@@ -119,7 +126,6 @@ a {
   transition: all .4s;
   -webkit-transition: all .4s;
 }
-
 
 a:hover {
   text-decoration: none;
