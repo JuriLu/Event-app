@@ -17,8 +17,7 @@
               <mat-form-field class="nameWidth" appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput formControlName="firstName" placeholder="First Name">
-                <mat-error
-                  *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
+                <mat-error *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
               </mat-form-field>
             </div>
 

@@ -1,7 +1,5 @@
 <body>
 <mat-card>
-
-
   <div class="colCustom ">
 
     <div class="photo-container ">
@@ -24,8 +22,7 @@
               <mat-form-field class="password" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput type={{type}} formControlName="password">
-                <mat-error
-                  *ngIf="loginForm.get('password').hasError('required')">{{"Password required"}}</mat-error>
+                <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Password required"}}</mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                   <mat-icon>{{hide}}</mat-icon>

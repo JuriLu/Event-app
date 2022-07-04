@@ -81,7 +81,6 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   direction: ltr;
-  //margin: 0;
   font-family: inherit;
   box-sizing: border-box;
   -webkit-appearance: button;
@@ -589,42 +588,6 @@ a.fc-col-header-cell-cushion {
   color: #00A9EE;
 }
 
-//Delete confirm container
-.custom-dialog-container .mat-dialog-container {
-  display: block;
-  padding: 0 4px;
-  border-radius: 30px;
-  box-sizing: border-box;
-  overflow: hidden;
-  outline: 0;
-  width: 43vh; //revise media
-  height: 28vh; //revise media
-  min-height: inherit;
-  max-height: inherit;
-}
-
-//Delete Inform Dialog
-.custom-dialog-container-delete .mat-dialog-container {
-  display: block;
-  padding: 0 4px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  overflow: hidden;
-  outline: 0;
-  width: 51vh; //revise media
-  height: 23vh; //revise media
-  min-height: inherit;
-  max-height: inherit;
-}
-
-.custom-dialog-container .mat-dialog-content {
-  display: block;
-  margin: 0 -3px;
-  padding: 0 23px;
-  max-height: 65vh;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-}
 
 //Event Title
 div.fc-event-title.fc-sticky {
@@ -644,6 +607,46 @@ div.fc-event-time {
   font-size: 14px;
 }
 
+//Dialogs Responsive
+@media (min-width: 1537px) {
+  //Delete confirm container
+  .custom-dialog-container .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 32vh;
+    height: 22vh;
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  //Delete Inform Dialog
+  .custom-dialog-container-delete .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 39vh;
+    height: 19vh;
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  .custom-dialog-container .mat-dialog-content {
+    display: block;
+    margin: 0 -3px;
+    padding: 0 23px;
+    max-height: 65vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 //All mat-input-forms on screens less than 1536 px
 @media (max-width: 1536.98px) {
 
@@ -654,4 +657,42 @@ div.fc-event-time {
   .mat-form-field-wrapper {
     padding-bottom: 0 !important;
   }
+
+  //Delete confirm container
+  .custom-dialog-container .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 41vh; //revise media
+    height: 28vh; //revise media
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  //Delete Inform Dialog
+  .custom-dialog-container-delete .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 51vh; //revise media
+    height: 23vh; //revise media
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  .custom-dialog-container .mat-dialog-content {
+    display: block;
+    margin: 0 -3px;
+    padding: 0 23px;
+    max-height: 65vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
 }
