@@ -82,7 +82,7 @@ export class SignUpComponent implements OnInit {
     if (this.signupForm.get('email').hasError('email')){
       return 'Not a valid email'
     } else{
-      return 'Email is Required'
+      return 'Email Required'
     }
   }
 

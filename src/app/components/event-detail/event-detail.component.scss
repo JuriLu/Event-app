@@ -1,22 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
-.col-md- * {
-  padding: 15px;
-}
-
 mat-form-field {
-  width: 1000px;
-}
-
-.event-card {
-  //padding: 60px 40px;
+  width: 500px;
 }
 
 .main {
   font-family: 'Poppins', sans-serif;
   height: 100vh;
   display: flex;
+  padding: 50px;
   align-items: center;
   justify-content: center;
 
@@ -34,11 +26,6 @@ mat-card-title {
   font-weight: 600;
 }
 
-input {
-  padding: 1px 0px;
-  margin: 5px 2px
-}
-
 .font {
   font-family: 'Poppins', sans-serif;
 }
@@ -53,7 +40,6 @@ h1 {
 }
 
 .input {
-  width: 100%;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -80,21 +66,17 @@ input::placeholder {
 
 .sendButton {
   margin-top: 15px;
-  width: 290px;
+  width: 225px;
   height: 50px;
   transition: .7s;
   font-family: 'Poppins', sans-serif;
 }
 
-
 .thebuttons {
   display: flex;
 }
 
-.title {
-  transform: translateY(-80px);
-}
-
+//Material Dragable Card
 .example-box {
   width: 200px;
   height: 200px;
@@ -115,6 +97,7 @@ input::placeholder {
   0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
+//Material Dragable Card
 .example-box:active {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14),

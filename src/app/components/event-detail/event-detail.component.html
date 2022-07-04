@@ -1,83 +1,92 @@
-<div  class="main">
+<div class="main">
+
   <button class="backBtn" mat-fab color="accent" [routerLink]="['..']">
     <mat-icon>chevron_left</mat-icon>
   </button>
+
   <div class="example-box" cdkDrag>
-  <mat-card  class="event-card" [formGroup]="eventForm">
-    <mat-card-title>Event Form</mat-card-title>
-    <mat-card-content>
+    <mat-card class="event-card" [formGroup]="eventForm">
+      <mat-card-title>Event Form</mat-card-title>
+      <mat-card-content>
 
-      <mat-form-field appearance="outline" class="input">
-        <mat-label class="font">Title</mat-label>
-        <input matInput placeholder="Placeholder" type="text" formControlName="title">
-        <mat-error *ngIf="eventForm.get('title').hasError('required')">{{"Title is required!"}}</mat-error>
-      </mat-form-field>
-
-      <div class="row">
+        <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <mat-form-field appearance="outline">
-            <mat-label>Start Date</mat-label>
-            <input formControlName="startDate" matInput [matDatepicker]="startDatepicker">
-            <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #startDatepicker></mat-datepicker>
-            <mat-error *ngIf="eventForm.get('startDate').hasError('required')">{{"Start Date is required!"}}</mat-error>
+          <mat-form-field appearance="outline" class="input">
+            <mat-label class="font">Title</mat-label>
+            <input matInput placeholder="Placeholder" type="text" formControlName="title">
+            <mat-error *ngIf="eventForm.get('title').hasError('required')">{{"Title is required!"}}</mat-error>
           </mat-form-field>
         </div>
-
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <mat-form-field appearance="outline">
-            <mat-label>Start Time</mat-label>
-            <input formControlName="startTime" matInput type="time">
-            <mat-error *ngIf="eventForm.get('startTime').hasError('required')">{{"Start Time is required!"}}</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <mat-form-field appearance="outline">
-            <mat-label>End Date</mat-label>
-            <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
-            <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
-            <mat-datepicker #endDatepicker></mat-datepicker>
-            <mat-error *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
-            <mat-error *ngIf="eventForm.get('endDate').hasError('required')">{{"End Date is required!"}}</mat-error>
-          </mat-form-field>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <mat-form-field appearance="outline">
-            <mat-label>End Time</mat-label>
-            <input formControlName="endTime" matInput type="time">
-            <mat-error *ngIf="eventForm.get('endTime').hasError('required')">{{"End Time is required!"}}</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-    </mat-card-content>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Start Date</mat-label>
+              <input formControlName="startDate" matInput [matDatepicker]="startDatepicker">
+              <mat-datepicker-toggle matSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #startDatepicker></mat-datepicker>
+              <mat-error
+                *ngIf="eventForm.get('startDate').hasError('required')">{{"Start Date is required!"}}</mat-error>
+            </mat-form-field>
+          </div>
 
-    <mat-card-actions align="end">
-      <div class="thebuttons">
-        <button
-          type="button"
-          class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4"
-          mat-raised-button
-          color="primary"
-          (click)="sendForm()"
-          [disabled]="!eventForm.valid">
-          {{ editMode ? "Update Event" : "Create Event"}}
-        </button>
-        <button
-          style="margin-left: 40px"
-          class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4 "
-          *ngIf="editMode"
-          type="button"
-          mat-raised-button
-          color="warn"
-          (click)="openDialog()">
-          {{"Delete Event"}}
-        </button>
-      </div>
-    </mat-card-actions>
-  </mat-card>
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Start Time</mat-label>
+              <input formControlName="startTime" matInput type="time">
+              <mat-error
+                *ngIf="eventForm.get('startTime').hasError('required')">{{"Start Time is required!"}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field appearance="outline">
+              <mat-label>End Date</mat-label>
+              <input formControlName="endDate" matInput [matDatepicker]="endDatepicker">
+              <mat-datepicker-toggle matSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+              <mat-datepicker #endDatepicker></mat-datepicker>
+              <mat-error
+                *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date must be greater than Start Date"}}</mat-error>
+              <mat-error *ngIf="eventForm.get('endDate').hasError('required')">{{"End Date is required!"}}</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field appearance="outline">
+              <mat-label>End Time</mat-label>
+              <input formControlName="endTime" matInput type="time">
+              <mat-error *ngIf="eventForm.get('endTime').hasError('required')">{{"End Time is required!"}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <div class="thebuttons">
+          <button
+            type="button"
+            class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4"
+            mat-raised-button
+            color="primary"
+            (click)="sendForm()"
+            [disabled]="!eventForm.valid">
+            {{ editMode ? "Update Event" : "Create Event"}}
+          </button>
+          <button
+            style="margin-left: 40px"
+            class="sendButton col-sm-4 col-md-4 col-lg-4 col-xl-4 "
+            *ngIf="editMode"
+            type="button"
+            mat-raised-button
+            color="warn"
+            (click)="openDialog()">
+            {{"Delete Event"}}
+          </button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

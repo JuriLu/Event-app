@@ -59,10 +59,9 @@ export class CalendarGridComponent implements OnInit,AfterViewChecked{
     themeSystem:'default',
 
     eventBackgroundColor: 'white',
-    eventBorderColor: 'blue',
     eventTextColor: 'black',
     eventDisplay:'block',
-    eventMinHeight:20,
+    eventShortHeight:20,
     eventMinWidth:10,
 
 

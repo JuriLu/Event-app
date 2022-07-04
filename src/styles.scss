@@ -13,7 +13,15 @@ body {
   background-size: auto;
 }
 
+// logout mat icon moved a bit up within the button
+.mat-fab .mat-button-wrapper {
+  padding: 9px 0 !important;;
+  display: inline-block ;
+  line-height: 24px ;
+}
 
+//ENTIRE STYLE UPDATE , LUMEN THEME COPIED FROM FULL CALENDAR API
+//Calendar next BTN HOVER
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-next-button.fc-button.fc-button-primary:hover {
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
@@ -104,6 +112,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-bottom-width: 3px;
   border-color: #137ea7;
 }
+//Calendar next BTN
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-next-button.fc-button.fc-button-primary{
   margin-right: 20px;
   --fc-daygrid-event-dot-width: 8px;
@@ -193,6 +202,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-bottom-left-radius: 0;
 }
 
+//Calendar previous BTN HOVER
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary{
 
   --fc-daygrid-event-dot-width: 8px;
@@ -280,6 +290,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+//Calendar previous BTN
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary:hover{
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
@@ -370,6 +381,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-bottom-right-radius: 0;
 }
 
+//Calendar today BTN
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button{
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
@@ -453,6 +465,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   cursor: pointer;
   margin-left: .75em;
 }
+//Calendar today BTN HOVER
 body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button:hover{    --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
   --fc-list-event-hover-bg-color: #f5f5f5;
@@ -538,27 +551,38 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-color: #137ea7;}
 
 
+//Calendar Title   month/year  July/2022 ex
 .fc-toolbar-chunk{
-  font-family: 'Poppins',sans-serif;
-  font-size: 35px;
+  font-size: 25px;
+  color: white;
+}
+.fc-toolbar-title{
+  color: white;
+  font-family: 'Poppins',sans-serif !important;
 }
 
+
+//Calendar border
 table.fc-theme-standard.fc-scrollgrid {
   border: 3px solid white;
 }
 
+//Calendar day number
 a.fc-daygrid-day-number{
   color: white;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
 }
 
-.fc-toolbar-title{
-  color: white;
+//Calendar days of the week
+a.fc-col-header-cell-cushion{
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: #00A9EE;
 }
 
-.text-muted[_ngcontent-cbr-c32]{
-  color: white ;
-}
-
+//Delete confirm container
 .custom-dialog-container .mat-dialog-container {
   display: block;
   padding: 0 4px;
@@ -566,12 +590,13 @@ a.fc-daygrid-day-number{
   box-sizing: border-box;
   overflow: hidden;
   outline: 0;
-  width: 32vh;
-  height: 24vh;
+  width: 43vh;    //revise media
+  height: 28vh;   //revise media
   min-height: inherit;
   max-height: inherit;
 }
 
+//Delete Inform Dialog
 .custom-dialog-container-delete .mat-dialog-container {
   display: block;
   padding: 0 4px;
@@ -579,8 +604,8 @@ a.fc-daygrid-day-number{
   box-sizing: border-box;
   overflow: hidden;
   outline: 0;
-  width: 39vh;
-  height: 18vh;
+  width: 51vh;    //revise media
+  height: 23vh;   //revise media
   min-height: inherit;
   max-height: inherit;
 }
@@ -594,4 +619,19 @@ a.fc-daygrid-day-number{
   -webkit-overflow-scrolling: touch;
 }
 
+//Event Title
+div.fc-event-title.fc-sticky{
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+}
 
+
+//main event div
+div.fc-event-main {
+  padding: 5px;
+}
+
+div.fc-event-time{
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
