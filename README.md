@@ -38,9 +38,9 @@ UI + Functional Updates:
 + Created Dragable event form
 + New UI Design for Delete Button
 + Modals Created: 
-   Event created/updated successfully
-   Confirm event delete
-   Event deleted successfully
+   - Event created/updated successfully
+   - Confirm event delete
+   - Event deleted successfully
 + All writing and fonts were updated 
 + Event form UI made smaller
 + EXTRA (SEE COMMITS)

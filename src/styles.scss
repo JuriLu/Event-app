@@ -2,13 +2,14 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html, body {  }
+html, body {
+}
 
 body {
   margin: 0;
   overflow: auto;
-  font-family:'Poppins', Roboto, "Helvetica Neue", sans-serif;
-  background-image:url('assets/BG.jpg') ;
+  font-family: 'Poppins', Roboto, "Helvetica Neue", sans-serif;
+  background-image: url('assets/BG.jpg');
   background-repeat: no-repeat;
   background-size: auto;
 }
@@ -16,8 +17,8 @@ body {
 // logout mat icon moved a bit up within the button
 .mat-fab .mat-button-wrapper {
   padding: 9px 0 !important;;
-  display: inline-block ;
-  line-height: 24px ;
+  display: inline-block;
+  line-height: 24px;
 }
 
 //ENTIRE STYLE UPDATE , LUMEN THEME COPIED FROM FULL CALENDAR API
@@ -56,20 +57,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -95,7 +96,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   border-style: solid;
   border-width: 0 1px 4px 1px;
   text-transform: uppercase;
@@ -112,8 +113,9 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-bottom-width: 3px;
   border-color: #137ea7;
 }
+
 //Calendar next BTN
-body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-next-button.fc-button.fc-button-primary{
+body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-next-button.fc-button.fc-button-primary {
   margin-right: 20px;
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
@@ -148,20 +150,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -187,7 +189,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   color: #fff;
   background-color: #158cba;
   border-style: solid;
@@ -203,7 +205,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
 }
 
 //Calendar previous BTN HOVER
-body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary{
+body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary {
 
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
@@ -238,20 +240,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -277,7 +279,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   color: #fff;
   background-color: #158cba;
   border-style: solid;
@@ -290,8 +292,9 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 //Calendar previous BTN
-body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary:hover{
+body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > div > button.fc-prev-button.fc-button.fc-button-primary:hover {
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
   --fc-list-event-hover-bg-color: #f5f5f5;
@@ -325,20 +328,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -364,7 +367,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   border-style: solid;
   border-width: 0 1px 4px 1px;
   text-transform: uppercase;
@@ -382,7 +385,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
 }
 
 //Calendar today BTN
-body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button{
+body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button {
   --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
   --fc-list-event-hover-bg-color: #f5f5f5;
@@ -416,20 +419,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -455,7 +458,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   color: #fff;
   background-color: #158cba;
   border-style: solid;
@@ -465,8 +468,10 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   cursor: pointer;
   margin-left: .75em;
 }
+
 //Calendar today BTN HOVER
-body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button:hover{    --fc-daygrid-event-dot-width: 8px;
+body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-toolbar > div:nth-child(3) > button:hover {
+  --fc-daygrid-event-dot-width: 8px;
   --fc-list-event-dot-width: 10px;
   --fc-list-event-hover-bg-color: #f5f5f5;
   --bs-blue: #158cba;
@@ -499,20 +504,20 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   --bs-danger: #ff4136;
   --bs-light: #f6f6f6;
   --bs-dark: #555;
-  --bs-primary-rgb: 21,140,186;
-  --bs-secondary-rgb: 240,240,240;
-  --bs-success-rgb: 40,182,44;
-  --bs-info-rgb: 117,202,235;
-  --bs-warning-rgb: 255,133,27;
-  --bs-danger-rgb: 255,65,54;
-  --bs-light-rgb: 246,246,246;
-  --bs-dark-rgb: 85,85,85;
-  --bs-white-rgb: 255,255,255;
-  --bs-black-rgb: 0,0,0;
-  --bs-body-color-rgb: 34,34,34;
-  --bs-body-bg-rgb: 255,255,255;
-  --bs-font-sans-serif: "Source Sans Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-  --bs-font-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  --bs-primary-rgb: 21, 140, 186;
+  --bs-secondary-rgb: 240, 240, 240;
+  --bs-success-rgb: 40, 182, 44;
+  --bs-info-rgb: 117, 202, 235;
+  --bs-warning-rgb: 255, 133, 27;
+  --bs-danger-rgb: 255, 65, 54;
+  --bs-light-rgb: 246, 246, 246;
+  --bs-dark-rgb: 85, 85, 85;
+  --bs-white-rgb: 255, 255, 255;
+  --bs-black-rgb: 0, 0, 0;
+  --bs-body-color-rgb: 34, 34, 34;
+  --bs-body-bg-rgb: 255, 255, 255;
+  --bs-font-sans-serif: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -538,7 +543,7 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   padding: .375rem .75rem;
   font-size: 1rem;
   border-radius: .25rem;
-  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
   border-style: solid;
   border-width: 0 1px 4px 1px;
   text-transform: uppercase;
@@ -548,17 +553,19 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   margin-left: .75em;
   margin-top: 1px;
   border-bottom-width: 3px;
-  border-color: #137ea7;}
+  border-color: #137ea7;
+}
 
 
 //Calendar Title   month/year  July/2022 ex
-.fc-toolbar-chunk{
+.fc-toolbar-chunk {
   font-size: 25px;
   color: white;
 }
-.fc-toolbar-title{
+
+.fc-toolbar-title {
   color: white;
-  font-family: 'Poppins',sans-serif !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 
@@ -568,7 +575,7 @@ table.fc-theme-standard.fc-scrollgrid {
 }
 
 //Calendar day number
-a.fc-daygrid-day-number{
+a.fc-daygrid-day-number {
   color: white;
   text-decoration: none;
   font-size: 17px;
@@ -576,7 +583,7 @@ a.fc-daygrid-day-number{
 }
 
 //Calendar days of the week
-a.fc-col-header-cell-cushion{
+a.fc-col-header-cell-cushion {
   font-family: 'Poppins', sans-serif;
   text-decoration: none;
   color: #00A9EE;
@@ -590,8 +597,8 @@ a.fc-col-header-cell-cushion{
   box-sizing: border-box;
   overflow: hidden;
   outline: 0;
-  width: 43vh;    //revise media
-  height: 28vh;   //revise media
+  width: 43vh; //revise media
+  height: 28vh; //revise media
   min-height: inherit;
   max-height: inherit;
 }
@@ -604,8 +611,8 @@ a.fc-col-header-cell-cushion{
   box-sizing: border-box;
   overflow: hidden;
   outline: 0;
-  width: 51vh;    //revise media
-  height: 23vh;   //revise media
+  width: 51vh; //revise media
+  height: 23vh; //revise media
   min-height: inherit;
   max-height: inherit;
 }
@@ -620,7 +627,7 @@ a.fc-col-header-cell-cushion{
 }
 
 //Event Title
-div.fc-event-title.fc-sticky{
+div.fc-event-title.fc-sticky {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
 }
@@ -631,7 +638,20 @@ div.fc-event-main {
   padding: 5px;
 }
 
-div.fc-event-time{
+//main event time
+div.fc-event-time {
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
+}
+
+//All mat-input-forms on screens less than 1536 px
+@media (max-width: 1536.98px) {
+
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 5px !important;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
 }

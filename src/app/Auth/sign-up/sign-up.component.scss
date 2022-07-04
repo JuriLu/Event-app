@@ -13,7 +13,6 @@ body{
 
 .colCustom {
   flex: 1 1 auto;
-  //padding: 1px 60px;
 }
 
 mat-card-title{
@@ -26,8 +25,8 @@ mat-error{
 
 mat-card{
   border-radius: 15px;
-  max-height: 92vh;
-  padding: 20px 40px;
+  //max-height: 92vh;
+  padding: 20px 100px;
   background-color: white;
 }
 
