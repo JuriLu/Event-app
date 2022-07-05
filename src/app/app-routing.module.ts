@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {Error404Component} from "./shared/error404/error404.component";
-import {RouterModule,Routes} from '@angular/router';
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
   {path: '', redirectTo: '/auth/signin', pathMatch: 'full'},
@@ -11,7 +11,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
