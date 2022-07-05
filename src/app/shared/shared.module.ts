@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import {BrowserModule} from "@angular/platform-browser";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HttpClientModule} from "@angular/common/http";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -25,9 +26,10 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     MaterialModule,
     RouterModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    BrowserModule,
+    // HttpClientModule,
+    // BrowserAnimationsModule,
+    // ReactiveFormsModule,
+    // BrowserModule,
   ],
   exports:[
     HeaderComponent,

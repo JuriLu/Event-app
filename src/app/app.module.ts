@@ -17,15 +17,15 @@ import {CoreModule} from "./shared/core/core.module";
     AppComponent,
   ],
   imports: [
-    AuthModule,
+    AppRoutingModule,
     CoreModule,
     SharedModule,
-    ComponentsModule,
+    // AuthModule,
+    // ComponentsModule,
 
-    AppRoutingModule,
     HttpClientModule,
-    BrowserModule,
     ReactiveFormsModule,
+    BrowserModule,
     BrowserAnimationsModule,
   ],
   bootstrap: [AppComponent]

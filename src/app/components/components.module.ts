@@ -12,6 +12,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import {SharedModule} from "../shared/shared.module";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {ComponentsRoutingModule} from "./components-routing.module";
+import {BrowserModule} from "@angular/platform-browser";
 
 
 FullCalendarModule.registerPlugins([
@@ -27,14 +28,14 @@ FullCalendarModule.registerPlugins([
     EventDetailComponent,
   ],
   imports: [
-    CommonModule,
+    // CommonModule,
+    // RouterModule,
     MaterialModule,
     ReactiveFormsModule,
-    RouterModule,
     FullCalendarModule,
-    SharedModule,
     DragDropModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+    SharedModule,
   ],
   exports: [
     CalendarGridComponent,

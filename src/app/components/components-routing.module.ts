@@ -8,7 +8,7 @@ import {EventResolver} from "../Resolvers/event.resolver";
 
 const routes:Routes = [
   {
-    path:'calendar',
+    path:'',
     children:[
       {
         path:'',
