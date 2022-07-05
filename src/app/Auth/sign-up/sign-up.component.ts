@@ -72,7 +72,7 @@ export class SignUpComponent implements OnInit {
       this.authService
         .signUp(firstName, lastName, email, password)
         .subscribe(user => {
-          if (user) this.router.navigateByUrl('/signin');
+          if (user) this.router.navigateByUrl('/auth/signin');
         });
     }
     console.log(this.signupForm)

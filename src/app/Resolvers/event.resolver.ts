@@ -1,10 +1,6 @@
 import {Injectable} from '@angular/core';
-import {
-  Router, Resolve,
-  RouterStateSnapshot,
-  ActivatedRouteSnapshot
-} from '@angular/router';
-import {Observable, of} from 'rxjs';
+import {Resolve, ActivatedRouteSnapshot} from '@angular/router';
+import {Observable} from 'rxjs';
 import {EventModel} from "../Model/event.model";
 import {CalendarService} from "../Services/calendar.service";
 
