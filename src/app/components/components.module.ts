@@ -1,6 +1,4 @@
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import interactionPlugin from "@fullcalendar/interaction";
+
 import {NgModule} from '@angular/core';
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "../shared/shared.module";
@@ -11,6 +9,9 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {CalendarGridComponent} from "./calendar-grid/calendar-grid.component";
 import {ComponentsRoutingModule} from "./components-routing.module";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import interactionPlugin from "@fullcalendar/interaction";
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
