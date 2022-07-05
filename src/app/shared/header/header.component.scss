@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
 li {
   margin-left: 10px;
 }
 
-nav>div>a.navbar-brand {
+nav > div > a.navbar-brand {
   color: white;
   font-size: 40px;
   font-weight: 500;
@@ -13,7 +12,7 @@ nav>div>a.navbar-brand {
   font-family: 'Poppins', sans-serif;
 }
 
-nav>div>a.navbar-brand:hover {
+nav > div > a.navbar-brand:hover {
   color: white;
   transform: scale(1.2) translateX(10px);
 }
@@ -22,7 +21,7 @@ nav>div>a.navbar-brand:hover {
   border-radius: 10px;
 }
 
-.account-container{
+.account-container {
   min-width: 20px;
   height: 48px;
   border: 0.1px white solid;
@@ -32,24 +31,24 @@ nav>div>a.navbar-brand:hover {
 }
 
 
-.accName{
+.accName {
   font-size: 16px;
   font-weight: 600;
-  color:#00A9EE ;
+  color: #00A9EE;
   font-family: 'Poppins', sans-serif;
 }
 
-mat-icon{
-  color:#00A9EE;
+mat-icon {
+  color: #00A9EE;
   text-align-all: center;
 }
 
-mat-icon:hover{
-  color:#ffffff;
+mat-icon:hover {
+  color: #ffffff;
 }
 
 
-.backBtn{
+.backBtn {
   border-radius: 50%;
   margin-left: 35px;
   transition: 0.5s;
@@ -58,7 +57,7 @@ mat-icon:hover{
   height: 50px;
 }
 
-.backBtn:hover{
+.backBtn:hover {
   border-radius: 50%;
   margin-left: 35px;
   transition: 0.5s;

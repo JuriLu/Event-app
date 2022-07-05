@@ -1,15 +1,16 @@
 import {Injectable} from '@angular/core';
-import {Resolve, ActivatedRouteSnapshot} from '@angular/router';
 import {Observable} from 'rxjs';
 import {EventModel} from "../Model/event.model";
 import {CalendarService} from "../Services/calendar.service";
+import {Resolve, ActivatedRouteSnapshot} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EventResolver implements Resolve<EventModel | null> {
 
-  constructor(private calendarService: CalendarService) {}
+  constructor(private calendarService: CalendarService) {
+  }
 
   resolve(route: ActivatedRouteSnapshot): Observable<EventModel> | null {
     if (route.paramMap.has('id')) {

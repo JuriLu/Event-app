@@ -15,8 +15,8 @@ export class HeaderComponent implements OnInit {
   name: string;
 
   ngOnInit(): void {
-    if (this.authService.loggedUser){
-      this.name=this.authService.loggedUser.firstName
+    if (this.authService.loggedUser) {
+      this.name = this.authService.loggedUser.firstName
     }
   }
 

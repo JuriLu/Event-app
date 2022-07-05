@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
+import {Component, OnInit} from '@angular/core';
+import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
 
 function ExactMatch(controlName: string): ValidatorFn {
-  return (control:AbstractControl): { exactMatch : boolean } | null => {
+  return (control: AbstractControl): { exactMatch: boolean } | null => {
     const checkedControl = control.parent?.get(controlName);
 
     if (control.value !== checkedControl?.value) {
-      return  { exactMatch: true };
+      return {exactMatch: true};
     }
 
     return null;
@@ -16,12 +16,12 @@ function ExactMatch(controlName: string): ValidatorFn {
 }
 
 function PartialMatch(controlName: string, errorKey: string = 'partiallyMatch'): ValidatorFn {
-  return (control:AbstractControl): { [key: string]: boolean } | null => {
+  return (control: AbstractControl): { [key: string]: boolean } | null => {
     const checkedControl = control.parent?.get(controlName);
 
     if (checkedControl?.value) {
       if (control.value?.toLowerCase()?.includes(checkedControl.value.toLowerCase())) {
-        return  { [errorKey]: true };
+        return {[errorKey]: true};
       }
     }
 
@@ -36,24 +36,25 @@ function PartialMatch(controlName: string, errorKey: string = 'partiallyMatch'):
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-  signupForm :FormGroup
+  signupForm: FormGroup
   hide = 'visibility_off';
   type = 'password';
 
-  constructor(private router:Router,private authService:AuthService) { }
+  constructor(private router: Router, private authService: AuthService) {
+  }
 
   ngOnInit(): void {
     this.signupForm = new FormGroup({
-      firstName : new FormControl('',[Validators.required]),
-      lastName : new FormControl('',[Validators.required]),
-      email : new FormControl('',[Validators.required,Validators.email]),
-      password : new FormControl('', [
+      firstName: new FormControl('', [Validators.required]),
+      lastName: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [
         Validators.required,
         Validators.minLength(8),
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/),
-        PartialMatch('firstName','firstNameMatch'),
-        PartialMatch('lastName','lastNameMatch'),
-        PartialMatch('email','emailMatch'),
+        PartialMatch('firstName', 'firstNameMatch'),
+        PartialMatch('lastName', 'lastNameMatch'),
+        PartialMatch('email', 'emailMatch'),
       ]),
       confirmPassword: new FormControl('',
         [Validators.required, ExactMatch('password')]
@@ -61,13 +62,9 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  onSubmit(){
-    console.log(this.signupForm)
-  }
-
-  onSignUp(){
-    if (this.signupForm.valid){
-      const { firstName, lastName, email, password } = this.signupForm.getRawValue();
+  onSignUp() {
+    if (this.signupForm.valid) {
+      const {firstName, lastName, email, password} = this.signupForm.getRawValue();
 
       this.authService
         .signUp(firstName, lastName, email, password)
@@ -78,39 +75,39 @@ export class SignUpComponent implements OnInit {
     console.log(this.signupForm)
   };
 
-  emailErrMsg(){
-    if (this.signupForm.get('email').hasError('email')){
+  emailErrMsg() {
+    if (this.signupForm.get('email').hasError('email')) {
       return 'Not a valid email'
-    } else{
+    } else {
       return 'Email Required'
     }
   }
 
-  confPassErrMsg(){
-    if (this.signupForm.get('confirmPassword').hasError('exactMatch')){
+  confPassErrMsg() {
+    if (this.signupForm.get('confirmPassword').hasError('exactMatch')) {
       return 'Passwords Do Not Match'
-    }else{
+    } else {
       return 'Confirm Password required'
     }
   };
 
-  passErrMsg(){
-   if (this.signupForm.get('password').invalid) {
-     switch (Object.keys(this.signupForm.get('password').errors)[0]) { // this.signupForm.get('password').errors returns --> { required: true }
-       case 'required':
-         return 'Password required';
-       case 'minlength':
-         return 'Password length must be min 8 character long';
-       case 'pattern':
-         return 'Password must have 1 Uppercase 1 Number';
-       case 'firstNameMatch':
-         return 'Password Must not be the same as FirstName';
-       case 'lastNameMatch':
-         return 'Password Must not be the same as LastName';
-       case 'emailMatch':
-         return 'Password Must not be the same as Email';
-     }
-   }
+  passErrMsg() {
+    if (this.signupForm.get('password').invalid) {
+      switch (Object.keys(this.signupForm.get('password').errors)[0]) { // this.signupForm.get('password').errors returns --> { required: true }
+        case 'required':
+          return 'Password required';
+        case 'minlength':
+          return 'Password length must be min 8 character long';
+        case 'pattern':
+          return 'Password must have 1 Uppercase 1 Number';
+        case 'firstNameMatch':
+          return 'Password Must not be the same as FirstName';
+        case 'lastNameMatch':
+          return 'Password Must not be the same as LastName';
+        case 'emailMatch':
+          return 'Password Must not be the same as Email';
+      }
+    }
   };
 
   getType() {

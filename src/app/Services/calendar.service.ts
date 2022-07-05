@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {EventModel} from "../Model/event.model";
-import {HttpClient, HttpParams} from "@angular/common/http";
-import {map, Observable} from "rxjs";
-import {ResponseModel} from "../Model/response.model";
-import {ListOf} from "../Model/list-of.model";
 import {environment} from "../../environments/environment";
+import {ListOf} from "../Model/list-of.model";
+import {EventModel} from "../Model/event.model";
+import {ResponseModel} from "../Model/response.model";
+import {map, Observable} from "rxjs";
+import {HttpClient, HttpParams} from "@angular/common/http";
 
 export const LOCAL_STORAGE_SELECTED_DATE = 'event:selected-date';
 

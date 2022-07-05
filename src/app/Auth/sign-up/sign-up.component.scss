@@ -1,5 +1,5 @@
-body{
-  background: linear-gradient(-135deg,#c850c0,#4158d0);
+body {
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
   height: 100vh;
   overflow: hidden;
   display: flex;
@@ -15,17 +15,16 @@ body{
   flex: 1 1 auto;
 }
 
-mat-card-title{
-  font-family: 'Poppins',sans-serif;
+mat-card-title {
+  font-family: 'Poppins', sans-serif;
 }
 
-mat-error{
-  font-family: 'Poppins',sans-serif;
+mat-error {
+  font-family: 'Poppins', sans-serif;
 }
 
-mat-card{
+mat-card {
   border-radius: 15px;
-  //max-height: 92vh;
   padding: 20px 100px;
   background-color: white;
 }
@@ -38,19 +37,19 @@ mat-card{
   max-width: 500px;
 }
 
-.photo-container{
+.photo-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 //fName , lName, pass , confPass
-.each{
+.each {
   display: flex;
   justify-content: center;
 }
 
-h1{
+h1 {
   font-weight: bolder;
   font-size: 28px;
   padding-left: 25px;
@@ -65,42 +64,42 @@ img {
   transition: 2.0s;
 }
 
-img:hover{
+img:hover {
   transform: rotate3d(13, 8, 5, 360deg);
 }
 
-mat-form-field{
+mat-form-field {
   width: 350px;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-input::placeholder{
-  font-family: 'Poppins',sans-serif;
+input::placeholder {
+  font-family: 'Poppins', sans-serif;
   font-weight: bolder;
   padding-left: 30px;
 }
 
-.authButton{
+.authButton {
   margin-top: 10px;
   width: 350px;
   height: 50px;
   transition: .4s;
-  font-family: 'Poppins' ,sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-.signup_link{
+.signup_link {
   display: flex;
   justify-content: center;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 13px;
   margin-top: 30px;
   color: #666666;
 }
 
-a{
+a {
   text-decoration: none;
   color: #666;
-  transition:all .4s;
+  transition: all .4s;
   -webkit-transition: all .4s;
 }
 
@@ -109,12 +108,12 @@ a:hover {
   color: #57B846;
 }
 
-input[type='submit']:hover{
+input[type='submit']:hover {
   background-color: #343434;
   cursor: pointer;
 }
 
-.endPart{
+.endPart {
   display: flex;
   justify-content: center;
 }

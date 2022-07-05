@@ -2,9 +2,6 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-html, body {
-}
-
 body {
   margin: 0;
   overflow: auto;
@@ -173,7 +170,6 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   direction: ltr;
-  //margin: 0;
   font-family: inherit;
   box-sizing: border-box;
   -webkit-appearance: button;
@@ -263,7 +259,6 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
   direction: ltr;
-  //margin: 0;
   font-family: inherit;
   box-sizing: border-box;
   -webkit-appearance: button;
@@ -666,8 +661,8 @@ div.fc-event-time {
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 41vh; //revise media
-    height: 28vh; //revise media
+    width: 41vh;
+    height: 28vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -680,8 +675,8 @@ div.fc-event-time {
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 51vh; //revise media
-    height: 23vh; //revise media
+    width: 51vh;
+    height: 23vh;
     min-height: inherit;
     max-height: inherit;
   }

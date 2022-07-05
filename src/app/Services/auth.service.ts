@@ -1,10 +1,10 @@
-import {Injectable} from '@angular/core';
-import {map, Observable, tap} from "rxjs";
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../environments/environment";
 import {AuthModel} from "../Model/auth.model";
 import {UserModel} from "../Model/user.model";
+import {Injectable} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {environment} from "../../environments/environment";
 import {ResponseModel} from "../Model/response.model";
+import {map, Observable, tap} from "rxjs";
 
 
 const LOCALSTORAGE_USER = 'event:user';

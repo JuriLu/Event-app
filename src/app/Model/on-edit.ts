@@ -1,3 +1,3 @@
-export interface OnEdit{
+export interface OnEdit {
   isDirty: boolean
 }

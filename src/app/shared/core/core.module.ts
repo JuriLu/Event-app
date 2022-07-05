@@ -1,11 +1,11 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {MAT_DATE_LOCALE} from "@angular/material/core";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {TokenInterceptor} from "../../Services/token.interceptor";
-import {AuthService} from "../../Services/auth.service";
+import {NgModule} from '@angular/core';
 import {AuthGuard} from "../../Guards/auth-guard";
+import {AuthService} from "../../Services/auth.service";
+import {CommonModule} from '@angular/common';
 import {CalendarService} from "../../Services/calendar.service";
+import {TokenInterceptor} from "../../Services/token.interceptor";
 
 
 @NgModule({

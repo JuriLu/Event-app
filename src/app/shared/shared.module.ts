@@ -1,42 +1,33 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {HeaderComponent} from "./header/header.component";
+import {NgModule} from '@angular/core';
+import {RouterModule} from "@angular/router";
+import {CommonModule} from '@angular/common';
 import {MaterialModule} from "./material/material.module";
+import {HeaderComponent} from "./header/header.component";
 import {Error404Component} from "./error404/error404.component";
 import {InformDialogComponent} from "./inform-dialog/inform-dialog.component";
-import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 import {DeleteDialogComponent} from "./delete-dialog/delete-dialog.component";
-import {RouterModule} from "@angular/router";
-import {BrowserModule} from "@angular/platform-browser";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {HttpClientModule} from "@angular/common/http";
-import {ReactiveFormsModule} from "@angular/forms";
-
-
+import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
 
 @NgModule({
   declarations: [
     HeaderComponent,
     Error404Component,
+    DeleteDialogComponent,
     InformDialogComponent,
     ConfirmDialogComponent,
-    DeleteDialogComponent
   ],
   imports: [
     CommonModule,
-    MaterialModule,
     RouterModule,
-    // HttpClientModule,
-    // BrowserAnimationsModule,
-    // ReactiveFormsModule,
-    // BrowserModule,
+    MaterialModule,
   ],
-  exports:[
+  exports: [
     HeaderComponent,
     Error404Component,
+    DeleteDialogComponent,
     InformDialogComponent,
     ConfirmDialogComponent,
-    DeleteDialogComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+}

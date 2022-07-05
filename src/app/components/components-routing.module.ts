@@ -1,37 +1,38 @@
 import {NgModule} from "@angular/core";
-import {RouterModule, Routes} from "@angular/router";
 import {AuthGuard} from "../Guards/auth-guard";
-import {CalendarGridComponent} from "./calendar-grid/calendar-grid.component";
-import {EventDetailComponent} from "./event-detail/event-detail.component";
-import {UnsavedDataGuard} from "../Guards/unsaved-data.guard";
 import {EventResolver} from "../Resolvers/event.resolver";
+import {UnsavedDataGuard} from "../Guards/unsaved-data.guard";
+import {RouterModule, Routes} from "@angular/router";
+import {EventDetailComponent} from "./event-detail/event-detail.component";
+import {CalendarGridComponent} from "./calendar-grid/calendar-grid.component";
 
-const routes:Routes = [
+const routes: Routes = [
   {
-    path:'',
-    children:[
+    path: '',
+    children: [
       {
-        path:'',
-        canActivate:[AuthGuard],
-        component:CalendarGridComponent
+        path: '',
+        canActivate: [AuthGuard],
+        component: CalendarGridComponent
       },
       {
-        path:':id',
+        path: ':id',
         component: EventDetailComponent,
-        canActivate:[AuthGuard],
-        canDeactivate:[UnsavedDataGuard],
-        resolve: { calendarEvent: EventResolver }
+        canActivate: [AuthGuard],
+        canDeactivate: [UnsavedDataGuard],
+        resolve: {calendarEvent: EventResolver}
       }
     ]
   },
 ]
 
 @NgModule({
-  imports:[
+  imports: [
     RouterModule.forChild(routes)
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })
-export class ComponentsRoutingModule{}
+export class ComponentsRoutingModule {
+}

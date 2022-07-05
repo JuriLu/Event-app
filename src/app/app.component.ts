@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-import {CalendarOptions} from "@fullcalendar/angular";
-import {AuthService} from "./Services/auth.service";
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',

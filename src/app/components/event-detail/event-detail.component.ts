@@ -1,21 +1,22 @@
-import {Component,OnInit} from '@angular/core';
+import {OnEdit} from "../../Model/on-edit";
+import {MatDialog} from "@angular/material/dialog";
+import {EventModel} from "../../Model/event.model";
+import {finalize, tap} from "rxjs";
+import {CalendarService} from "../../Services/calendar.service";
+import {Component, OnInit} from '@angular/core';
+import {DeleteDialogComponent} from "../../shared/delete-dialog/delete-dialog.component";
+import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
+import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
-import {EventModel} from "../../Model/event.model";
-import {CalendarService} from "../../Services/calendar.service";
-import {OnEdit} from "../../Model/on-edit";
-import {finalize, tap} from "rxjs";
-import {MatDialog} from "@angular/material/dialog";
-import {ConfirmDialogComponent} from "../../shared/confirm-dialog/confirm-dialog.component";
-import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
-import {DeleteDialogComponent} from "../../shared/delete-dialog/delete-dialog.component";
 
+//Custom Validator For End Date to be greater than Start Date
 function GreaterThan(controlName: string): ValidatorFn {
-  return (control:AbstractControl): { greater : boolean } | null => {
+  return (control: AbstractControl): { greater: boolean } | null => {
     const checkedControl = control.parent?.get(controlName);
 
     if (control.value < checkedControl?.value) {
-      return  { greater: true };
+      return {greater: true};
     }
 
     return null;
@@ -34,7 +35,6 @@ export class EventDetailComponent implements OnInit, OnEdit {
   isDirty: boolean = false
 
 
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private calendarService: CalendarService,
@@ -45,11 +45,10 @@ export class EventDetailComponent implements OnInit, OnEdit {
       title: new FormControl('', [Validators.required]),
       startDate: new FormControl('', [Validators.required]),
       startTime: new FormControl('', [Validators.required]),
-      endDate: new FormControl('', [Validators.required,GreaterThan('startDate')]),
+      endDate: new FormControl('', [Validators.required, GreaterThan('startDate')]),
       endTime: new FormControl('', [Validators.required]),
     });
   }
-
 
 
   ngOnInit(): void {
@@ -111,46 +110,46 @@ export class EventDetailComponent implements OnInit, OnEdit {
     const {title, startDate, startTime, endDate, endTime} = this.eventForm.getRawValue();
     const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
     const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
-    console.log(end>start);
+    console.log(end > start);
     const eventModel: Omit<EventModel, 'id'> = {
       title,
       start,
       end
     };
 
-      (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
+    (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
+    )
+      .pipe(
+        finalize(() => this.isDirty = false),
       )
-        .pipe(
-          finalize(() => this.isDirty = false),
-        )
-        .subscribe(event => {
-          this.dialog.open(InformDialogComponent,{
-            data:{
-              title:event.title,
-              startDate:event.start,
-              endDate:event.end,
-              editMode: this.editMode
-            }
-          })
-          this.router.navigate(['calendar']);
-        });
+      .subscribe(event => {
+        this.dialog.open(InformDialogComponent, {
+          data: {
+            title: event.title,
+            startDate: event.start,
+            endDate: event.end,
+            editMode: this.editMode
+          }
+        })
+        this.router.navigate(['calendar']);
+      });
 
 
   }
 
-  openDialog(){
-  const confirmDialog = this.dialog.open(ConfirmDialogComponent,{
-    panelClass:'custom-dialog-container',
-    data:{
-      title:'Confirm Delete',
-      message:`Are you sure to delete event: '${this.eventForm.get('title').value}'`
-    }
-  })
+  openDialog() {
+    const confirmDialog = this.dialog.open(ConfirmDialogComponent, {
+      panelClass: 'custom-dialog-container',
+      data: {
+        title: 'Confirm Delete',
+        message: `Are you sure to delete event: '${this.eventForm.get('title').value}'`
+      }
+    })
     confirmDialog.afterClosed().subscribe(result => {
       if (result) {
         this.calendarService.delete(this.id).subscribe();
         this.router.navigate(['calendar'])
-        this.dialog.open(DeleteDialogComponent,{panelClass:'custom-dialog-container-delete',})
+        this.dialog.open(DeleteDialogComponent, {panelClass: 'custom-dialog-container-delete',})
       }
     })
   }
