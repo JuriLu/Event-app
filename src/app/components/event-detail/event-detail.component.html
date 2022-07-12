@@ -50,7 +50,6 @@
               <mat-datepicker #endDatepicker></mat-datepicker>
               <mat-error *ngIf="eventForm.get('endDate').hasError('greater')">{{"End Date can't be lower than Start Date"}}</mat-error>
               <mat-error *ngIf="eventForm.get('endDate').hasError('required')">{{"End Date required!"}}</mat-error>
-              <mat-error *ngIf="eventForm.get('endDate').disabled && eventForm.get('endDate').touched">{{"Select the Start Date First"}}</mat-error>
             </mat-form-field>
           </div>
 

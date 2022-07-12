@@ -13,6 +13,7 @@ body {
 
 .colCustom {
   flex: 1 1 auto;
+  padding: 0px 100px;
 }
 
 mat-card-title {
@@ -25,12 +26,12 @@ mat-error {
 
 mat-card {
   border-radius: 15px;
-  padding: 20px 100px;
+  padding: 0px 20px;
   background-color: white;
 }
 
 .signup-container {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +70,7 @@ img:hover {
 }
 
 mat-form-field {
-  width: 350px;
+  width: 290px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -81,18 +82,19 @@ input::placeholder {
 
 .authButton {
   margin-top: 10px;
-  width: 350px;
+  width: 290px;
   height: 50px;
   transition: .4s;
   font-family: 'Poppins', sans-serif;
 }
 
-.signup_link {
+.signin_link {
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   font-size: 13px;
-  margin-top: 30px;
+  //margin-top: 30px;
+  padding-bottom: 20px;
   color: #666666;
 }
 
