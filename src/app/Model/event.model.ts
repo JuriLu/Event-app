@@ -5,6 +5,7 @@ export interface EventModel {
   title: string;
   start: string;
   end: string;
+  user?: UserModel;
   bookCount?: number;
   bookings?: UserModel[]
 }

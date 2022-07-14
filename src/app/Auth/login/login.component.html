@@ -15,21 +15,21 @@
             <mat-form-field class="email" appearance="outline">
               <mat-label>Email</mat-label>
               <input matInput placeholder="email@example.com" formControlName="email" required>
-              <mat-error *ngIf="loginForm.get('email').invalid">{{emailErrorMessage()}}</mat-error>
             </mat-form-field>
+            <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">{{emailErrorMessage()}}</mat-error>
 
             <div>
               <mat-form-field class="password" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput type={{type}} formControlName="password">
-                <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Password required"}}</mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
-              <mat-error>{{this.errMsg}}</mat-error>
             </div>
+            <mat-error *ngIf="loginForm.get('password').hasError('required')&& loginForm.get('password').touched">{{"Password required"}}</mat-error>
+            <mat-error>{{this.errMsg}}</mat-error>
             <br>
             <button
               class="authButton"

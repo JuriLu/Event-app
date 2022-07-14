@@ -691,3 +691,9 @@ div.fc-event-time {
   }
 
 }
+//Login --> email field
+body > mat-card > div > div.login-container > div > form > mat-card-content > mat-form-field > div{
+  //margin: 0;
+  padding: 0;
+}
+

@@ -3,6 +3,7 @@ import {CalendarOptions} from "@fullcalendar/angular";
 import {CalendarService} from "../../Services/calendar.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
+import {UserModel} from "../../Model/user.model";
 
 @Component({
   selector: 'app-calendar-grid',
@@ -11,11 +12,22 @@ import {AfterViewChecked, Component, OnInit} from '@angular/core';
 })
 export class CalendarGridComponent implements OnInit, AfterViewChecked {
   public height = 917;
+  public idParam: any;
+  public listEvent = [];
+  public userLoggedIn: UserModel;
+  public userId;
+
 
   // public winHeight=null;
 
 
   ngOnInit() {
+    this.userLoggedIn = JSON.parse(localStorage.getItem('event:user'));
+    // console.log(this.userLoggedIn);
+    this.userId = this.userLoggedIn.id;
+    // console.log(this.userId);
+    // this.getEventByUserId()
+    // this.compareValues()
   }
 
   ngAfterViewChecked() {
@@ -104,10 +116,19 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
 
       this.calendarService
         .getEvents({start: s, end: e})
-        .subscribe((events: any) => this.calendarOptions = {...this.calendarOptions, events});
-      console.log(this.calendarOptions)
+        .subscribe((events: any) => {
+            events.forEach((value, index, array) => {
+              if (value.user.id === this.userLoggedIn.id) {
+                console.log(value);
+                this.listEvent.push(value)
+                this.calendarOptions.events = this.listEvent;
+              }
+            })
+          }
+        );
+
+
     }
   };
-
 
 }

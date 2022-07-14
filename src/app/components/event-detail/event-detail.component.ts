@@ -34,6 +34,9 @@ export class EventDetailComponent implements OnInit, OnEdit {
   editMode: boolean = false
   isDirty: boolean = false
 
+  idEvent: any;
+  idParam: any;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -54,7 +57,6 @@ export class EventDetailComponent implements OnInit, OnEdit {
   ngOnInit(): void {
     const calendarEvent: EventModel | null = this.activatedRoute.snapshot.data.calendarEvent;
 
-
     if (calendarEvent) {
       this.populateForm(calendarEvent);
     } else {
@@ -67,6 +69,9 @@ export class EventDetailComponent implements OnInit, OnEdit {
     this.eventForm.valueChanges.pipe(tap(() => {
       if (this.eventForm.dirty) this.isDirty = true
     })).subscribe()
+
+    this.getEventByUserId();
+
   }
 
   private populateForm(eventModel: EventModel): void {
@@ -75,10 +80,12 @@ export class EventDetailComponent implements OnInit, OnEdit {
     const startDate = new Date(start);
     const startTime = start.split('T')[1].split('.')[0]
       .substr(0, 5);
+    console.log(startTime);
 
     const endDate = new Date(end);
     const endTime = end.split('T')[1].split('.')[0]
       .substr(0, 5);
+    console.log(endTime);
 
     this.eventForm.patchValue({
       title,
@@ -151,6 +158,22 @@ export class EventDetailComponent implements OnInit, OnEdit {
         this.router.navigate(['calendar'])
         this.dialog.open(DeleteDialogComponent, {panelClass: 'custom-dialog-container-delete',})
       }
+    })
+  }
+
+  // getEventByUserId(){
+  //   this.calendarService.getEvent(this.idParam).subscribe(
+  //     data => this.idEvent = data,
+  //     error => console.log("error")
+  //   )
+  // }
+
+
+  getEventByUserId(){
+    this.calendarService.getEvent(101).subscribe((data)=>{
+      this.idEvent= data;
+      console.log(data,'dataaaaaaaaaaaaaaaaaaa');
+      console.log(this.idEvent)
     })
   }
 
