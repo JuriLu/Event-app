@@ -604,6 +604,7 @@ div.fc-event-time {
 
 //Dialogs Responsive
 @media (min-width: 1537px) {
+
   //Delete confirm container
   .custom-dialog-container .mat-dialog-container {
     display: block;
@@ -613,7 +614,7 @@ div.fc-event-time {
     overflow: hidden;
     outline: 0;
     width: 32vh;
-    height: 22vh;
+    height: 23vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -712,7 +713,7 @@ div.fc-event-time {
     overflow: hidden;
     outline: 0;
     width: 38vh;
-    height: 28vh;
+    height: 29vh;
     min-height: inherit;
     max-height: inherit;
   }

@@ -5,16 +5,16 @@ li {
 }
 
 nav > div > a.navbar-brand {
-  color: white;
-  font-size: 40px;
-  font-weight: 500;
-  transition-duration: 0.3s;
-  font-family: 'Poppins', sans-serif;
+  transition-duration: 0.9s;
 }
 
 nav > div > a.navbar-brand:hover {
   color: white;
-  transform: scale(1.2) translateX(10px);
+  transform: scale(1.1) translateX(2px);
+}
+
+img{
+  border-radius: 10px;
 }
 
 #navbarSupportedContent > ul > li.nav-item.d-flex > button {
