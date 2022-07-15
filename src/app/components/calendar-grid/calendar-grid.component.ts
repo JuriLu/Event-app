@@ -16,6 +16,8 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
   public listEvent = [];
   public userLoggedIn: UserModel;
   public userId;
+  public openEv:boolean = false
+
 
 
   // public winHeight=null;
@@ -106,9 +108,11 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
     dateClick: (data) => {
       this.calendarService.selectedDate = data.date.toISOString()
       if (this.authService.isAuthenticated) this.router.navigate(['new'], {relativeTo: this.activatedRoute})
+      // this.openEv = true
     },
     eventClick: (data) => {
       this.router.navigate([data.event.id], {relativeTo: this.activatedRoute})
+      // this.openEv = true
     },
     datesSet: ({start, end}) => {
       const s = start.toISOString();
@@ -117,17 +121,14 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
       this.calendarService
         .getEvents({start: s, end: e})
         .subscribe((events: any) => {
-            events.forEach((value, index, array) => {
-              if (value.user.id === this.userLoggedIn.id) {
-                console.log(value);
-                this.listEvent.push(value)
-                this.calendarOptions.events = this.listEvent;
-              }
-            })
-          }
-        );
-
-
+          events.forEach((value, index, array) => {
+            if (value.user.id === this.userLoggedIn.id) {
+              console.log(value);
+              this.listEvent.push(value)
+              this.calendarOptions.events = this.listEvent;
+            }
+          })
+        });
     }
   };
 

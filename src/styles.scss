@@ -554,12 +554,14 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
 //Calendar Title   month/year  July/2022 ex
 .fc-toolbar-chunk {
   font-size: 25px;
+  font-style: italic;
   color: white;
 }
 
 .fc-toolbar-title {
   color: white;
   font-family: 'Poppins', sans-serif !important;
+  font-style: italic !important;
 }
 
 

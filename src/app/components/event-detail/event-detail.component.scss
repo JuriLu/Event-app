@@ -25,11 +25,12 @@ mat-card {
 
 mat-error {
   font-family: 'Poppins', sans-serif;
+  font-style: italic;
   font-size: 10px;
 }
 
 mat-card-title {
-  padding: 20px;
+  padding-bottom: 20px;
   text-align: center;
   font-size: 30px;
   font-weight: 600;
@@ -74,7 +75,7 @@ input::placeholder {
 }
 
 .sendButton {
-  margin-top: 15px;
+  //margin-top: 15px;
   width: 225px;
   height: 50px;
   transition: .7s;
