@@ -2,15 +2,13 @@
 
 .main {
   font-family: Poppins, sans-serif;
+  padding: 0;
 }
 
 button[value=Confirm] {
   margin-right: 5px;
 }
 
-.body {
-  padding-top: 15px;
-}
 
 mat-dialog-content > p {
   text-align: center;
@@ -18,7 +16,7 @@ mat-dialog-content > p {
 }
 
 .mat-dialog-title {
-  font-size: 24px;
+  font-size: 20px;
   font-family: Poppins, sans-serif;
 }
 
@@ -28,9 +26,10 @@ mat-dialog-content > p {
 }
 
 mat-icon {
-  margin-left: 333px;
+  margin-left: 257px;
   margin-bottom: 0;
   color: #929292;
 }
+
 
 
