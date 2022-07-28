@@ -114,10 +114,17 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
       this.router.navigate([data.event.id], {relativeTo: this.activatedRoute})
       // this.openEv = true
     },
+
+    //Called after the calendar’s date range has been initially set or changed in some way and the DOM has been updated.
+    // The calendar’s dates can change any time the user does the following: click the prev/next buttons,
+    // change the view, click a navlink. The dates can also change when the current-date is manipulated
+    // via the API, such as when gotoDate is called.
+
     datesSet: ({start, end}) => {
       const s = start.toISOString();
       const e = end.toISOString();
 
+      // Event By User ID
       this.calendarService
         .getEvents({start: s, end: e})
         .subscribe((events: any) => {
