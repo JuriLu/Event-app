@@ -172,12 +172,9 @@ export class EventDetailComponent implements OnInit, OnEdit {
   getEventByUserId(){
     this.calendarService.getEvent(101).subscribe((data)=>{
       this.idEvent= data;
-      console.log(data,'dataaaaaaaaaaaaaaaaaaa');
       console.log(this.idEvent)
     })
   }
-
-
 }
 
 

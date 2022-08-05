@@ -27,9 +27,8 @@
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
-            </div>
             <mat-error *ngIf="loginForm.get('password').hasError('required')&& loginForm.get('password').touched">{{"Password required"}}</mat-error>
-            <mat-error>{{this.errMsg}}</mat-error>
+            </div>
             <br>
             <button
               class="authButton"
