@@ -131,30 +131,13 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
       this.calendarService
         .getEvents({start: s, end: e})
         .subscribe((events: EventModel[]) => {
-          if (1 > 0){    // TEST
-            events.forEach((value, index, array) => {  //#23
+            events.forEach((value, index, array) => {
               if (value.user.id === this.userLoggedIn.id) {
                 console.log(value);
                 this.listEvent.push(value)
                 this.calendarOptions.events = this.listEvent;
               }
-            }) // TEST
-          } else {
-            this.listEvent.push(events.map( (event) => event.status = 'Private' ))
-            this.calendarOptions.events = this.listEvent
-            console.log(this.listEvent[0].status);
-          }
-          // TEST     USED MAP TO SEE IF THE STATUS WOULD CHANGE , JUST TO SEE IF THE LOGIC WORKED
-          //          BUT THE ARRAY COMES FROM THE BACKEND SO WE NEED TO MAKE IT TO GET FROM BACKEND AN
-          //          EVENT WHICH HAS EVENT STATUS THEN USE Filter TO IT
-
-          // FINAL IDEA IS TO USE FILTER TO CHECK WHAT STATUS THE EVENT HAS
-          // IF IT IS PUBLIC WE ARE GONNA PUSH IT TO this.calendarOptions.events (this.listEvent)
-          // ALSO WHEN ITS PRIVATE WE ARE GONNA PUSH IT TO this.calendarOptions.events (this.listEvent)
-          // BUT WE ARE GOING TO MAKE CHECKS SO IF THE USER IS NOT AUTHENTICATED TO SHOW ONLY PUBLIC
-          // EVENTS ( AND NO EVENT.USER.ID IS NEEDED) AND IF ITS AUTHENTICATED (just use if there is
-          // a user or not loggedUser : UserModel)  THE LOGIC WILL BE THE SAME AS #23.STATUS WOULD NOT MATTER
-
+            })
         });
     }
   };
