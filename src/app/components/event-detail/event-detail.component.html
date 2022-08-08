@@ -17,7 +17,8 @@
             </mat-form-field>
           </div>
         </div>
-        <mat-error *ngIf="eventForm.get('title').hasError('required') && eventForm.get('title').touched">{{"Title required!"}}</mat-error>
+        <mat-error
+          *ngIf="eventForm.get('title').hasError('required') && eventForm.get('title').touched">{{"Title required!"}}</mat-error>
 
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -28,7 +29,8 @@
               <mat-datepicker #startDatepicker></mat-datepicker>
             </mat-form-field>
           </div>
-          <mat-error *ngIf="eventForm.get('startDate').hasError('required')  && eventForm.get('startDate').touched">{{"Start Date required!"}}</mat-error>
+          <mat-error
+            *ngIf="eventForm.get('startDate').hasError('required')  && eventForm.get('startDate').touched">{{"Start Date required!"}}</mat-error>
 
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <mat-form-field appearance="outline">
@@ -37,7 +39,8 @@
             </mat-form-field>
           </div>
         </div>
-        <mat-error *ngIf="eventForm.get('startTime').hasError('required')  && eventForm.get('startTime').touched">{{"Start Time required!"}}</mat-error>
+        <mat-error
+          *ngIf="eventForm.get('startTime').hasError('required')  && eventForm.get('startTime').touched">{{"Start Time required!"}}</mat-error>
 
         <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -60,7 +63,22 @@
         </div>
         <mat-error *ngIf="eventForm.get('endTime').hasError('required')  && eventForm.get('endTime').touched">{{"End Time required!"}}</mat-error>
 
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <mat-form-field appearance="outline">
+              <mat-label>Select Status</mat-label>
+              <mat-select
+                [(value)]="status"
+              formControlName="status">
+                <mat-option value="Public">Public</mat-option>
+                <mat-option value="Private">Private</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <p>You selected: {{status}}</p>
+          </div>
+          <mat-error *ngIf="eventForm.get('status').hasError('required')  && eventForm.get('endTime').touched">{{"Status required!"}}</mat-error>
 
+        </div>
       </mat-card-content>
 
       <mat-card-actions align="end">
