@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
 import {UserModel} from "../../Model/user.model";
+import {map} from "rxjs";
+import {CalendarService} from "../../Services/calendar.service";
+import {CalendarGridComponent} from "../../components/calendar-grid/calendar-grid.component";
 
 @Component({
   selector: 'app-header',
@@ -11,7 +14,10 @@ import {UserModel} from "../../Model/user.model";
 export class HeaderComponent implements OnInit {
   user: UserModel
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) {
   }
 
   name: string;
@@ -26,6 +32,7 @@ export class HeaderComponent implements OnInit {
   onSignOut(): void {
     this.authService.signOut();
     this.user = null
+    this.authService.logoutSubject.next(true)
   }
 
   Login(){
@@ -34,6 +41,7 @@ export class HeaderComponent implements OnInit {
 
   SignUp(){
     this.router.navigateByUrl('/auth/signup')
+
   }
 
 

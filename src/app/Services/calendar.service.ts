@@ -43,14 +43,14 @@ export class CalendarService {
     const params = new HttpParams({
       fromObject: {...filters}
     });
-    console.log('PARAMS:', params);
+    // console.log('PARAMS:', params);
     return this.httpClient
       .get<ResponseModel<ListOf<EventModel>>>(this._url, {params})
       .pipe(
         map(res => res.data),
         map(listOf => listOf.list),
-        shareReplay(),
-        tap(listOf => console.log(listOf))
+        // shareReplay(),
+        // tap(listOf => console.log(listOf))
       );
   }
 
