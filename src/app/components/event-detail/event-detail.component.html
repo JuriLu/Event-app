@@ -70,11 +70,11 @@
               <mat-select
                 [(value)]="status"
               formControlName="status">
-                <mat-option value="Public">Public</mat-option>
-                <mat-option value="Private">Private</mat-option>
+                <mat-option value="public">Public</mat-option>
+                <mat-option value="private">Private</mat-option>
               </mat-select>
             </mat-form-field>
-            <p>You selected: {{status}}</p>
+<!--            <p>You selected: {{status}}</p>-->
           </div>
           <mat-error *ngIf="eventForm.get('status').hasError('required')  && eventForm.get('endTime').touched">{{"Status required!"}}</mat-error>
 

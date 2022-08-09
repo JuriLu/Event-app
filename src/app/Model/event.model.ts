@@ -1,12 +1,12 @@
 import {UserModel} from "./user.model";
 
-export type status = 'Private' | 'Public'
+export type Status = 'private' | 'public'
 export interface EventModel {
   id: number;
   title: string;
   start: string;
   end: string;
+  status: Status;
   user?: UserModel;
-  status?: status;
   bookings?: UserModel[]
 }

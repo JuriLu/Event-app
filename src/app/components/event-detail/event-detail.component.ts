@@ -1,6 +1,6 @@
 import {OnEdit} from "../../Model/on-edit";
 import {MatDialog} from "@angular/material/dialog";
-import {EventModel} from "../../Model/event.model";
+import {EventModel, Status} from "../../Model/event.model";
 import {finalize, tap} from "rxjs";
 import {CalendarService} from "../../Services/calendar.service";
 import {Component, OnInit} from '@angular/core';
@@ -33,7 +33,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
   id?: number;
   editMode: boolean = false
   isDirty: boolean = false
-  status = 'Public';
+  status:Status = 'public';
 
   idEvent: any;
   idParam: any;
@@ -72,12 +72,12 @@ export class EventDetailComponent implements OnInit, OnEdit {
       if (this.eventForm.dirty) this.isDirty = true
     })).subscribe()
 
-    this.getEventByUserId();
+    // this.getEventByUserId();
 
   }
 
   private populateForm(eventModel: EventModel): void {
-    const {id, title, start, end} = eventModel;
+    const {id, title, start, end,status} = eventModel;
 
     const startDate = new Date(start);
     const startTime = start.split('T')[1].split('.')[0]
@@ -94,7 +94,8 @@ export class EventDetailComponent implements OnInit, OnEdit {
       startDate,
       startTime,
       endDate,
-      endTime
+      endTime,
+      status
     });
 
     this.id = id;
@@ -116,33 +117,34 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
 
   sendForm() {
-    console.log(this.eventForm.getRawValue());
-    // const {title, startDate, startTime, endDate, endTime} = this.eventForm.getRawValue();
-    // const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
-    // const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
-    // console.log(end > start);
-    // const eventModel: Omit<EventModel, 'id'> = {
-    //   title,
-    //   start,
-    //   end
-    // };
-    //
-    // (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
-    // )
-    //   .pipe(
-    //     finalize(() => this.isDirty = false),
-    //   )
-    //   .subscribe(event => {
-    //     this.dialog.open(InformDialogComponent, {
-    //       data: {
-    //         title: event.title,
-    //         startDate: event.start,
-    //         endDate: event.end,
-    //         editMode: this.editMode
-    //       }
-    //     })
-    //     this.router.navigate(['calendar']);
-    //   });
+    // console.log(this.eventForm.getRawValue());
+    const {title, startDate, startTime, endDate, endTime,status} = this.eventForm.getRawValue();
+    const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
+    const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
+    console.log(end > start);
+    const eventModel: Omit<EventModel, 'id'> = {
+      title,
+      start,
+      end,
+      status
+    };
+
+    (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
+    )
+      .pipe(
+        finalize(() => this.isDirty = false),
+      )
+      .subscribe(event => {
+        this.dialog.open(InformDialogComponent, {
+          data: {
+            title: event.title,
+            startDate: event.start,
+            endDate: event.end,
+            editMode: this.editMode
+          }
+        })
+        this.router.navigate(['calendar']);
+      });
 
 
   }
@@ -171,12 +173,12 @@ export class EventDetailComponent implements OnInit, OnEdit {
   //   )
   // }
 
-  getEventByUserId(){
-    this.calendarService.getEvent(101).subscribe((data)=>{
-      this.idEvent= data;
-      console.log(this.idEvent)
-    })
-  }
+  // getEventByUserId(){
+  //   this.calendarService.getEvent(101).subscribe((data)=>{
+  //     this.idEvent= data;
+  //     console.log(this.idEvent)
+  //   })
+  // }
 }
 
 

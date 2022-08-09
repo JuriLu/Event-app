@@ -133,9 +133,10 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
         .subscribe((events: EventModel[]) => {
             events.forEach((value, index, array) => {
               if (value.user.id === this.userLoggedIn.id) {
-                console.log(value);
+                // console.log(value);
                 this.listEvent.push(value)
                 this.calendarOptions.events = this.listEvent;
+                console.log(this.calendarOptions.events);
               }
             })
         });
