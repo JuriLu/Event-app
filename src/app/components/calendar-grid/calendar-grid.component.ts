@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {UserModel} from "../../Model/user.model";
 import {EventModel} from "../../Model/event.model";
+import {map} from "rxjs";
 
 @Component({
   selector: 'app-calendar-grid',
@@ -35,6 +36,9 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
   ) {
   }
 
+  getPublicEvent(){
+
+  }
 
   calendarOptions: CalendarOptions = {
 
@@ -98,15 +102,11 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
       const s = start.toISOString();
       const e = end.toISOString();
 
-      // Event By User ID
-
-      // JUST FOR TESTING
+      // Get Events by status and user ID
       if (this.authService.loggedUser){
-
-      }
-      this.calendarService
-        .getEvents({start: s, end: e})
-        .subscribe((events: EventModel[]) => {
+        this.calendarService
+          .getEvents({start: s, end: e})
+          .subscribe((events: EventModel[]) => {
             events.forEach((value, index, array) => {
               if (value.user.id === this.userLoggedIn.id) {
                 // console.log(value);
@@ -115,7 +115,16 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
                 console.log(this.calendarOptions.events);
               }
             })
-        });
+          });
+      }else if (!this.authService.loggedUser){
+        this.calendarService
+          .getEvents({start: s, end: e})
+          .pipe(
+            map( (event) => event.filter(ev => ev.status === 'public' ))
+          )
+          .subscribe((events: any) => this.calendarOptions = {...this.calendarOptions, events});
+        // console.log(this.calendarOptions)
+      }
     }
   };
 
