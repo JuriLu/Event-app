@@ -3,7 +3,7 @@ import {environment} from "../../environments/environment";
 import {ListOf} from "../Model/list-of.model";
 import {EventModel} from "../Model/event.model";
 import {ResponseModel} from "../Model/response.model";
-import {map, Observable, tap} from "rxjs";
+import {map, Observable, shareReplay, tap} from "rxjs";
 import {HttpClient, HttpParams} from "@angular/common/http";
 
 export const LOCAL_STORAGE_SELECTED_DATE = 'event:selected-date';
@@ -49,6 +49,7 @@ export class CalendarService {
       .pipe(
         map(res => res.data),
         map(listOf => listOf.list),
+        shareReplay(),
         tap(listOf => console.log(listOf))
       );
   }
