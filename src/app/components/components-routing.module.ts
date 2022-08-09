@@ -12,7 +12,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        canActivate: [AuthGuard],
+        // canActivate: [AuthGuard],
         component: CalendarGridComponent
       },
       {

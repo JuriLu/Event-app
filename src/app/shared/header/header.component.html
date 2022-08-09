@@ -6,7 +6,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="this.user">
           <div class="account-container">
             <div class="row mt-1 mx-0   justify-content-start">
               <div class="col-1">
@@ -18,10 +18,14 @@
             </div>
           </div>
         </li>
-        <button class="backBtn" mat-fab color="accent" (click)="onSignOut()">
+        <button *ngIf="this.user" class="backBtn" mat-fab color="accent" (click)="onSignOut()">
           <mat-icon>logout</mat-icon>
         </button>
 
+        <div *ngIf="!this.user">
+          <button type="button" class="btn btn-light me-2" (click)="Login()">Login</button>
+          <button type="button" class="btn btn-success" (click)="SignUp()">Sign-up</button>
+        </div>
       </ul>
     </div>
   </div>

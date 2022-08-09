@@ -13,24 +13,15 @@ import {EventModel} from "../../Model/event.model";
 })
 export class CalendarGridComponent implements OnInit, AfterViewChecked {
   public height = 917;
-  public idParam: any;
   public listEvent = [];
   public userLoggedIn: UserModel;
   public userId;
   public openEv:boolean = false
 
 
-
-  // public winHeight=null;
-
-
   ngOnInit() {
     this.userLoggedIn = JSON.parse(localStorage.getItem('event:user'));
-    // console.log(this.userLoggedIn);
     this.userId = this.userLoggedIn.id;
-    // console.log(this.userId);
-    // this.getEventByUserId()
-    // this.compareValues()
   }
 
   ngAfterViewChecked() {
@@ -44,24 +35,6 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
   ) {
   }
 
-  // onResize(){
-  //   this.winHeight = window.innerHeight
-  //   console.log(this.winHeight);
-  //
-  //   if (this.winHeight<=793){
-  //     this.theHeight=100
-  //   }else if (this.winHeight>=1007){
-  //     this.theHeight=890
-  //   }
-  // }
-  //
-  // get theHeight(){
-  //   return this.height
-  // }
-  //
-  // set theHeight(val){
-  //   this.height = val
-  // }
 
   calendarOptions: CalendarOptions = {
 
@@ -128,6 +101,9 @@ export class CalendarGridComponent implements OnInit, AfterViewChecked {
       // Event By User ID
 
       // JUST FOR TESTING
+      if (this.authService.loggedUser){
+
+      }
       this.calendarService
         .getEvents({start: s, end: e})
         .subscribe((events: EventModel[]) => {
