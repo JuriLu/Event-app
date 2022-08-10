@@ -604,6 +604,8 @@ div.fc-event-time {
   font-size: 14px;
 }
 
+
+
 //Dialogs Responsive
 @media (min-width: 1537px) {
 
@@ -611,11 +613,11 @@ div.fc-event-time {
   .custom-dialog-container .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 32vh;
+    width: 30vh;
     height: 23vh;
     min-height: inherit;
     max-height: inherit;
@@ -625,11 +627,11 @@ div.fc-event-time {
   .custom-dialog-container-delete .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 31vh;
+    width: 29vh;
     height: 11vh;
     min-height: inherit;
     max-height: inherit;
@@ -645,7 +647,7 @@ div.fc-event-time {
   }
 }
 
-//All mat-input-forms on screens less than 1536 px
+//All mat-input-forms & DIALOGS on screens less than 1536 px
 @media (max-width: 1536.98px) {
 
   .mat-form-field-appearance-outline .mat-form-field-wrapper {
@@ -660,12 +662,12 @@ div.fc-event-time {
   .custom-dialog-container .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 41vh;
-    height: 29vh;
+    width: 39vh;
+    height: 30vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -674,11 +676,11 @@ div.fc-event-time {
   .custom-dialog-container-delete .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 40vh;
+    width: 38vh;
     height: 14vh;
     min-height: inherit;
     max-height: inherit;
@@ -710,12 +712,12 @@ div.fc-event-time {
   .custom-dialog-container .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 38vh;
-    height: 29vh;
+    width: 34vh;
+    height: 26vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -724,11 +726,11 @@ div.fc-event-time {
   .custom-dialog-container-delete .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 35vh;
+    width: 32vh;
     height: 12vh;
     min-height: inherit;
     max-height: inherit;
