@@ -34,38 +34,32 @@ export class CalendarGridComponent implements OnInit {
 
   }
 
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private calendarService: CalendarService,
     private authService: AuthService,
   ) {
-    this.declarecalendar()
+    this.declareCalendar()
   }
 
 
-  declarecalendar() {
+  declareCalendar() {
 
      this.calendarOptions = {
 
       initialView: 'dayGridMonth',
       weekends: true,
       dayHeaders: true,
-
       slotDuration: '00:30:00',
       slotLabelInterval: '01:00',
-
       events: [],
-
       themeSystem: 'default',
-
       eventBackgroundColor: 'white',
       eventTextColor: 'black',
       eventDisplay: 'block',
       eventShortHeight: 20,
       eventMinWidth: 10,
-
 
       headerToolbar: {
         start: '',
@@ -91,10 +85,19 @@ export class CalendarGridComponent implements OnInit {
 
       dateClick: (data) => {
         this.calendarService.selectedDate = data.date.toISOString()
-        if (this.authService.isAuthenticated) this.router.navigate(['new'], {relativeTo: this.activatedRoute})
+        if (this.authService.isAuthenticated) {
+          this.router.navigate(['new'], {relativeTo: this.activatedRoute})
+        } else {
+          this.router.navigateByUrl('/auth/signin')
+        }
       },
       eventClick: (data) => {
-        this.router.navigate([data.event.id], {relativeTo: this.activatedRoute})
+        if (this.authService.isAuthenticated){
+          this.router.navigate([data.event.id], {relativeTo: this.activatedRoute})
+        } else {
+          this.router.navigateByUrl('/auth/signin')
+        }
+
       },
 
       //Called after the calendar’s date range has been initially set or changed in some way and the DOM has been updated.
