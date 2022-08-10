@@ -42,10 +42,16 @@
           </mat-card-content>
         </form>
         <div class="signup_link">
-          <a [routerLink]="['/auth/signup']"> Create your Account <span class="arrow"> &#8594;</span></a>
+          <a [routerLink]="['/auth/signup']">
+            Create Account
+            <span class="moveDown material-symbols-outlined">person_add</span>
+          </a>
         </div>
         <div class="home_link">
-          <a [routerLink]="['/calendar']"> Home <span class="arrow"></span></a>
+          <a [routerLink]="['/calendar']">
+            Home
+            <span class="moveDown material-symbols-outlined">home</span>
+          </a>
         </div>
       </div>
     </div>
