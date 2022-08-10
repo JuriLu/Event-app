@@ -76,8 +76,18 @@
           </mat-card-content>
         </form>
         <div class="signin_link">
-          <a routerLink="/auth/signin"> Back to Login </a>
+          <a class="home_link" [routerLink]="['/calendar']">
+            Home
+            <span class="moveDown material-symbols-outlined">home</span>
+          </a>
+          <a routerLink="/auth/signin">
+            Login
+            <span class="moveDown material-symbols-outlined">login</span>
+          </a>
         </div>
+<!--        <div class="home_link">-->
+
+<!--        </div>-->
       </div>
     </div>
   </div>

@@ -79,6 +79,7 @@ img:hover {
 .email {
   width: 100%;
   font-family: 'Poppins', sans-serif;
+  padding-bottom: 7px;
 }
 
 .password {
@@ -117,8 +118,8 @@ input::placeholder {
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  margin-left: 80px;
-  margin-top: 100px;
+  margin-left: 0;
+  margin-top: 50px;
   color: #666666;
 }
 
@@ -126,7 +127,8 @@ input::placeholder {
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-size: 15px;
-  margin-left: 119px;
+  margin-left: 15px;
+  margin-right: 40px;
   margin-top: 10px;
   color: #666666;
 }
@@ -152,6 +154,7 @@ input[type='submit']:hover {
   background-color: transparent;
 }
 
+//Icons
 .moveDown{
   transform: translateY(5px)
 }
