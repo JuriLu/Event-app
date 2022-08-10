@@ -54,6 +54,7 @@ img{
   color: #00A9EE;
   font-family: 'Poppins', sans-serif;
   font-style: italic;
+  transform: translateX(20px) translateY(-25px);
 }
 
 mat-icon {
@@ -86,7 +87,6 @@ mat-icon:hover {
 }
 
 button.btn{
-
   font-family: 'Poppins', sans-serif;
 }
 

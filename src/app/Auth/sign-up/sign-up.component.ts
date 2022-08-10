@@ -2,6 +2,9 @@ import {Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, ValidatorFn, Validators} from "@angular/forms";
+import {MatDialog} from "@angular/material/dialog";
+import {InformDialogComponent} from "../../shared/inform-dialog/inform-dialog.component";
+import {UserCreatedDialogComponent} from "../../shared/user-created-dialog/user-created-dialog.component";
 
 function ExactMatch(controlName: string): ValidatorFn {
   return (control: AbstractControl): { exactMatch: boolean } | null => {
@@ -40,7 +43,10 @@ export class SignUpComponent implements OnInit {
   hide = 'visibility_off';
   type = 'password';
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -69,6 +75,13 @@ export class SignUpComponent implements OnInit {
       this.authService
         .signUp(firstName, lastName, email, password)
         .subscribe(user => {
+          this.dialog.open(UserCreatedDialogComponent, {
+            data: {
+              fName: firstName,
+              lName: lastName,
+              email: email,
+            }
+          })
           if (user) this.router.navigateByUrl('/auth/signin');
         });
     }
