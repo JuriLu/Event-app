@@ -3,8 +3,7 @@ import {CalendarOptions, FullCalendarComponent} from "@fullcalendar/angular";
 import {CalendarService} from "../../Services/calendar.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {UserModel} from "../../Model/user.model";
-import {EventModel} from "../../Model/event.model";
+
 import {map, tap} from "rxjs";
 
 @Component({
@@ -13,22 +12,18 @@ import {map, tap} from "rxjs";
   styleUrls: ['./calendar-grid.component.scss']
 })
 export class CalendarGridComponent implements OnInit {
-  @ViewChild('calendar') calendarRef:FullCalendarComponent
+  @ViewChild('calendar') calendarRef: FullCalendarComponent
   public start;
   public end;
-  public height = 917;
-  public userLoggedIn: UserModel;
-  public userId;
   calendarOptions: CalendarOptions;
 
 
   ngOnInit() {
-    this.userLoggedIn = JSON.parse(localStorage.getItem('event:user'));
-    this.userId = this.userLoggedIn.id;
+    //Get Events firstly when comes from logout
     this.authService.logoutSubject
       .pipe(
         tap(() => {
-          this.onEvent(this.start,this.end)
+          this.publicEvent(this.start, this.end)
         })
       ).subscribe()
 
@@ -45,16 +40,18 @@ export class CalendarGridComponent implements OnInit {
 
 
   declareCalendar() {
-
-     this.calendarOptions = {
+    this.calendarOptions = {
 
       initialView: 'dayGridMonth',
       weekends: true,
       dayHeaders: true,
       slotDuration: '00:30:00',
       slotLabelInterval: '01:00',
+
       events: [],
+
       themeSystem: 'default',
+
       eventBackgroundColor: 'white',
       eventTextColor: 'black',
       eventDisplay: 'block',
@@ -75,7 +72,7 @@ export class CalendarGridComponent implements OnInit {
         list: "list"
       },
 
-       height: 917,
+      height: 917,
       contentHeight: 800,
       aspectRatio: 4,
       expandRows: true,
@@ -92,12 +89,11 @@ export class CalendarGridComponent implements OnInit {
         }
       },
       eventClick: (data) => {
-        if (this.authService.isAuthenticated){
+        if (this.authService.isAuthenticated) {
           this.router.navigate([data.event.id], {relativeTo: this.activatedRoute})
         } else {
           this.router.navigateByUrl('/auth/signin')
         }
-
       },
 
       //Called after the calendar’s date range has been initially set or changed in some way and the DOM has been updated.
@@ -108,29 +104,25 @@ export class CalendarGridComponent implements OnInit {
       datesSet: ({start, end}) => {
         const s = start.toISOString();
         const e = end.toISOString();
+        this.start = s;
+        this.end = e;
 
-          this.start = s;
-          this.end = e;
-
-
-        // console.log('test');
         if (this.authService.loggedUser) {
           this.calendarService
             .getEvents({start: s, end: e})
             .pipe(
-              map((event) => event.filter(ev => ev.user.id === this.userLoggedIn.id))
+              map((event) => event.filter(ev => ev.user.id === this.authService.loggedUser.id))
             )
             .subscribe((events: any) =>
-              this.calendarOptions = {...this.calendarOptions, events}
-            );
-
+              this.calendarOptions = {...this.calendarOptions, events});
         } else {
-        this.onEvent(s,e)
+          this.publicEvent(s, e)
         }
       }
     };
   }
-  onEvent(start,end){
+  //Function Comes Outside to use in constructor and inside the Object calendar
+  publicEvent(start, end) {
     this.calendarService
       .getEvents({start: start, end: end})
       .pipe(
@@ -140,7 +132,5 @@ export class CalendarGridComponent implements OnInit {
         this.calendarOptions = {...this.calendarOptions, events}
       );
   }
-
-
 
 }
