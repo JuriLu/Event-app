@@ -32,16 +32,13 @@ export class HeaderComponent implements OnInit {
   onSignOut(): void {
     this.authService.signOut();
     this.user = null
-    this.authService.logoutSubject.next(true)
   }
 
   Login(){
     this.router.navigateByUrl('/auth/signin')
   }
-
   SignUp(){
     this.router.navigateByUrl('/auth/signup')
-
   }
 
 

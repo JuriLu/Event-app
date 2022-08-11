@@ -52,6 +52,7 @@ export class AuthService {
   signOut(): void {
     this.loggedUser = null;
     localStorage.removeItem(LOCALSTORAGE_USER);
+    this.logoutSubject.next(true)
 
   }
 }
