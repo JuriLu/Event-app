@@ -33,7 +33,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
   id?: number;
   editMode: boolean = false
   isDirty: boolean = false
-  status:Status = 'public';
+  status: Status = 'public';
 
   idEvent: any;
   idParam: any;
@@ -51,7 +51,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
       startTime: new FormControl('', [Validators.required]),
       endDate: new FormControl('', [Validators.required, GreaterThan('startDate')]),
       endTime: new FormControl('', [Validators.required]),
-      status: new FormControl('',[Validators.required])
+      status: new FormControl('', [Validators.required])
     });
   }
 
@@ -72,12 +72,11 @@ export class EventDetailComponent implements OnInit, OnEdit {
       if (this.eventForm.dirty) this.isDirty = true
     })).subscribe()
 
-    // this.getEventByUserId();
 
   }
 
   private populateForm(eventModel: EventModel): void {
-    const {id, title, start, end,status} = eventModel;
+    const {id, title, start, end, status} = eventModel;
 
     const startDate = new Date(start);
     const startTime = start.split('T')[1].split('.')[0]
@@ -118,7 +117,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
   sendForm() {
     // console.log(this.eventForm.getRawValue());
-    const {title, startDate, startTime, endDate, endTime,status} = this.eventForm.getRawValue();
+    const {title, startDate, startTime, endDate, endTime, status} = this.eventForm.getRawValue();
     const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
     const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
     console.log(end > start);
@@ -140,6 +139,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
             title: event.title,
             startDate: event.start,
             endDate: event.end,
+            status: event.status,
             editMode: this.editMode
           }
         })
@@ -166,19 +166,6 @@ export class EventDetailComponent implements OnInit, OnEdit {
     })
   }
 
-  // getEventByUserId(){
-  //   this.calendarService.getEvent(this.idParam).subscribe(
-  //     data => this.idEvent = data,
-  //     error => console.log("error")
-  //   )
-  // }
-
-  // getEventByUserId(){
-  //   this.calendarService.getEvent(101).subscribe((data)=>{
-  //     this.idEvent= data;
-  //     console.log(this.idEvent)
-  //   })
-  // }
 }
 
 
