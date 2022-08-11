@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AuthService} from "../../Services/auth.service";
 import {UserModel} from "../../Model/user.model";
 import {map} from "rxjs";
@@ -16,6 +16,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private activatedRoute: ActivatedRoute,
     private authService: AuthService,
   ) {
   }
@@ -39,6 +40,10 @@ export class HeaderComponent implements OnInit {
   }
   SignUp(){
     this.router.navigateByUrl('/auth/signup')
+  }
+
+  newEvent(){
+    this.router.navigate(['new'], {relativeTo: this.activatedRoute})
   }
 
 
