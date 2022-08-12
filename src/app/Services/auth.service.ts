@@ -43,6 +43,10 @@ export class AuthService {
       )
   }
 
+  // setImg( imageUrl?: string):Observable<any> {
+  //   return this.http.put(`${this.authUrl}/update`,imageUrl)
+  // }
+
 
   signUp(firstName: string, lastName: string, email: string, password: string): Observable<any> {
     const authData: AuthModel = {firstName, lastName, email, password}
