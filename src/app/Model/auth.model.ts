@@ -3,4 +3,5 @@ export interface AuthModel {
   lastName: string,
   email: string,
   password: string
+  imageUrl?:string
 }
