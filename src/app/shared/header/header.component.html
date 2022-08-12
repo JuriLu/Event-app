@@ -31,13 +31,13 @@
           <div class="d-flex align-items-center" >
             <a class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                aria-expanded="false">
-              <img src="assets/CuUserLogo.png" alt="UserLogo" width="50" height="50" class="rounded-circle">
+              <img src="{{imgUrl}}" alt="UserLogo" width="50" height="50" class="rounded-circle">
             </a>
             <ul class="dropdown-menu shadow">
 
               <div class="p-1 mb-0 bg-light border-bottom">
                 <li><p class="dropdown-item d-flex align-items-center gap-2 py-1" >
-                  Username: {{name}}
+                  <strong>{{name}}</strong>
                 </p></li>
               </div>
               <ul class="list-unstyled mb-0">
@@ -47,7 +47,7 @@
                 </a></li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" (click)="toProfile()">
                   <span class="d-inline-block bg-primary rounded-circle p-1"></span>
-                  Profile*
+                  Profiles
                 </a></li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" >
                   <span class="d-inline-block bg-danger rounded-circle p-1"></span>

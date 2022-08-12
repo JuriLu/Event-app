@@ -2,7 +2,9 @@
 
   <div class="container-fluid">
     <a class="navbar-brand" routerLink="../">
-<!--        <span class="material-symbols-outlined">arrow_back_ios</span>-->
+      <mat-icon>
+        arrow_back_ios
+      </mat-icon>
       Back To Calendar
     </a>
   </div>
@@ -19,6 +21,7 @@
   </div>
 
   <div class="row">
+
     <div class="col-2">
       <p class="h4 mx-5 mt-5">First Name</p>
 
@@ -27,6 +30,7 @@
           <p class="mb-0 mx-2 p-2 h6 cuFont">{{firstName}}</p>
         </div>
       </div>
+
     </div>
 
     <div class="col-2">
@@ -37,8 +41,18 @@
           <p class="mb-0 mx-2 p-2 h6 cuFont">{{lastName}}</p>
         </div>
       </div>
-
     </div>
+
+    <div class="col-2">
+      <p class="h4 mx-5 mt-5">Email</p>
+
+      <div class="col-10">
+        <div class="mx-5 mt-2 container bg-white cuRectangle">
+          <p class="mb-0 pt-2 pb-2 h6 cuFont">{{email}}</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div class="row mt-5 pt-5">
@@ -58,7 +72,7 @@
       <button class="btn btn-outline-primary">Update</button>
     </div>
     <div class="col-1 p-0 m-0">
-      <button class="btn btn-outline-danger">Delete</button>
+      <button class="btn btn-outline-danger">Clear</button>
     </div>
   </div>
 

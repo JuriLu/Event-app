@@ -13,6 +13,7 @@ import {CalendarGridComponent} from "../../components/calendar-grid/calendar-gri
 })
 export class HeaderComponent implements OnInit {
   user: UserModel
+  imgUrl: string
 
   constructor(
     private router: Router,
@@ -28,6 +29,7 @@ export class HeaderComponent implements OnInit {
       this.name = this.authService.loggedUser.firstName
     }
     this.user = this.authService.loggedUser
+    this.setImg()
   }
 
   onSignOut(): void {
@@ -48,6 +50,14 @@ export class HeaderComponent implements OnInit {
 
   toProfile(){
     this.router.navigate(['profile'], {relativeTo: this.activatedRoute})
+  }
+
+  setImg(){
+    if (this.user.imageUrl){
+      this.imgUrl = this.user.imageUrl
+    } else {
+      this.imgUrl = 'assets/CuUserLogo.png'
+    }
   }
 
 }
