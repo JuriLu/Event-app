@@ -13,6 +13,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import {MatSelectModule} from "@angular/material/select";
+import { ProfileComponent } from './profile/profile.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -25,6 +26,7 @@ FullCalendarModule.registerPlugins([
   declarations: [
     CalendarGridComponent,
     EventDetailComponent,
+    ProfileComponent,
   ],
     imports: [
         SharedModule,
