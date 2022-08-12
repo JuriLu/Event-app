@@ -46,5 +46,8 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['new'], {relativeTo: this.activatedRoute})
   }
 
+  toProfile(){
+    this.router.navigate(['profile'], {relativeTo: this.activatedRoute})
+  }
 
 }
