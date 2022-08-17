@@ -5,10 +5,13 @@
 body {
   margin: 0;
   overflow: auto;
-  font-family: 'Poppins', Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Poppins', "Helvetica Neue", sans-serif;
   background-image: url('assets/BG.jpg');
   background-repeat: no-repeat;
   background-size: auto;
+}
+.material-icons{
+  font-family: 'Material Icons' !important;
 }
 
 // logout mat icon moved a bit up within the button
