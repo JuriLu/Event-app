@@ -1,34 +1,37 @@
 <header>
   <nav class="navbar navbar-expand-md navbar-dark static-top bg-custom">
     <div class="container-fluid">
-      <a class="navbar-brand" >
+      <a class="navbar-brand">
         <img src="assets/eventApp3.png" alt="bmw logo" class="bi me-2" width="90" height="90">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
               aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse " id="navbarCollapse">
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-<!--            <a class="nav-link active" aria-current="page" href="">Home</a>-->
+          <li class="nav-item justify-content-end">
+<!--            <a class="nav-link active" aria-current="page" (click)="newEvent()">New Event</a>-->
           </li>
           <li class="nav-item">
-<!--            <a class="nav-link" href="">Link</a>-->
+            <!--            <a class="nav-link" href="">Link</a>-->
           </li>
           <li class="nav-item">
-<!--            <a class="nav-link disabled">Disabled</a>-->
+            <!--            <a class="nav-link disabled">Disabled</a>-->
           </li>
         </ul>
-<!--              Maybe For future purposes-->
-<!--        <form class="d-flex w-25" role="search">-->
-<!--          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">-->
-<!--          <button class="btn btn-outline-primary" type="submit">Search</button>-->
-<!--        </form>-->
+        <!--              Maybe For future purposes-->
+        <!--        <form class="d-flex w-25" role="search">-->
+        <!--          <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">-->
+        <!--          <button class="btn btn-outline-primary" type="submit">Search</button>-->
+        <!--        </form>-->
+        <div >
+          <a class="mx-4 newEvent" aria-current="page" (click)="newEvent()">New Event</a>
+        </div>
 
         <!--Profile-->
         <div *ngIf="this.user" class="dropdown">
-          <div class="d-flex align-items-center" >
+          <div class="d-flex align-items-center">
             <a class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
                aria-expanded="false">
               <img src="{{setImg()}}" alt="UserLogo" width="50" height="50" class="rounded-circle">
@@ -36,25 +39,27 @@
             <ul class="dropdown-menu shadow">
 
               <div class="p-1 mb-0 bg-light border-bottom">
-                <li><p class="dropdown-item d-flex align-items-center gap-2 py-1" >
+                <li><p class="dropdown-item d-flex align-items-center gap-2 py-1">
                   <strong>{{name}}</strong>
                 </p></li>
               </div>
               <ul class="list-unstyled mb-0">
-                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" (click)="newEvent()">
-                  <span class="d-inline-block bg-success rounded-circle p-1"></span>
-                  New Event
-                </a></li>
+                <!--                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" (click)="newEvent()">-->
+                <!--                  <span class="d-inline-block bg-success rounded-circle p-1"></span>-->
+                <!--                  New Event-->
+                <!--                </a></li>-->
                 <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" (click)="toProfile()">
-                  <span class="d-inline-block bg-primary rounded-circle p-1"></span>
+                  <span class="d-inline-block  rounded-circle"><img src="{{setImg()}}" alt="profile" width="30"
+                                                                    height="30"></span>
                   Profile
                 </a></li>
-                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" >
-                  <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                <li><a class="dropdown-item d-flex align-items-center gap-2 py-2">
+                  <span class="d-inline-block  rounded-circle"><img src="assets/settings.jpg" alt="profile" width="30"
+                                                                    height="30"></span>
                   Settings*
                 </a></li>
                 <li><a class="dropdown-item d-flex align-items-center gap-2 py-2" (click)="onSignOut()">
-                  <span class="d-inline-block bg-danger rounded-circle p-1"></span>
+                  <span class="d-inline-block  rounded-circle mx-1"><mat-icon class="mt-2">logout</mat-icon></span>
                   Log Out
                 </a></li>
               </ul>
