@@ -4,15 +4,17 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {ResponseModel} from "../Model/response.model";
-import {map, Observable, tap} from "rxjs";
+import {map, Observable, Subject, tap} from "rxjs";
 
 
 const LOCALSTORAGE_USER = 'event:user';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  logoutSubject = new Subject<boolean>();
   loggedUser: UserModel;
   private readonly authUrl: string = environment.baseApi + '/auth';
 
@@ -41,6 +43,10 @@ export class AuthService {
       )
   }
 
+  // setImg( imageUrl?: string):Observable<any> {
+  //   return this.http.put(`${this.authUrl}/update`,imageUrl)
+  // }
+
 
   signUp(firstName: string, lastName: string, email: string, password: string): Observable<any> {
     const authData: AuthModel = {firstName, lastName, email, password}
@@ -50,6 +56,8 @@ export class AuthService {
   signOut(): void {
     this.loggedUser = null;
     localStorage.removeItem(LOCALSTORAGE_USER);
+    this.logoutSubject.next(true)
+
   }
 }
 

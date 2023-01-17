@@ -1,6 +1,6 @@
 import {OnEdit} from "../../Model/on-edit";
 import {MatDialog} from "@angular/material/dialog";
-import {EventModel} from "../../Model/event.model";
+import {EventModel, Status} from "../../Model/event.model";
 import {finalize, tap} from "rxjs";
 import {CalendarService} from "../../Services/calendar.service";
 import {Component, OnInit} from '@angular/core';
@@ -33,6 +33,10 @@ export class EventDetailComponent implements OnInit, OnEdit {
   id?: number;
   editMode: boolean = false
   isDirty: boolean = false
+  status: Status = 'public';
+
+  idEvent: any;
+  idParam: any;
 
 
   constructor(
@@ -47,13 +51,13 @@ export class EventDetailComponent implements OnInit, OnEdit {
       startTime: new FormControl('', [Validators.required]),
       endDate: new FormControl('', [Validators.required, GreaterThan('startDate')]),
       endTime: new FormControl('', [Validators.required]),
+      status: new FormControl('', [Validators.required])
     });
   }
 
 
   ngOnInit(): void {
     const calendarEvent: EventModel | null = this.activatedRoute.snapshot.data.calendarEvent;
-
 
     if (calendarEvent) {
       this.populateForm(calendarEvent);
@@ -67,25 +71,30 @@ export class EventDetailComponent implements OnInit, OnEdit {
     this.eventForm.valueChanges.pipe(tap(() => {
       if (this.eventForm.dirty) this.isDirty = true
     })).subscribe()
+
+
   }
 
   private populateForm(eventModel: EventModel): void {
-    const {id, title, start, end} = eventModel;
+    const {id, title, start, end, status} = eventModel;
 
     const startDate = new Date(start);
     const startTime = start.split('T')[1].split('.')[0]
       .substr(0, 5);
+    console.log(startTime);
 
     const endDate = new Date(end);
     const endTime = end.split('T')[1].split('.')[0]
       .substr(0, 5);
+    console.log(endTime);
 
     this.eventForm.patchValue({
       title,
       startDate,
       startTime,
       endDate,
-      endTime
+      endTime,
+      status
     });
 
     this.id = id;
@@ -107,14 +116,16 @@ export class EventDetailComponent implements OnInit, OnEdit {
 
 
   sendForm() {
-    const {title, startDate, startTime, endDate, endTime} = this.eventForm.getRawValue();
+    // console.log(this.eventForm.getRawValue());
+    const {title, startDate, startTime, endDate, endTime, status} = this.eventForm.getRawValue();
     const start = EventDetailComponent.toISOStringConverter(startDate, startTime);
     const end = EventDetailComponent.toISOStringConverter(endDate, endTime);
     console.log(end > start);
     const eventModel: Omit<EventModel, 'id'> = {
       title,
       start,
-      end
+      end,
+      status
     };
 
     (this.id ? this.calendarService.update(this.id, eventModel) : this.calendarService.create(eventModel)
@@ -128,6 +139,7 @@ export class EventDetailComponent implements OnInit, OnEdit {
             title: event.title,
             startDate: event.start,
             endDate: event.end,
+            status: event.status,
             editMode: this.editMode
           }
         })
@@ -153,7 +165,6 @@ export class EventDetailComponent implements OnInit, OnEdit {
       }
     })
   }
-
 
 }
 

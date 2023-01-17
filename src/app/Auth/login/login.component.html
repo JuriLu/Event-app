@@ -2,8 +2,10 @@
 <mat-card>
   <div class="colCustom ">
 
-    <div class="photo-container ">
-      <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png" width="250px" height="230px">
+    <div class="photo-container">
+      <a [routerLink]="['/calendar']" >
+        <img alt="Event App" src="assets/eventApp3.png" width="250px" height="230px">
+      </a>
     </div>
 
     <div class=" login-container">
@@ -15,20 +17,19 @@
             <mat-form-field class="email" appearance="outline">
               <mat-label>Email</mat-label>
               <input matInput placeholder="email@example.com" formControlName="email" required>
-              <mat-error *ngIf="loginForm.get('email').invalid">{{emailErrorMessage()}}</mat-error>
             </mat-form-field>
+            <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">{{emailErrorMessage()}}</mat-error>
 
             <div>
               <mat-form-field class="password" appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput type={{type}} formControlName="password">
-                <mat-error *ngIf="loginForm.get('password').hasError('required')">{{"Password required"}}</mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
-              <mat-error>{{this.errMsg}}</mat-error>
+            <mat-error *ngIf="loginForm.get('password').hasError('required')&& loginForm.get('password').touched">{{"Password required"}}</mat-error>
             </div>
             <br>
             <button
@@ -43,9 +44,15 @@
           </mat-card-content>
         </form>
         <div class="signup_link">
-          <a [routerLink]="['/auth/signup']"> Create your Account <span class="arrow"> &#8594;</span></a>
+          <a class="home_link" [routerLink]="['/calendar']">
+            Home
+            <mat-icon class="moveDown material-symbols-outlined">home</mat-icon>
+          </a>
+          <a [routerLink]="['/auth/signup']">
+            Create Account
+            <mat-icon class="moveDown material-symbols-outlined">person_add</mat-icon>
+          </a>
         </div>
-
       </div>
     </div>
   </div>

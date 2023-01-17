@@ -8,7 +8,7 @@ import {Component, Inject} from '@angular/core';
 })
 export class InformDialogComponent {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-  }
-
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 }

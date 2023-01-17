@@ -43,4 +43,6 @@ UI + Functional Updates:
    - Event deleted successfully
 + All writing and fonts were updated 
 + Event form UI made smaller
++ Showing Events UPDATED, users can see 
+only events they created
 + EXTRA (SEE COMMITS)

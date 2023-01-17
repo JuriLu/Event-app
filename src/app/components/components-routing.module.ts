@@ -5,14 +5,18 @@ import {UnsavedDataGuard} from "../Guards/unsaved-data.guard";
 import {RouterModule, Routes} from "@angular/router";
 import {EventDetailComponent} from "./event-detail/event-detail.component";
 import {CalendarGridComponent} from "./calendar-grid/calendar-grid.component";
+import {ProfileComponent} from "./profile/profile.component";
 
 const routes: Routes = [
   {
     path: '',
     children: [
       {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
         path: '',
-        canActivate: [AuthGuard],
         component: CalendarGridComponent
       },
       {
@@ -21,8 +25,8 @@ const routes: Routes = [
         canActivate: [AuthGuard],
         canDeactivate: [UnsavedDataGuard],
         resolve: {calendarEvent: EventResolver}
-      }
-    ]
+      },
+    ],
   },
 ]
 

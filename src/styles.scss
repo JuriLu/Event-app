@@ -5,10 +5,14 @@
 body {
   margin: 0;
   overflow: auto;
-  font-family: 'Poppins', Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Poppins', "Helvetica Neue", sans-serif;
   background-image: url('assets/BG.jpg');
   background-repeat: no-repeat;
   background-size: auto;
+}
+
+.material-icons{
+  font-family: 'Material Icons' !important;
 }
 
 // logout mat icon moved a bit up within the button
@@ -554,12 +558,14 @@ body > app-root > app-calendar-grid > full-calendar > div.fc-header-toolbar.fc-t
 //Calendar Title   month/year  July/2022 ex
 .fc-toolbar-chunk {
   font-size: 25px;
+  font-style: italic;
   color: white;
 }
 
 .fc-toolbar-title {
   color: white;
   font-family: 'Poppins', sans-serif !important;
+  font-style: italic !important;
 }
 
 
@@ -602,18 +608,21 @@ div.fc-event-time {
   font-size: 14px;
 }
 
+
+
 //Dialogs Responsive
 @media (min-width: 1537px) {
+
   //Delete confirm container
   .custom-dialog-container .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 32vh;
-    height: 22vh;
+    width: 30vh;
+    height: 23vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -622,12 +631,12 @@ div.fc-event-time {
   .custom-dialog-container-delete .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 39vh;
-    height: 19vh;
+    width: 29vh;
+    height: 11vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -642,7 +651,7 @@ div.fc-event-time {
   }
 }
 
-//All mat-input-forms on screens less than 1536 px
+//All mat-input-forms & DIALOGS on screens less than 1536 px
 @media (max-width: 1536.98px) {
 
   .mat-form-field-appearance-outline .mat-form-field-wrapper {
@@ -657,12 +666,12 @@ div.fc-event-time {
   .custom-dialog-container .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 30px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 41vh;
-    height: 28vh;
+    width: 40vh;
+    height: 30vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -671,12 +680,12 @@ div.fc-event-time {
   .custom-dialog-container-delete .mat-dialog-container {
     display: block;
     padding: 0 4px;
-    border-radius: 20px;
+    border-radius: 5px;
     box-sizing: border-box;
     overflow: hidden;
     outline: 0;
-    width: 51vh;
-    height: 23vh;
+    width: 39vh;
+    height: 14vh;
     min-height: inherit;
     max-height: inherit;
   }
@@ -690,4 +699,64 @@ div.fc-event-time {
     -webkit-overflow-scrolling: touch;
   }
 
+}
+
+//Tablet
+@media (max-width: 768.98px) {
+
+  .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin: 5px !important;
+  }
+
+  .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+
+  //Delete confirm container
+  .custom-dialog-container .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 34vh;
+    height: 26vh;
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  //Delete Inform Dialog
+  .custom-dialog-container-delete .mat-dialog-container {
+    display: block;
+    padding: 0 4px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+    outline: 0;
+    width: 32vh;
+    height: 12vh;
+    min-height: inherit;
+    max-height: inherit;
+  }
+
+  .custom-dialog-container .mat-dialog-content {
+    display: block;
+    margin: 0 -3px;
+    padding: 0 23px;
+    max-height: 65vh;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+}
+
+//Login --> email field
+body > mat-card > div > div.login-container > div > form > mat-card-content > mat-form-field > div{
+  //margin: 0;
+  padding: 0;
+}
+
+body > mat-card > div > div.login-container > div > form > mat-card-content > div > mat-form-field > div{
+  padding-bottom: 0;
 }

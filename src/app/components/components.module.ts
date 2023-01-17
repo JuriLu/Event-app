@@ -12,6 +12,8 @@ import {ComponentsRoutingModule} from "./components-routing.module";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
+import {MatSelectModule} from "@angular/material/select";
+import { ProfileComponent } from './profile/profile.component';
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -24,16 +26,18 @@ FullCalendarModule.registerPlugins([
   declarations: [
     CalendarGridComponent,
     EventDetailComponent,
+    ProfileComponent,
   ],
-  imports: [
-    SharedModule,
-    CommonModule,
-    MaterialModule,
-    DragDropModule,
-    FullCalendarModule,
-    ReactiveFormsModule,
-    ComponentsRoutingModule,
-  ],
+    imports: [
+        SharedModule,
+        CommonModule,
+        MaterialModule,
+        DragDropModule,
+        FullCalendarModule,
+        ReactiveFormsModule,
+        ComponentsRoutingModule,
+        MatSelectModule,
+    ],
   exports: [
     CalendarGridComponent,
     EventDetailComponent,

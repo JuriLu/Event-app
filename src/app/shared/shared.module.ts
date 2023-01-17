@@ -7,6 +7,7 @@ import {Error404Component} from "./error404/error404.component";
 import {InformDialogComponent} from "./inform-dialog/inform-dialog.component";
 import {DeleteDialogComponent} from "./delete-dialog/delete-dialog.component";
 import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component";
+import { UserCreatedDialogComponent } from './user-created-dialog/user-created-dialog.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {ConfirmDialogComponent} from "./confirm-dialog/confirm-dialog.component"
     DeleteDialogComponent,
     InformDialogComponent,
     ConfirmDialogComponent,
+    UserCreatedDialogComponent,
   ],
   imports: [
     CommonModule,

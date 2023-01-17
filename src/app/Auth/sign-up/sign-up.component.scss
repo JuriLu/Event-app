@@ -13,24 +13,29 @@ body {
 
 .colCustom {
   flex: 1 1 auto;
+  padding: 0 100px;
 }
 
 mat-card-title {
+  margin-left: 100px;
   font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  color: #c2bebd;
 }
 
 mat-error {
   font-family: 'Poppins', sans-serif;
+  font-size: 10px;
 }
 
 mat-card {
   border-radius: 15px;
-  padding: 20px 100px;
+  padding: 5px 20px;
   background-color: white;
 }
 
 .signup-container {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +46,7 @@ mat-card {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
 }
 
 //fName , lName, pass , confPass
@@ -69,7 +75,7 @@ img:hover {
 }
 
 mat-form-field {
-  width: 350px;
+  width: 290px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -81,19 +87,30 @@ input::placeholder {
 
 .authButton {
   margin-top: 10px;
-  width: 350px;
+  width: 290px;
   height: 50px;
   transition: .4s;
   font-family: 'Poppins', sans-serif;
 }
 
-.signup_link {
+.signin_link {
   display: flex;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  margin-top: 30px;
+  font-size: 15px;
+  padding-top: 10px;
+  margin-right: 0px;
   color: #666666;
+}
+
+.home_link {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  margin-right: 80px;
+  //margin-top: 10px;
+  color: #666666;
+  padding-bottom: 10px;
 }
 
 a {
@@ -116,6 +133,11 @@ input[type='submit']:hover {
 .endPart {
   display: flex;
   justify-content: center;
+}
+
+//Icons
+.moveDown{
+  transform: translateY(5px)
 }
 
 

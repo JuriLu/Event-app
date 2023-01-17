@@ -3,7 +3,9 @@
   <div class="colCustom">
 
     <div class="photo-container">
-      <img src="https://colorlib.com/etc/lf/Login_v1/images/img-01.png">
+      <a [routerLink]="['/calendar']" >
+        <img alt="Event App" src="assets/eventApp3.png" width="250px" height="230px">
+      </a>
     </div>
 
     <div class="signup-container">
@@ -17,52 +19,51 @@
               <mat-form-field class="nameWidth" appearance="outline">
                 <mat-label>First Name</mat-label>
                 <input matInput formControlName="firstName" placeholder="First Name">
-                <mat-error
-                  *ngIf="signupForm.get('firstName').hasError('required')">{{"First Name required"}}</mat-error>
               </mat-form-field>
             </div>
+                <mat-error *ngIf="signupForm.get('firstName').hasError('required') && signupForm.get('firstName').touched">{{"First Name required"}}</mat-error>
 
             <div class="each">
               <mat-form-field class="nameWidth" appearance="outline">
                 <mat-label>Last Name</mat-label>
                 <input formControlName="lastName" matInput placeholder="Last Name">
-                <mat-error *ngIf="signupForm.get('lastName').hasError('required')">{{"Last Name required"}}</mat-error>
               </mat-form-field>
             </div>
+                <mat-error *ngIf="signupForm.get('lastName').hasError('required') && signupForm.get('lastName').touched">{{"Last Name required"}}</mat-error>
 
 
             <div class="each">
               <mat-form-field class="email" appearance="outline">
                 <mat-label>Email</mat-label>
                 <input formControlName="email" matInput placeholder="Email">
-                <mat-error *ngIf="signupForm.get('email').invalid">{{emailErrMsg()}}</mat-error>
               </mat-form-field>
             </div>
+                <mat-error *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">{{emailErrMsg()}}</mat-error>
 
 
             <div class="each">
               <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input formControlName="password" type={{type}} matInput placeholder="Password">
-                <mat-error *ngIf="signupForm.get('password').invalid">{{passErrMsg()}}</mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
             </div>
+                <mat-error *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">{{passErrMsg()}}</mat-error>
 
             <div class="each">
               <mat-form-field appearance="outline">
                 <mat-label>Confirm Password</mat-label>
                 <input formControlName="confirmPassword" type={{type}} matInput placeholder="Confirm Password">
-                <mat-error *ngIf="signupForm.get('confirmPassword').invalid">{{confPassErrMsg()}}</mat-error>
                 <button type="button" mat-icon-button matSuffix (click)="getType()" [attr.aria-label]="'Hide password'"
                         [attr.aria-pressed]="hide">
                   <mat-icon>{{hide}}</mat-icon>
                 </button>
               </mat-form-field>
             </div>
+                <mat-error *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">{{confPassErrMsg()}}</mat-error>
 
 
             <div class="endPart">
@@ -76,9 +77,19 @@
             </div>
           </mat-card-content>
         </form>
-        <div class="signup_link">
-          <a routerLink="/auth/signin"> Back to Login </a>
+        <div class="signin_link">
+          <a class="home_link" [routerLink]="['/calendar']">
+            Home
+            <mat-icon class="moveDown material-symbols-outlined">home</mat-icon>
+          </a>
+          <a routerLink="/auth/signin">
+            Login
+            <mat-icon class="moveDown material-symbols-outlined">login</mat-icon>
+          </a>
         </div>
+<!--        <div class="home_link">-->
+
+<!--        </div>-->
       </div>
     </div>
   </div>
